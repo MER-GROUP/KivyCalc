@@ -229,7 +229,7 @@ class Calc(BoxLayout):
     # далее очистить и записать в историю label_display_comment ответ результата вычесления
     # и текущий операнд
     def add(self):
-        if ('=' == self.operand) and ('w' == self.previous_operand): # 1
+        if ('=' == self.operand) and (self.previous_operand in 'w<'): # 1
             pass
         elif ((0 < len(self.calc_arr)) 
             and ('/' == self.calc_arr[-1])
@@ -289,7 +289,7 @@ class Calc(BoxLayout):
     # далее очистить и записать в историю label_display_comment ответ результата вычесления
     # и текущий операнд
     def subtract(self):
-        if ('=' == self.operand) and ('w' == self.previous_operand): # 1
+        if ('=' == self.operand) and (self.previous_operand in 'w<'): # 1
             pass
         elif ((0 < len(self.calc_arr)) 
             and ('/' == self.calc_arr[-1])
@@ -349,7 +349,7 @@ class Calc(BoxLayout):
     # далее очистить и записать в историю label_display_comment ответ результата вычесления
     # и текущий операнд
     def multiply(self):
-        if ('=' == self.operand) and ('w' == self.previous_operand): # 1
+        if ('=' == self.operand) and (self.previous_operand in 'w<'): # 1
             pass
         elif ((0 < len(self.calc_arr)) 
             and ('/' == self.calc_arr[-1])
@@ -409,7 +409,7 @@ class Calc(BoxLayout):
     # далее очистить и записать в историю label_display_comment ответ результата вычесления
     # и текущий операнд
     def division(self):
-        if ('=' == self.operand) and ('w' == self.previous_operand): # 1
+        if ('=' == self.operand) and (self.previous_operand in 'w<'): # 1
             pass
         elif (('w' == self.operand) and (self.previous_operand is None)):
             pass
@@ -478,7 +478,7 @@ class Calc(BoxLayout):
     # далее очистить и записать в историю label_display_comment ответ результата вычесления
     # и текущий операнд
     def percent(self):
-        if ('=' == self.operand) and ('w' == self.previous_operand): # 1
+        if ('=' == self.operand) and (self.previous_operand in 'w<'): # 1
             pass
         elif ((0 < len(self.calc_arr)) 
             and ('/' == self.calc_arr[-1])
