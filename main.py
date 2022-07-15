@@ -83,6 +83,10 @@ class Calc(BoxLayout):
         if self.display_clear and not self.push_back : # 1
             self.label_display.text = ''
             self.display_clear = False
+        elif (self.push_equal):
+            self.label_display.text = ''
+            self.label_display_comment.text = ''
+            self.push_equal = False
 
         digit_begin = button.text # 2
         if ('-' == digit_begin) and ('' == self.label_display.text):
