@@ -37,6 +37,9 @@ for file in listdir(kv_path):
     kv_path_file = str(Path(join(kv_path, file)))
     Builder.load_file(kv_path_file)
 # *****************************************************************************************
+# decimal - работа с десятичными числами
+from decimal import Decimal
+# *****************************************************************************************
 # собственные модули
 # Parse - разбор текстовых строк
 from Parse import Parse
