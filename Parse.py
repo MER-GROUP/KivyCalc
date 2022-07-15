@@ -40,6 +40,7 @@ if __name__ == '__main__':
     test_4 = '1212+67676-787878/8989898'
     test_5 = '1212+67676-787878*8989898'
     test_6 = '12128989898'
+    test_7 = '-12128989898'
 
     print(Parse().back_to_operand(test_1))
     print(Parse().back_to_operand(test_2))
@@ -47,6 +48,7 @@ if __name__ == '__main__':
     print(Parse().back_to_operand(test_4))
     print(Parse().back_to_operand(test_5))
     print(Parse().back_to_operand(test_6))
+    print(Parse().back_to_operand(test_7))
 
     print(Parse().split(test_1))
     print(Parse().split(test_2))
@@ -54,4 +56,5 @@ if __name__ == '__main__':
     print(Parse().split(test_4))
     print(Parse().split(test_5))
     print(Parse().split(test_6))
+    print(Parse().split(test_7))
 # *****************************************************************************************
