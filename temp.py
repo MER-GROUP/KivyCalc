@@ -50,3 +50,12 @@ print('type(res) =', type(res))
 print('---------------------------')
 print('123456789'[-2])
 print('---------------------------')
+from decimal import Decimal
+a = Decimal('-5')
+b = Decimal('15')
+print(a + b)
+print('---------------------------')
+line = '-+*/='
+print('1212+7878784-3434/676767*676767'.count(line))
+print(''.count.__doc__)
+print('---------------------------')

@@ -24,6 +24,8 @@ class Parse:
     # разделение строки по разделителям '+-*/%'
     def split(self, line: str) -> list[str]:
         arr = re.split('\+|\-|\*|\/|\%', line)
+        if '' == arr[0]:
+            arr[1] = line[0] + arr[1]
         return arr if '' != arr[0] else arr[1 : ]
     # ---------------------------------------------------------------------------
     def validate_history(self):
