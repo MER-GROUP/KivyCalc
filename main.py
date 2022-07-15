@@ -1,5 +1,5 @@
 # *****************************************************************************************
-# Простой калькулятор
+# KivyCalc - простой калькулятор для простых иповседневных вычеслений
 # *****************************************************************************************
 # главное окно программы
 from kivy.app import App
@@ -36,6 +36,9 @@ kv_path = str(Path(join(dirname(__file__), folder)))
 for file in listdir(kv_path):
     kv_path_file = str(Path(join(kv_path, file)))
     Builder.load_file(kv_path_file)
+# *****************************************************************************************
+# decimal - работа с десятичными числами
+from decimal import Decimal
 # *****************************************************************************************
 # собственные модули
 # Parse - разбор текстовых строк
@@ -83,6 +86,10 @@ class Calc(BoxLayout):
         if self.display_clear and not self.push_back : # 1
             self.label_display.text = ''
             self.display_clear = False
+        elif (self.push_equal):
+            self.label_display.text = ''
+            self.label_display_comment.text = ''
+            self.push_equal = False
 
         digit_begin = button.text # 2
         if ('-' == digit_begin) and ('' == self.label_display.text):
@@ -568,6 +575,14 @@ class Calc(BoxLayout):
             return
         elif (self.label_display_comment.text[-1] in '-+*/%') and ('' == self.label_display.text):
             return
+        elif ((self.label_display_comment.text[0] in '-+*/%') 
+            and (2 == len(self.label_display_comment.text))
+            and (self.label_display.text[0] in '-+*/%')
+            and (2 == len(self.label_display.text))
+            ):
+            self.label_display.text = ''
+            self.label_display_comment.text = ''
+            self.write_number = None
         elif (self.label_display_comment.text[-1] in '-+*/%') and (1 == len(self.label_display.text)):
             self.label_display.text = ''
             self.write_number = None
@@ -660,11 +675,26 @@ class Calc(BoxLayout):
                     and (2 == len(Parse().split(res)))
                     and ('%' == Parse().back_to_operand(res)[-1])
                     ):
-                    procent, digit = Parse().split(res)
-                    res = procent + '*' + digit + '/' + '100'
-                    res = str(eval(res))
+                    # procent, digit = Parse().split(res)
+                    # res = procent + '*' + digit + '/' + '100'
+                    # res = str(eval(res))
+                    a, b = Parse().split(res)
+                    procent, digit = Decimal(a), Decimal(b)
+                    res = str(procent * digit / 100)
                 else:
-                    res = str(eval(res))
+                    # res = str(eval(res))
+                    if ('' != res) and (2 == len(Parse().split(res))):
+                        operand = Parse().back_to_operand(res)[-1]
+                        a, b = Parse().split(res)
+                        x, y = Decimal(a), Decimal(b)
+                        if ('-' == operand):
+                            res = str(x - y)
+                        elif ('+' == operand):
+                            res = str(x + y)
+                        elif ('*' == operand):
+                            res = str(x * y)
+                        elif ('/' == operand):
+                            res = str(x / y)
 
         self.label_display.text = res # 6
         self.label_display_comment.text += str(self.operand) # 7
