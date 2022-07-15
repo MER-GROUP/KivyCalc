@@ -45,6 +45,7 @@ if __name__ == '__main__':
     test_6 = '12128989898'
     test_7 = '-12128989898'
     test_8 = '-12128989898+676767-99999'
+    test_9 = '-12128989898--99999-88888'
 
     print(Parse().back_to_operand(test_1))
     print(Parse().back_to_operand(test_2))
@@ -54,6 +55,7 @@ if __name__ == '__main__':
     print(Parse().back_to_operand(test_6))
     print(Parse().back_to_operand(test_7))
     print(Parse().back_to_operand(test_8))
+    print(Parse().back_to_operand(test_9))
 
     print(Parse().split(test_1))
     print(Parse().split(test_2))
@@ -63,4 +65,5 @@ if __name__ == '__main__':
     print(Parse().split(test_6))
     print(Parse().split(test_7))
     print(Parse().split(test_8))
+    print(Parse().split(test_9))
 # *****************************************************************************************
