@@ -667,11 +667,26 @@ class Calc(BoxLayout):
                     and (2 == len(Parse().split(res)))
                     and ('%' == Parse().back_to_operand(res)[-1])
                     ):
-                    procent, digit = Parse().split(res)
-                    res = procent + '*' + digit + '/' + '100'
-                    res = str(eval(res))
+                    # procent, digit = Parse().split(res)
+                    # res = procent + '*' + digit + '/' + '100'
+                    # res = str(eval(res))
+                    a, b = Parse().split(res)
+                    procent, digit = Decimal(a), Decimal(b)
+                    res = str(procent * digit / 100)
                 else:
-                    res = str(eval(res))
+                    # res = str(eval(res))
+                    if ('' != res) and (2 == len(Parse().split(res))):
+                        operand = Parse().back_to_operand(res)[-1]
+                        a, b = Parse().split(res)
+                        x, y = Decimal(a), Decimal(b)
+                        if ('-' == operand):
+                            res = str(x - y)
+                        elif ('+' == operand):
+                            res = str(x + y)
+                        elif ('*' == operand):
+                            res = str(x * y)
+                        elif ('/' == operand):
+                            res = str(x / y)
 
         self.label_display.text = res # 6
         self.label_display_comment.text += str(self.operand) # 7
