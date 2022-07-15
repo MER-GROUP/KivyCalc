@@ -26,6 +26,15 @@ class Parse:
         arr = re.split('\+|\-|\*|\/|\%', line)
         if '' == arr[0]:
             arr[1] = line[0] + arr[1]
+        
+        if '' in arr:
+            i = int()
+            while i < len(arr):
+                if ('' == arr[i]):
+                    del arr[i]
+                    i -= 1
+                i += 1
+
         return arr if '' != arr[0] else arr[1 : ]
     # ---------------------------------------------------------------------------
     def validate_history(self):
@@ -46,6 +55,8 @@ if __name__ == '__main__':
     test_7 = '-12128989898'
     test_8 = '-12128989898+676767-99999'
     test_9 = '-12128989898--99999-88888'
+    test_10 = '12128989898--99999-88888'
+    test_11 = '12128989898--99999------88888'
 
     print(Parse().back_to_operand(test_1))
     print(Parse().back_to_operand(test_2))
@@ -56,6 +67,8 @@ if __name__ == '__main__':
     print(Parse().back_to_operand(test_7))
     print(Parse().back_to_operand(test_8))
     print(Parse().back_to_operand(test_9))
+    print(Parse().back_to_operand(test_10))
+    print(Parse().back_to_operand(test_11))
 
     print(Parse().split(test_1))
     print(Parse().split(test_2))
@@ -66,4 +79,6 @@ if __name__ == '__main__':
     print(Parse().split(test_7))
     print(Parse().split(test_8))
     print(Parse().split(test_9))
+    print(Parse().split(test_10))
+    print(Parse().split(test_11))
 # *****************************************************************************************
