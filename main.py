@@ -551,7 +551,9 @@ class Calc(BoxLayout):
     # 1. сохранить в память калькулятора число
     # иначе извлечь из памяти калькулятора число на дисплей калькулятора
     def memory(self):
-        if ('' == self.label_display_memory.text) and ('' != self.label_display.text): # 1
+        if ('' == self.label_display_memory.text) and ('' == self.label_display.text): # 1
+            return
+        elif ('' == self.label_display_memory.text) and ('' != self.label_display.text):
             self.label_display_memory.text = self.label_display.text
         else:  
             if (((self.label_display_comment.text[-1] in '-+*/%')) 
