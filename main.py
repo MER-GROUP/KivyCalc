@@ -185,6 +185,15 @@ class Calc(BoxLayout):
                 self.label_display_comment.text += str(self.write_number)
             else:
                 self.label_display_comment.text = str(self.write_number)
+        elif (('' != self.label_display.text)
+            and ('-' == self.label_display.text[0])
+            ):
+            if (2 < len(self.label_display_comment.text)):
+                self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)
+                self.label_display_comment.text = self.label_display_comment.text[: -1]
+                self.label_display_comment.text += str(self.write_number)
+            else:
+                self.label_display_comment.text = str(self.write_number)
         elif ((self.push_back) 
             and ('' != self.label_display.text)
             ):
