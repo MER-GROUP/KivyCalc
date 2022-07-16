@@ -556,7 +556,9 @@ class Calc(BoxLayout):
         elif ('' == self.label_display_memory.text) and ('' != self.label_display.text):
             self.label_display_memory.text = self.label_display.text
         else:  
-            if (((self.label_display_comment.text[-1] in '-+*/%')) 
+            if ('' == self.label_display_comment.text):
+                self.label_display_comment.text = self.label_display_memory.text  
+            elif (((self.label_display_comment.text[-1] in '-+*/%')) 
                 and (self.label_display_memory.text[0] in '-+*/%')):
                 self.label_display_comment.text += self.label_display_memory.text
             elif ((self.label_display_comment.text[-1] in '-+*/%') 
