@@ -222,6 +222,7 @@ class Calc(BoxLayout):
         print(' write digit_end =', digit_end)
         print(' write zero =', self.zero)
         print(' write push_back =', self.push_back)
+        print(' write push_equal =', self.push_equal)
     # ---------------------------------------------------------------------------
     # операнд сложения чисел
     # 1. условия проверки нажятия кнопки '+'
@@ -282,6 +283,7 @@ class Calc(BoxLayout):
         print(' add calc_arr =', self.calc_arr)
         print(' add zero =', self.zero)
         print(' add push_back =', self.push_back)
+        print(' add push_equal =', self.push_equal)
     # ---------------------------------------------------------------------------
     # операнд вычитания чисел
     # 1. условия проверки нажятия кнопки '-'
@@ -342,6 +344,7 @@ class Calc(BoxLayout):
         print(' subtract calc_arr =', self.calc_arr)
         print(' subtract zero =', self.zero)
         print(' subtract push_back =', self.push_back)
+        print(' subtract push_equal =', self.push_equal)
     # ---------------------------------------------------------------------------
     # операнд умножения чисел
     # 1. условия проверки нажятия кнопки '*'
@@ -402,6 +405,7 @@ class Calc(BoxLayout):
         print(' multiply calc_arr =', self.calc_arr)
         print(' multiply zero =', self.zero)
         print(' multiply push_back =', self.push_back)
+        print(' multiply push_equal =', self.push_equal)
     # ---------------------------------------------------------------------------
     # операнд деления чисел
     # 1. условия проверки нажятия кнопки '/'
@@ -471,6 +475,7 @@ class Calc(BoxLayout):
         print(' division calc_arr =', self.calc_arr)
         print(' division zero =', self.zero)
         print(' division push_back =', self.push_back)
+        print(' division push_equal =', self.push_equal)
     # ---------------------------------------------------------------------------
     # операнд процент от числа
     # 1. условия проверки нажятия кнопки '%'
@@ -531,6 +536,7 @@ class Calc(BoxLayout):
         print(' percent calc_arr =', self.calc_arr)
         print(' percent zero =', self.zero)
         print(' percent push_back =', self.push_back)
+        print(' percent push_equal =', self.push_equal)
     # ---------------------------------------------------------------------------
     # операнд сохранения числа в память калькулятора
     # 1. сохранить в память калькулятора число
@@ -560,6 +566,7 @@ class Calc(BoxLayout):
         print(' memory calc_arr =', self.calc_arr)
         print(' memory zero =', self.zero)
         print(' memory push_back =', self.push_back)
+        print(' memory push_equal =', self.push_equal)
     # ---------------------------------------------------------------------------
     # операнд удаление чисел     
     # 1. удалить крайнюю цифру из числа
@@ -627,6 +634,7 @@ class Calc(BoxLayout):
         print(' back calc_arr =', self.calc_arr)
         print(' back zero =', self.zero)
         print(' back push_back =', self.push_back)
+        print(' back push_equal =', self.push_equal)
     # ---------------------------------------------------------------------------
     # операнд равно (результат действий калькулятора)
     # 1. условия проверки нажятия кнопки '='   
@@ -714,6 +722,7 @@ class Calc(BoxLayout):
         print(' equal zero =', self.zero)
         print(' equal push_back =', self.push_back)
         print(' equal res =', res)
+        print(' equal push_equal =', self.push_equal)
     # ---------------------------------------------------------------------------
     # обнудить все переменные при нажатии кнопки 'C'
     def clear(self):
@@ -741,6 +750,7 @@ class Calc(BoxLayout):
         print(' clear calc_arr =', self.calc_arr)
         print(' clear zero =', self.zero)
         print(' clear push_back =', self.push_back)
+        print(' clear push_equal =', self.push_equal)
     # ---------------------------------------------------------------------------
     pass
     # ---------------------------------------------------------------------------
