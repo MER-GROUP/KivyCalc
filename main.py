@@ -740,14 +740,16 @@ class Calc(BoxLayout):
                     # procent, digit = Parse().split(res)
                     # res = procent + '*' + digit + '/' + '100'
                     # res = str(eval(res))
-                    a, b = Parse().split(res)
+                    a, b = Parse().split_with_operand(res)
                     procent, digit = Decimal(a), Decimal(b)
                     res = str(procent * digit / 100)
                 else:
                     # res = str(eval(res))
                     if ('' != res) and (2 == len(Parse().split(res))):
-                        operand = Parse().back_to_operand(res)[-1]
-                        a, b = Parse().split(res)
+                        op1 = Parse().back_to_operand(res)[-1]
+                        op2 = Parse().back_to_operand(res)[-2]
+                        operand = op2 if op2 in '-+*/%' else op1
+                        a, b = Parse().split_with_operand(res)
                         x, y = Decimal(a), Decimal(b)
                         if ('-' == operand):
                             res = str(x - y)
