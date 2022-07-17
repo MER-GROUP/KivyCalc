@@ -1,6 +1,7 @@
 # *****************************************************************************************
 # re - импорт регулярных выражений
 import re
+from turtle import right
 # *****************************************************************************************
 # Parse - разбор текстовых строк
 class Parse:
@@ -22,8 +23,6 @@ class Parse:
         pass
     # ---------------------------------------------------------------------------
     # разделение строки по разделителям '+-*/%'
-    # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    # пересмотреть метод back
     def split(self, line: str) -> list[str]:
         arr = re.split('\+|\-|\*|\/|\%', line)
         if '' == arr[0]:
@@ -40,8 +39,42 @@ class Parse:
         return arr
     # ---------------------------------------------------------------------------
     # разделение строки по разделителям '+-*/%' игнорируя отрицательные числа
-    def split_with_operand(self):
-        pass
+    def split_with_operand(self, line: str) -> list[str]:
+        arr = list()
+        size_line = len(line)
+        i = int()
+
+        while i < size_line:
+            if (line[i].isdigit()):
+                left = i
+                right = i
+                cnt = int()
+                while 0 <= left:
+                    if (line[left] in '+-*/%'):
+                        cnt += 1
+                    if (line[left] in '+-*/%') and (2 == cnt):
+                        cnt = int()
+                        left += 1
+                        break
+                    if (line[left] in '+-*/%') and (1 == cnt) and (0 == left):
+                        cnt = int()
+                        break
+                    if (line[left].isdigit()) and (1 == cnt):
+                        cnt = int()
+                        left += 2
+                        break
+                    if (line[left].isdigit()) and (0 == cnt) and (0 == left):
+                        break
+                    left -= 1
+                while right < size_line:
+                    if (line[right] in '+-*/%'):
+                        break
+                    right += 1
+                arr.append(line[left : right])
+                i = right - 1
+            i += 1
+
+        return arr
     # ---------------------------------------------------------------------------
     def validate_history(self):
         pass
@@ -63,6 +96,8 @@ if __name__ == '__main__':
     test_9 = '-12128989898--99999-88888'
     test_10 = '12128989898--99999-88888'
     test_11 = '12128989898--99999------88888'
+    test_12 = '12128989898--99999------88888-'
+    test_13 = '12128989898--99999------88888----'
 
     print(Parse().back_to_operand(test_1))
     print(Parse().back_to_operand(test_2))
@@ -75,6 +110,10 @@ if __name__ == '__main__':
     print(Parse().back_to_operand(test_9))
     print(Parse().back_to_operand(test_10))
     print(Parse().back_to_operand(test_11))
+    print(Parse().back_to_operand(test_12))
+    print(Parse().back_to_operand(test_13))
+
+    print('-------------------------------------')
 
     print(Parse().split(test_1))
     print(Parse().split(test_2))
@@ -87,4 +126,23 @@ if __name__ == '__main__':
     print(Parse().split(test_9))
     print(Parse().split(test_10))
     print(Parse().split(test_11))
+    print(Parse().split(test_12))
+    print(Parse().split(test_13))
+
+    print('-------------------------------------')
+
+    print(Parse().split_with_operand(test_1))
+    print(Parse().split_with_operand(test_2))
+    print(Parse().split_with_operand(test_3))
+    print(Parse().split_with_operand(test_4))
+    print(Parse().split_with_operand(test_5))
+    print(Parse().split_with_operand(test_6))
+    print(Parse().split_with_operand(test_7))
+    print(Parse().split_with_operand(test_8))
+    print(Parse().split_with_operand(test_9))
+    print(Parse().split_with_operand(test_10))
+    print(Parse().split_with_operand(test_11))
+    print(Parse().split_with_operand(test_12))
+    print(Parse().split_with_operand(test_13))
+
 # *****************************************************************************************

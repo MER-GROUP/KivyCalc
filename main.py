@@ -553,6 +553,12 @@ class Calc(BoxLayout):
     def memory(self):
         if ('' == self.label_display_memory.text) and ('' == self.label_display.text): # 1
             return
+        elif (self.push_equal) and ('' != self.label_display_memory.text):
+            self.label_display_comment.text = self.label_display_memory.text
+            self.label_display.text = self.label_display_memory.text
+            self.write_number = self.label_display_memory.text
+            self.label_display_memory.text = ''
+            self.push_equal = False
         elif ('' == self.label_display_memory.text) and ('' != self.label_display.text):
             self.label_display_memory.text = self.label_display.text
         else:  
@@ -580,8 +586,11 @@ class Calc(BoxLayout):
                     if (self.label_display_comment.text[-1] in '+*/%'):
                         self.label_display_comment.text += self.label_display_memory.text
                     else:
-                        self.label_display_comment.text = self.label_display_comment.text[: -1]
-                        self.label_display_comment.text += self.label_display_memory.text
+                        if ('-' == self.label_display_comment.text[-2]):
+                            self.label_display_comment.text = self.label_display_comment.text[: -1]
+                            self.label_display_comment.text += self.label_display_memory.text
+                        else:
+                            self.label_display_comment.text += self.label_display_memory.text
             else:
                 self.label_display_comment.text = self.label_display_memory.text
             self.label_display.text = self.label_display_memory.text
@@ -630,14 +639,14 @@ class Calc(BoxLayout):
             ):
             self.label_display.text = ''
             self.write_number = None
-        # elif (('' != self.label_display_comment.text) 
-        #     and (self.label_display_comment.text[-1] in '-+*/%')
-        #     and (1 < len(self.label_display_comment.text))
-        #     ): 
-        #     self.label_display.text = self.label_display.text[: -1]
-        #     self.write_number = None if 0 == len(self.label_display.text) else self.label_display.text
-        #     self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)
-        #     self.label_display_comment.text += self.write_number  
+        elif (('' != self.label_display_comment.text) 
+            and (self.label_display_comment.text[-1] in '-+*/%')
+            and (1 < len(self.label_display_comment.text))
+            ): 
+            self.label_display.text = self.label_display.text[: -1]
+            # self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)           
+            self.write_number = None if 0 == len(self.label_display.text) else self.label_display.text
+            self.label_display_comment.text += self.write_number  
         elif (('' != self.label_display_comment.text)
             and (2 == len(self.label_display.text))
             and ('-' == self.label_display.text[0])
@@ -731,14 +740,16 @@ class Calc(BoxLayout):
                     # procent, digit = Parse().split(res)
                     # res = procent + '*' + digit + '/' + '100'
                     # res = str(eval(res))
-                    a, b = Parse().split(res)
+                    a, b = Parse().split_with_operand(res)
                     procent, digit = Decimal(a), Decimal(b)
                     res = str(procent * digit / 100)
                 else:
                     # res = str(eval(res))
                     if ('' != res) and (2 == len(Parse().split(res))):
-                        operand = Parse().back_to_operand(res)[-1]
-                        a, b = Parse().split(res)
+                        op1 = Parse().back_to_operand(res)[-1]
+                        op2 = Parse().back_to_operand(res)[-2]
+                        operand = op2 if op2 in '-+*/%' else op1
+                        a, b = Parse().split_with_operand(res)
                         x, y = Decimal(a), Decimal(b)
                         if ('-' == operand):
                             res = str(x - y)
