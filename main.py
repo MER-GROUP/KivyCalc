@@ -633,14 +633,14 @@ class Calc(BoxLayout):
             ):
             self.label_display.text = ''
             self.write_number = None
-        # elif (('' != self.label_display_comment.text) 
-        #     and (self.label_display_comment.text[-1] in '-+*/%')
-        #     and (1 < len(self.label_display_comment.text))
-        #     ): 
-        #     self.label_display.text = self.label_display.text[: -1]
-        #     self.write_number = None if 0 == len(self.label_display.text) else self.label_display.text
-        #     self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)
-        #     self.label_display_comment.text += self.write_number  
+        elif (('' != self.label_display_comment.text) 
+            and (self.label_display_comment.text[-1] in '-+*/%')
+            and (1 < len(self.label_display_comment.text))
+            ): 
+            self.label_display.text = self.label_display.text[: -1]
+            # self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)           
+            self.write_number = None if 0 == len(self.label_display.text) else self.label_display.text
+            self.label_display_comment.text += self.write_number  
         elif (('' != self.label_display_comment.text)
             and (2 == len(self.label_display.text))
             and ('-' == self.label_display.text[0])
