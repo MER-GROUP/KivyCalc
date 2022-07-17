@@ -553,6 +553,12 @@ class Calc(BoxLayout):
     def memory(self):
         if ('' == self.label_display_memory.text) and ('' == self.label_display.text): # 1
             return
+        elif (self.push_equal) and ('' != self.label_display_memory.text):
+            self.label_display_comment.text = self.label_display_memory.text
+            self.label_display.text = self.label_display_memory.text
+            self.write_number = self.label_display_memory.text
+            self.label_display_memory.text = ''
+            self.push_equal = False
         elif ('' == self.label_display_memory.text) and ('' != self.label_display.text):
             self.label_display_memory.text = self.label_display.text
         else:  
