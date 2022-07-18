@@ -88,7 +88,7 @@ class Parse:
         return arr
     # ---------------------------------------------------------------------------
     # 
-    def history_trim(self, line: str) -> str:
+    def history_trim(self, line: str, limit: int) -> str:
         pass
     # ---------------------------------------------------------------------------
     pass
