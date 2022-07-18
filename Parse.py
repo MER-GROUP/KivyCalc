@@ -18,8 +18,20 @@ class Parse:
         if index is None: return line
         else: return line[: index + 1]
     # ---------------------------------------------------------------------------
-    def next_to_operand(self):
-        pass
+    # если в строке есть операнд '+-*/%'
+    # то обрезать начало строки до первого операнда
+    def next_to_operand(self, line: str) -> str:
+        index = None
+        i = int()
+        while i < len(line):
+            if (0 ==i) and (line[i] in '+-*/%'):
+                pass
+            elif line[i] in '+-*/%':
+                index = i
+                break
+            i += 1
+        if index is None: return line
+        else: return line[index : ]
     # ---------------------------------------------------------------------------
     # разделение строки по разделителям '+-*/%'
     def split(self, line: str) -> list[str]:
@@ -98,6 +110,8 @@ if __name__ == '__main__':
     test_12 = '12128989898--99999------88888-'
     test_13 = '12128989898--99999------88888----'
     test_14 = '-654%-5'
+    test_15 = '-555555---'
+    test_16 = '-'
 
     print(Parse().back_to_operand(test_1))
     print(Parse().back_to_operand(test_2))
@@ -113,6 +127,8 @@ if __name__ == '__main__':
     print(Parse().back_to_operand(test_12))
     print(Parse().back_to_operand(test_13))
     print(Parse().back_to_operand(test_14))
+    print(Parse().back_to_operand(test_15))
+    print(Parse().back_to_operand(test_16))
 
     print('-------------------------------------')
 
@@ -130,6 +146,8 @@ if __name__ == '__main__':
     print(Parse().split(test_12))
     print(Parse().split(test_13))
     print(Parse().split(test_14))
+    print(Parse().split(test_15))
+    print(Parse().split(test_16))
 
     print('-------------------------------------')
 
@@ -147,5 +165,26 @@ if __name__ == '__main__':
     print(Parse().split_with_operand(test_12))
     print(Parse().split_with_operand(test_13))
     print(Parse().split_with_operand(test_14))
+    print(Parse().split_with_operand(test_15))
+    print(Parse().split_with_operand(test_16))
+
+    print('-------------------------------------')
+
+    print(Parse().next_to_operand(test_1))
+    print(Parse().next_to_operand(test_2))
+    print(Parse().next_to_operand(test_3))
+    print(Parse().next_to_operand(test_4))
+    print(Parse().next_to_operand(test_5))
+    print(Parse().next_to_operand(test_6))
+    print(Parse().next_to_operand(test_7))
+    print(Parse().next_to_operand(test_8))
+    print(Parse().next_to_operand(test_9))
+    print(Parse().next_to_operand(test_10))
+    print(Parse().next_to_operand(test_11))
+    print(Parse().next_to_operand(test_12))
+    print(Parse().next_to_operand(test_13))
+    print(Parse().next_to_operand(test_14))
+    print(Parse().next_to_operand(test_15))
+    print(Parse().next_to_operand(test_16))
 
 # *****************************************************************************************
