@@ -676,7 +676,10 @@ class Calc(BoxLayout):
 
         if (self.push_equal): # 6
             self.push_equal = False
-            self.label_display_comment.text = self.write_number
+            if (self.write_number is None):
+                self.label_display_comment.text = ''
+            else:
+                self.label_display_comment.text = self.write_number
 
         # test
         print('------------------------------------------------')
