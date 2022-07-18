@@ -18,7 +18,7 @@ class Parse:
         if index is None: return line
         else: return line[: index + 1]
     # ---------------------------------------------------------------------------
-    # если в строке есть операнд '+-*/%'
+    # если в строке есть операнд '+-*/%' или '+-*/%=' (на выбор)
     # то обрезать начало строки до первого операнда
     def next_to_operand(self, line: str) -> str:
         index = None
@@ -26,7 +26,8 @@ class Parse:
         while i < len(line):
             if (0 ==i) and (line[i] in '+-*/%'):
                 pass
-            elif line[i] in '+-*/%':
+            # elif line[i] in '+-*/%':
+            elif line[i] in '+-*/%=':
                 index = i
                 break
             i += 1
@@ -96,17 +97,33 @@ class Parse:
         i = limit-1
 
         while (len(line) > limit):
-            if (self.next_to_operand(line)[0] in '+-*/%'):
-                line = self.next_to_operand(line)
-            else:
-                if(line[0] in '+-*/%='):
+            line = self.next_to_operand(line)
+
+            # test ####################
+            print(f'if1') ###
+            print(f'line = {line}') ###
+
+            if (line[0] in '='):
+                # test ####################
+                print(f'else') ###
+                print(f'line = {line}') ###
+
+                if(line[0] in '='):
+                    # test ####################
+                    print(f'if2') ###
+
                     line = line[1 : ]
-                else:
+
+
+                while (len(line) > limit):
+                    # test ####################
+                    print(f'else2') ###
+                    print(f'line = {line}') ###
+
                     line_digit = float(line)
                     line_digit = round(line_digit, i)
                     line = str(line_digit)
-                    # test ####################
-                    print(f'line = {line}') ###
+
                     i -= 1
 
         return line
@@ -133,9 +150,12 @@ if __name__ == '__main__':
     test_14 = '-654%-5'
     test_15 = '-555555---'
     test_16 = '-'
+    test_16_1 = '444444=6666666'
+    test_16_2 = '+6767676=1.23456789012345678901234567890123456789012345678901234567890'
 
     test_17 = '-1111+334343%2323232-232323+6767676=12345678901234567890'
     test_18 = '-1111+334343%2323232-232323+6767676=1.23456789012345678901234567890123456789012345678901234567890'
+    test_19 = '-1111+334343%2323232-232323+6767676=123456789012345678901234567890123456789012345678901234567890'
 
     print(Parse().back_to_operand(test_1))
     print(Parse().back_to_operand(test_2))
@@ -153,6 +173,8 @@ if __name__ == '__main__':
     print(Parse().back_to_operand(test_14))
     print(Parse().back_to_operand(test_15))
     print(Parse().back_to_operand(test_16))
+    print(Parse().back_to_operand(test_16_1))
+    print(Parse().back_to_operand(test_16_2))
 
     print('-------------------------------------')
 
@@ -172,6 +194,8 @@ if __name__ == '__main__':
     print(Parse().split(test_14))
     print(Parse().split(test_15))
     print(Parse().split(test_16))
+    print(Parse().split(test_16_1))
+    print(Parse().split(test_16_2))
 
     print('-------------------------------------')
 
@@ -191,6 +215,8 @@ if __name__ == '__main__':
     print(Parse().split_with_operand(test_14))
     print(Parse().split_with_operand(test_15))
     print(Parse().split_with_operand(test_16))
+    print(Parse().split_with_operand(test_16_1))
+    print(Parse().split_with_operand(test_16_2))
 
     print('-------------------------------------')
 
@@ -210,11 +236,14 @@ if __name__ == '__main__':
     print(Parse().next_to_operand(test_14))
     print(Parse().next_to_operand(test_15))
     print(Parse().next_to_operand(test_16))
+    print(Parse().next_to_operand(test_16_1))
+    print(Parse().next_to_operand(test_16_2))
 
     print('-------------------------------------')
 
     print(test_17)
     print(Parse().history_trim(test_17, 50))
+    print('-------------------------------------')
     print(test_18)
     print(Parse().history_trim(test_18, 50))
 
