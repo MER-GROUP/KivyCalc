@@ -88,12 +88,28 @@ class Parse:
         return arr
     # ---------------------------------------------------------------------------
     # обрезка истории, если не помещается на дисплей калькулятора
-    # (дейстаия обрезаются с начала строки до первого операнда,
+    # (с начала строки обрезаются дейстаия до первого операнда,
     # если ответ большой то он сокращается,
     # лимит длинны строки на android = 100 символов,
     # остальные ОС = 40 символов)
     def history_trim(self, line: str, limit: int) -> str:
-        pass
+        i = limit-1
+
+        while (len(line) > limit):
+            if (self.next_to_operand(line)[0] in '+-*/%'):
+                line = self.next_to_operand(line)
+            else:
+                if(line[0] in '+-*/%='):
+                    line = line[1 : ]
+                else:
+                    line_digit = float(line)
+                    line_digit = round(line_digit, i)
+                    line = str(line_digit)
+                    # test ####################
+                    print(f'line = {line}') ###
+                    i -= 1
+
+        return line
     # ---------------------------------------------------------------------------
     pass
     # ---------------------------------------------------------------------------
@@ -117,6 +133,9 @@ if __name__ == '__main__':
     test_14 = '-654%-5'
     test_15 = '-555555---'
     test_16 = '-'
+
+    test_17 = '-1111+334343%2323232-232323+6767676=12345678901234567890'
+    test_18 = '-1111+334343%2323232-232323+6767676=1.23456789012345678901234567890123456789012345678901234567890'
 
     print(Parse().back_to_operand(test_1))
     print(Parse().back_to_operand(test_2))
@@ -191,5 +210,12 @@ if __name__ == '__main__':
     print(Parse().next_to_operand(test_14))
     print(Parse().next_to_operand(test_15))
     print(Parse().next_to_operand(test_16))
+
+    print('-------------------------------------')
+
+    print(test_17)
+    print(Parse().history_trim(test_17, 50))
+    print(test_18)
+    print(Parse().history_trim(test_18, 50))
 
 # *****************************************************************************************
