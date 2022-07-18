@@ -98,32 +98,13 @@ class Parse:
 
         while (len(line) > limit):
             line = self.next_to_operand(line)
-
-            # test ####################
-            print(f'if1') ###
-            print(f'line = {line}') ###
-
             if (line[0] in '='):
-                # test ####################
-                print(f'else') ###
-                print(f'line = {line}') ###
-
                 if(line[0] in '='):
-                    # test ####################
-                    print(f'if2') ###
-
                     line = line[1 : ]
-
-
                 while (len(line) > limit):
-                    # test ####################
-                    print(f'else2') ###
-                    print(f'line = {line}') ###
-
                     line_digit = float(line)
                     line_digit = round(line_digit, i)
                     line = str(line_digit)
-
                     i -= 1
 
         return line
@@ -156,6 +137,8 @@ if __name__ == '__main__':
     test_17 = '-1111+334343%2323232-232323+6767676=12345678901234567890'
     test_18 = '-1111+334343%2323232-232323+6767676=1.23456789012345678901234567890123456789012345678901234567890'
     test_19 = '-1111+334343%2323232-232323+6767676=123456789012345678901234567890123456789012345678901234567890'
+    test_20 = '-1111+334343%2323232-232323+6767676=-123456789012345678901234567890123456789012345678901234567890'
+    test_21 = '-1111+334343%2323232-232323+6767676=-1.00000000000000000000000000000000000000000000000000000000890'
 
     print(Parse().back_to_operand(test_1))
     print(Parse().back_to_operand(test_2))
@@ -247,7 +230,13 @@ if __name__ == '__main__':
     print(test_18)
     print(Parse().history_trim(test_18, 50))
     print('-------------------------------------')
-    print(test_18)
+    print(test_19)
     print(Parse().history_trim(test_19, 50))
+    print('-------------------------------------')
+    print(test_20)
+    print(Parse().history_trim(test_20, 50))
+    print('-------------------------------------')
+    print(test_21)
+    print(Parse().history_trim(test_21, 50))
 
 # *****************************************************************************************
