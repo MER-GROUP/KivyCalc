@@ -97,6 +97,7 @@ if __name__ == '__main__':
     test_11 = '12128989898--99999------88888'
     test_12 = '12128989898--99999------88888-'
     test_13 = '12128989898--99999------88888----'
+    test_14 = '-654%-5'
 
     print(Parse().back_to_operand(test_1))
     print(Parse().back_to_operand(test_2))
@@ -111,6 +112,7 @@ if __name__ == '__main__':
     print(Parse().back_to_operand(test_11))
     print(Parse().back_to_operand(test_12))
     print(Parse().back_to_operand(test_13))
+    print(Parse().back_to_operand(test_14))
 
     print('-------------------------------------')
 
@@ -127,6 +129,7 @@ if __name__ == '__main__':
     print(Parse().split(test_11))
     print(Parse().split(test_12))
     print(Parse().split(test_13))
+    print(Parse().split(test_14))
 
     print('-------------------------------------')
 
@@ -143,5 +146,6 @@ if __name__ == '__main__':
     print(Parse().split_with_operand(test_11))
     print(Parse().split_with_operand(test_12))
     print(Parse().split_with_operand(test_13))
+    print(Parse().split_with_operand(test_14))
 
 # *****************************************************************************************
