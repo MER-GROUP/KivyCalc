@@ -676,7 +676,10 @@ class Calc(BoxLayout):
 
         if (self.push_equal): # 6
             self.push_equal = False
-            self.label_display_comment.text = self.write_number
+            if (self.write_number is None):
+                self.label_display_comment.text = ''
+            else:
+                self.label_display_comment.text = self.write_number
 
         # test
         print('------------------------------------------------')
@@ -733,9 +736,17 @@ class Calc(BoxLayout):
                 break
             else:
                 res += i
+                try:
+                    op1 = Parse().back_to_operand(res)[-1]
+                    op2 = Parse().back_to_operand(res)[-2]
+                except (IndexError):
+                    op1 = Parse().back_to_operand(res)[-1]
+                    op2 = ''
+                operand = op2 if op2 in '-+*/%' else op1
+               
                 if (('' != res) 
                     and (2 == len(Parse().split(res)))
-                    and ('%' == Parse().back_to_operand(res)[-1])
+                    and ('%' == operand)
                     ):
                     # procent, digit = Parse().split(res)
                     # res = procent + '*' + digit + '/' + '100'
@@ -746,9 +757,6 @@ class Calc(BoxLayout):
                 else:
                     # res = str(eval(res))
                     if ('' != res) and (2 == len(Parse().split(res))):
-                        op1 = Parse().back_to_operand(res)[-1]
-                        op2 = Parse().back_to_operand(res)[-2]
-                        operand = op2 if op2 in '-+*/%' else op1
                         a, b = Parse().split_with_operand(res)
                         x, y = Decimal(a), Decimal(b)
                         if ('-' == operand):
