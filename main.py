@@ -568,7 +568,7 @@ class Calc(BoxLayout):
                 and (self.label_display_memory.text[0] in '-+*/%')):
                 self.label_display_comment.text += self.label_display_memory.text
             elif ((self.label_display_comment.text[-1] in '-+*/%') 
-                and (1 < len(Parse().split(self.label_display_comment.text)))
+                and (1 < len(Parse().split_with_operand_and_exponent(self.label_display_comment.text)))
                 ):
                 if (self.label_display_memory.text[0] not in '-+*/%'):
                     self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)
@@ -576,7 +576,7 @@ class Calc(BoxLayout):
                 else:
                     self.label_display_comment.text += self.label_display_memory.text
             elif ((self.label_display_comment.text[-1] not in '-+*/%') 
-                and (1 < len(Parse().split(self.label_display_comment.text)))
+                and (1 < len(Parse().split_with_operand_and_exponent(self.label_display_comment.text)))
                 ):
                 if (self.label_display_memory.text[0] not in '-+*/%'):
                     self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)
@@ -625,6 +625,24 @@ class Calc(BoxLayout):
             return
         elif (self.label_display_comment.text[-1] in '-+*/%') and ('' == self.label_display.text):
             return
+        elif ('e' in self.label_display.text) or ('E' in self.label_display.text):
+            text_display = self.label_display.text
+            text_display_comment = self.label_display_comment.text
+            size_text_display = len(text_display)
+            size_text_display_comment = len(text_display_comment)
+            # if (text_display == text_display_comment.endswith(text_display)):
+            if ((text_display == text_display_comment[size_text_display_comment - size_text_display : ]) 
+                or (text_display[:] == text_display_comment[:])):
+                if ((self.label_display.text[-1] in '0123456789') 
+                    and (self.label_display.text[-2] in '0123456789')):
+                    self.label_display.text = self.label_display.text[: -1]
+                    self.label_display_comment.text = self.label_display_comment.text[: -1]
+                elif ((self.label_display.text[-1] in '0123456789') 
+                    and (self.label_display.text[-2] in '-+*/%')
+                    and (self.label_display.text[-3] in 'eE')):
+                    self.label_display.text = self.label_display.text[: -3]
+                    self.label_display_comment.text = self.label_display_comment.text[: -3]
+                self.write_number = None if 0 == len(self.label_display.text) else self.label_display.text
         elif ((self.label_display_comment.text[0] in '-+*/%') 
             and (2 == len(self.label_display_comment.text))
             and (self.label_display.text[0] in '-+*/%')
@@ -743,21 +761,21 @@ class Calc(BoxLayout):
                     op1 = Parse().back_to_operand(res)[-1]
                     op2 = ''
                 operand = op2 if op2 in '-+*/%' else op1
-               
+                              
                 if (('' != res) 
-                    and (2 == len(Parse().split(res)))
+                    and (2 == len(Parse().split_with_operand_and_exponent(res)))
                     and ('%' == operand)
                     ):
                     # procent, digit = Parse().split(res)
                     # res = procent + '*' + digit + '/' + '100'
                     # res = str(eval(res))
-                    a, b = Parse().split_with_operand(res)
+                    a, b = Parse().split_with_operand_and_exponent(res)
                     procent, digit = Decimal(a), Decimal(b)
                     res = str(procent * digit / 100)
                 else:
                     # res = str(eval(res))
-                    if ('' != res) and (2 == len(Parse().split(res))):
-                        a, b = Parse().split_with_operand(res)
+                    if ('' != res) and (2 == len(Parse().split_with_operand_and_exponent(res))):
+                        a, b = Parse().split_with_operand_and_exponent(res)
                         x, y = Decimal(a), Decimal(b)
                         if ('-' == operand):
                             res = str(x - y)
