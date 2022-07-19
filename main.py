@@ -744,6 +744,9 @@ class Calc(BoxLayout):
                     op2 = ''
                 operand = op2 if op2 in '-+*/%' else op1
                
+                # if ('' != res) and (('E' in res) or ('e' in res)):
+                #     pass
+                
                 if (('' != res) 
                     and (2 == len(Parse().split(res)))
                     and ('%' == operand)
