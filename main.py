@@ -625,6 +625,24 @@ class Calc(BoxLayout):
             return
         elif (self.label_display_comment.text[-1] in '-+*/%') and ('' == self.label_display.text):
             return
+        elif ('e' in self.label_display.text) or ('E' in self.label_display.text):
+            text_display = self.label_display.text
+            text_display_comment = self.label_display_comment.text
+            size_text_display = len(text_display)
+            size_text_display_comment = len(text_display_comment)
+            # if (text_display == text_display_comment.endswith(text_display)):
+            if ((text_display == text_display_comment[size_text_display_comment - size_text_display : ]) 
+                or (text_display[:] == text_display_comment[:])):
+                if ((self.label_display.text[-1] in '0123456789') 
+                    and (self.label_display.text[-2] in '0123456789')):
+                    self.label_display.text = self.label_display.text[: -1]
+                    self.label_display_comment.text = self.label_display_comment.text[: -1]
+                elif ((self.label_display.text[-1] in '0123456789') 
+                    and (self.label_display.text[-2] in '-+*/%')
+                    and (self.label_display.text[-3] in 'eE')):
+                    self.label_display.text = self.label_display.text[: -3]
+                    self.label_display_comment.text = self.label_display_comment.text[: -3]
+                self.write_number = None if 0 == len(self.label_display.text) else self.label_display.text
         elif ((self.label_display_comment.text[0] in '-+*/%') 
             and (2 == len(self.label_display_comment.text))
             and (self.label_display.text[0] in '-+*/%')
