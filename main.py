@@ -568,7 +568,7 @@ class Calc(BoxLayout):
                 and (self.label_display_memory.text[0] in '-+*/%')):
                 self.label_display_comment.text += self.label_display_memory.text
             elif ((self.label_display_comment.text[-1] in '-+*/%') 
-                and (1 < len(Parse().split(self.label_display_comment.text)))
+                and (1 < len(Parse().split_with_operand_and_exponent(self.label_display_comment.text)))
                 ):
                 if (self.label_display_memory.text[0] not in '-+*/%'):
                     self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)
@@ -576,7 +576,7 @@ class Calc(BoxLayout):
                 else:
                     self.label_display_comment.text += self.label_display_memory.text
             elif ((self.label_display_comment.text[-1] not in '-+*/%') 
-                and (1 < len(Parse().split(self.label_display_comment.text)))
+                and (1 < len(Parse().split_with_operand_and_exponent(self.label_display_comment.text)))
                 ):
                 if (self.label_display_memory.text[0] not in '-+*/%'):
                     self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)
