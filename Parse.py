@@ -284,7 +284,26 @@ if __name__ == '__main__':
     print(Parse().history_trim(test_21, 50))
 
     print('-------------------------------------')
-
+  
+    print(Parse().split_with_operand_and_exponent(test_1))
+    print(Parse().split_with_operand_and_exponent(test_2))
+    print(Parse().split_with_operand_and_exponent(test_3))
+    print(Parse().split_with_operand_and_exponent(test_4))
+    print(Parse().split_with_operand_and_exponent(test_5))
+    print(Parse().split_with_operand_and_exponent(test_6))
+    print(Parse().split_with_operand_and_exponent(test_7))
+    print(Parse().split_with_operand_and_exponent(test_8))
+    print(Parse().split_with_operand_and_exponent(test_9))
+    print(Parse().split_with_operand_and_exponent(test_10))
+    print(Parse().split_with_operand_and_exponent(test_11))
+    print(Parse().split_with_operand_and_exponent(test_12))
+    print(Parse().split_with_operand_and_exponent(test_13))
+    print(Parse().split_with_operand_and_exponent(test_14))
+    print(Parse().split_with_operand_and_exponent(test_15))
+    print(Parse().split_with_operand_and_exponent(test_16))
+    print(Parse().split_with_operand_and_exponent(test_16_1))
+    print(Parse().split_with_operand_and_exponent(test_16_2))
+    print('*************************************')
     print(test_22)
     print(Parse().split_with_operand_and_exponent(test_22))
 
