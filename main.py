@@ -743,24 +743,21 @@ class Calc(BoxLayout):
                     op1 = Parse().back_to_operand(res)[-1]
                     op2 = ''
                 operand = op2 if op2 in '-+*/%' else op1
-               
-                # if ('' != res) and (('E' in res) or ('e' in res)):
-                #     pass
-                
+                              
                 if (('' != res) 
-                    and (2 == len(Parse().split(res)))
+                    and (2 == len(Parse().split_with_operand_and_exponent(res)))
                     and ('%' == operand)
                     ):
                     # procent, digit = Parse().split(res)
                     # res = procent + '*' + digit + '/' + '100'
                     # res = str(eval(res))
-                    a, b = Parse().split_with_operand(res)
+                    a, b = Parse().split_with_operand_and_exponent(res)
                     procent, digit = Decimal(a), Decimal(b)
                     res = str(procent * digit / 100)
                 else:
                     # res = str(eval(res))
-                    if ('' != res) and (2 == len(Parse().split(res))):
-                        a, b = Parse().split_with_operand(res)
+                    if ('' != res) and (2 == len(Parse().split_with_operand_and_exponent(res))):
+                        a, b = Parse().split_with_operand_and_exponent(res)
                         x, y = Decimal(a), Decimal(b)
                         if ('-' == operand):
                             res = str(x - y)
