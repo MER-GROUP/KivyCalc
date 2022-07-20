@@ -642,6 +642,19 @@ class Calc(BoxLayout):
                     and (self.label_display.text[-3] in 'eE')):
                     self.label_display.text = self.label_display.text[: -3]
                     self.label_display_comment.text = self.label_display_comment.text[: -3]
+                self.write_number = None if 0 == len(self.label_display.text) else self.label_display.text            
+            elif (self.operand in '-+*/%'):
+                if ((self.label_display.text[-1] in '0123456789') 
+                    and (self.label_display.text[-2] in '0123456789')):
+                    digit_back = self.label_display.text[: -1]
+                    self.label_display.text = digit_back
+                    self.label_display_comment.text += digit_back
+                elif ((self.label_display.text[-1] in '0123456789') 
+                    and (self.label_display.text[-2] in '-+*/%')
+                    and (self.label_display.text[-3] in 'eE')):
+                    digit_back = self.label_display.text[: -3]
+                    self.label_display.text = digit_back
+                    self.label_display_comment.text += digit_back
                 self.write_number = None if 0 == len(self.label_display.text) else self.label_display.text
         elif ((self.label_display_comment.text[0] in '-+*/%') 
             and (2 == len(self.label_display_comment.text))
