@@ -32,7 +32,7 @@ class Parse:
             if (0 ==i) and (line[i] in '+-*/%'):
                 pass
             # elif line[i] in '+-*/%':
-            elif line[i] in '+-*/%=':
+            elif (line[i] in '+-*/%='):
                 index = i
                 break
             i += 1
@@ -42,7 +42,21 @@ class Parse:
     # если в строке есть операнд '+-*/%' или '+-*/%=' (на выбор)
     # то обрезать начало строки до первого операнда учитывая числа с e(E)
     def next_to_operand_with_exponent(self, line: str) -> str:
-        pass
+        index = None
+        i = int()
+        while i < len(line):
+            if (0 ==i) and (line[i] in '+-*/%'):
+                pass
+            elif (line[i] in 'eE'):
+                i += 2
+                continue
+            # elif line[i] in '+-*/%':
+            elif (line[i] in '+-*/%='):
+                index = i
+                break
+            i += 1
+        if index is None: return line
+        else: return line[index : ]
     # ---------------------------------------------------------------------------
     # разделение строки по разделителям '+-*/%'
     def split(self, line: str) -> list[str]:
@@ -263,46 +277,6 @@ if __name__ == '__main__':
     print(Parse().split_with_operand(test_16_2))
 
     print('-------------------------------------')
-    print('next_to_operand')
-
-    print(Parse().next_to_operand(test_1))
-    print(Parse().next_to_operand(test_2))
-    print(Parse().next_to_operand(test_3))
-    print(Parse().next_to_operand(test_4))
-    print(Parse().next_to_operand(test_5))
-    print(Parse().next_to_operand(test_6))
-    print(Parse().next_to_operand(test_7))
-    print(Parse().next_to_operand(test_8))
-    print(Parse().next_to_operand(test_9))
-    print(Parse().next_to_operand(test_10))
-    print(Parse().next_to_operand(test_11))
-    print(Parse().next_to_operand(test_12))
-    print(Parse().next_to_operand(test_13))
-    print(Parse().next_to_operand(test_14))
-    print(Parse().next_to_operand(test_15))
-    print(Parse().next_to_operand(test_16))
-    print(Parse().next_to_operand(test_16_1))
-    print(Parse().next_to_operand(test_16_2))
-
-    print('-------------------------------------')
-    print('history_trim')
-
-    print(test_17)
-    print(Parse().history_trim(test_17, 50))
-    print('*************************************')
-    print(test_18)
-    print(Parse().history_trim(test_18, 50))
-    print('*************************************')
-    print(test_19)
-    print(Parse().history_trim(test_19, 50))
-    print('*************************************')
-    print(test_20)
-    print(Parse().history_trim(test_20, 50))
-    print('*************************************')
-    print(test_21)
-    print(Parse().history_trim(test_21, 50))
-
-    print('-------------------------------------')
     print('split_with_operand_and_exponent')
   
     print(Parse().split_with_operand_and_exponent(test_1))
@@ -327,4 +301,69 @@ if __name__ == '__main__':
     print(test_22)
     print(Parse().split_with_operand_and_exponent(test_22))
 
+    print('-------------------------------------')
+    print('next_to_operand')
+
+    print(Parse().next_to_operand(test_1))
+    print(Parse().next_to_operand(test_2))
+    print(Parse().next_to_operand(test_3))
+    print(Parse().next_to_operand(test_4))
+    print(Parse().next_to_operand(test_5))
+    print(Parse().next_to_operand(test_6))
+    print(Parse().next_to_operand(test_7))
+    print(Parse().next_to_operand(test_8))
+    print(Parse().next_to_operand(test_9))
+    print(Parse().next_to_operand(test_10))
+    print(Parse().next_to_operand(test_11))
+    print(Parse().next_to_operand(test_12))
+    print(Parse().next_to_operand(test_13))
+    print(Parse().next_to_operand(test_14))
+    print(Parse().next_to_operand(test_15))
+    print(Parse().next_to_operand(test_16))
+    print(Parse().next_to_operand(test_16_1))
+    print(Parse().next_to_operand(test_16_2))
+    print(Parse().next_to_operand(test_16_3))
+
+    print('-------------------------------------')
+    print('next_to_operand_with_exponent')
+
+    print(Parse().next_to_operand_with_exponent(test_1))
+    print(Parse().next_to_operand_with_exponent(test_2))
+    print(Parse().next_to_operand_with_exponent(test_3))
+    print(Parse().next_to_operand_with_exponent(test_4))
+    print(Parse().next_to_operand_with_exponent(test_5))
+    print(Parse().next_to_operand_with_exponent(test_6))
+    print(Parse().next_to_operand_with_exponent(test_7))
+    print(Parse().next_to_operand_with_exponent(test_8))
+    print(Parse().next_to_operand_with_exponent(test_9))
+    print(Parse().next_to_operand_with_exponent(test_10))
+    print(Parse().next_to_operand_with_exponent(test_11))
+    print(Parse().next_to_operand_with_exponent(test_12))
+    print(Parse().next_to_operand_with_exponent(test_13))
+    print(Parse().next_to_operand_with_exponent(test_14))
+    print(Parse().next_to_operand_with_exponent(test_15))
+    print(Parse().next_to_operand_with_exponent(test_16))
+    print(Parse().next_to_operand_with_exponent(test_16_1))
+    print(Parse().next_to_operand_with_exponent(test_16_2))
+    print(Parse().next_to_operand_with_exponent(test_16_3))
+
+    print('-------------------------------------')
+    print('history_trim')
+
+    print(test_17)
+    print(Parse().history_trim(test_17, 50))
+    print('*************************************')
+    print(test_18)
+    print(Parse().history_trim(test_18, 50))
+    print('*************************************')
+    print(test_19)
+    print(Parse().history_trim(test_19, 50))
+    print('*************************************')
+    print(test_20)
+    print(Parse().history_trim(test_20, 50))
+    print('*************************************')
+    print(test_21)
+    print(Parse().history_trim(test_21, 50))
+
+    print('-------------------------------------')
 # *****************************************************************************************
