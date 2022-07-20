@@ -163,7 +163,7 @@ class Parse:
         i = limit-1
 
         while (len(line) > limit):
-            line = self.next_to_operand(line)
+            line = self.next_to_operand_with_exponent(line)
             if (line[0] in '='):
                 if(line[0] in '='):
                     line = line[1 : ]
@@ -197,6 +197,7 @@ if __name__ == '__main__':
     test_14 = '-654%-5'
     test_15 = '-555555---'
     test_16 = '-'
+    test_16_0 = '---22222'
     test_16_1 = '444444=6666666'
     test_16_2 = '+6767676=1.23456789012345678901234567890123456789012345678901234567890'
     test_16_3 = '-1212E+34--67676e+54-'
@@ -206,7 +207,10 @@ if __name__ == '__main__':
     test_19 = '-1111+334343%2323232-232323+6767676=123456789012345678901234567890123456789012345678901234567890'
     test_20 = '-1111+334343%2323232-232323+6767676=-123456789012345678901234567890123456789012345678901234567890'
     test_21 = '-1111+334343%2323232-232323+6767676=-1.00000000000000000000000000000000000000000000000000000000890'
-    
+    test_21_1 = '-1111E+28+334343e-76554%2323232E+676-232323+6767676=-12345678901234'
+    test_21_2 = '-1111E+28+-334343e-76554%-2323232E+676--232323+-6767676=-12345678901234'
+
+
     test_22 = '-12128989898+676767E+34--99999e-27/44444'
 
     print('-------------------------------------')
@@ -343,6 +347,7 @@ if __name__ == '__main__':
     print(Parse().next_to_operand_with_exponent(test_14))
     print(Parse().next_to_operand_with_exponent(test_15))
     print(Parse().next_to_operand_with_exponent(test_16))
+    print(Parse().next_to_operand_with_exponent(test_16_0))
     print(Parse().next_to_operand_with_exponent(test_16_1))
     print(Parse().next_to_operand_with_exponent(test_16_2))
     print(Parse().next_to_operand_with_exponent(test_16_3))
@@ -364,6 +369,12 @@ if __name__ == '__main__':
     print('*************************************')
     print(test_21)
     print(Parse().history_trim(test_21, 50))
+    print('*************************************')
+    print(test_21_1)
+    print(Parse().history_trim(test_21_1, 50))
+    print('*************************************')
+    print(test_21_2)
+    print(Parse().history_trim(test_21_2, 50))
 
     print('-------------------------------------')
 # *****************************************************************************************
