@@ -195,6 +195,9 @@ if __name__ == '__main__':
     
     test_22 = '-12128989898+676767E+34--99999e-27/44444'
 
+    print('-------------------------------------')
+    print('back_to_operand')
+
     print(Parse().back_to_operand(test_1))
     print(Parse().back_to_operand(test_2))
     print(Parse().back_to_operand(test_3))
@@ -216,6 +219,7 @@ if __name__ == '__main__':
     print(Parse().back_to_operand(test_16_3))
 
     print('-------------------------------------')
+    print('split')
 
     print(Parse().split(test_1))
     print(Parse().split(test_2))
@@ -237,6 +241,7 @@ if __name__ == '__main__':
     print(Parse().split(test_16_2))
 
     print('-------------------------------------')
+    print('split_with_operand')
 
     print(Parse().split_with_operand(test_1))
     print(Parse().split_with_operand(test_2))
@@ -258,6 +263,7 @@ if __name__ == '__main__':
     print(Parse().split_with_operand(test_16_2))
 
     print('-------------------------------------')
+    print('next_to_operand')
 
     print(Parse().next_to_operand(test_1))
     print(Parse().next_to_operand(test_2))
@@ -279,6 +285,7 @@ if __name__ == '__main__':
     print(Parse().next_to_operand(test_16_2))
 
     print('-------------------------------------')
+    print('history_trim')
 
     print(test_17)
     print(Parse().history_trim(test_17, 50))
@@ -296,6 +303,7 @@ if __name__ == '__main__':
     print(Parse().history_trim(test_21, 50))
 
     print('-------------------------------------')
+    print('split_with_operand_and_exponent')
   
     print(Parse().split_with_operand_and_exponent(test_1))
     print(Parse().split_with_operand_and_exponent(test_2))
