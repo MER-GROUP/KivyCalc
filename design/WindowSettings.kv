@@ -28,7 +28,9 @@
             BoxLayout:
                 orientation: 'vertical'
                 # размер виджета
-                size_hint: 1, 0.3
+                size_hint: 1, 0.5
+                # растояние между границей и вложенными виджетами  #########
+                padding: [0,0,0,10]
                 Label:
                     text: 'rounding numbers'
                     bold: False
@@ -47,9 +49,9 @@
                         # растояние между границей и вложенными виджетами 
                         padding: [0,0,10,0]
                         Slider:
-                            id: slider
+                            id: slider_round
                             min: 0
-                            max: 999
+                            max: 10
                             value: 2
                             step: 1
                             orientation: 'horizontal'
@@ -57,7 +59,48 @@
                         size_hint: 0.2, 0.2
                         Label:
                             # присвоение значения slider в label
-                            text: '{}'.format(int(slider.value))
+                            text: '{}'.format(int(slider_round.value))
+                            # размер шрифта
+                            font_size: '30sp'
+                            # жирность шрифта
+                            bold: True
+                            # горизонтальное выравнивание
+                            # halign: 'left'
+            BoxLayout:
+                orientation: 'vertical'
+                # размер виджета
+                size_hint: 1, 0.5
+                # растояние между границей и вложенными виджетами  #########
+                padding: [0,5,0,0]
+                Label:
+                    text: 'history length'
+                    bold: False
+                    # автоматически переносить/растягивать текст {
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'top'
+                    # автоматически переносить/растягивать текст }
+                BoxLayout:
+                    orientation: 'horizontal'
+                    # растояние между границей и вложенными виджетами 
+                    padding: [10,0,20,0]
+                    BoxLayout:
+                        # размер виджета
+                        size_hint: 0.8, 0.2
+                        # растояние между границей и вложенными виджетами 
+                        padding: [0,0,10,0]
+                        Slider:
+                            id: slider_hist
+                            min: 0
+                            max: 999
+                            value: 100
+                            step: 1
+                            orientation: 'horizontal'
+                    BoxLayout:
+                        size_hint: 0.2, 0.2
+                        Label:
+                            # присвоение значения slider в label
+                            text: '{}'.format(int(slider_hist.value))
                             # размер шрифта
                             font_size: '30sp'
                             # жирность шрифта
