@@ -16,7 +16,7 @@
             padding: [0,5,0,0]
             BoxLayout:
                 # размер виджета
-                size_hint: 1, 0.2
+                size_hint: 1, 0.3
                 Label:
                     text: 'SETTINGS'
                     bold: True
@@ -28,7 +28,7 @@
             BoxLayout:
                 orientation: 'vertical'
                 # размер виджета
-                size_hint: 1, 0.5
+                size_hint: 1, 0.9
                 # растояние между границей и вложенными виджетами  #########
                 padding: [0,0,0,10]
                 Label:
@@ -69,7 +69,7 @@
             BoxLayout:
                 orientation: 'vertical'
                 # размер виджета
-                size_hint: 1, 0.5
+                size_hint: 1, 0.8
                 # растояние между границей и вложенными виджетами  #########
                 padding: [0,5,0,0]
                 Label:
@@ -93,7 +93,7 @@
                             id: slider_hist
                             min: 0
                             max: 999
-                            value: 100
+                            value: 999
                             step: 1
                             orientation: 'horizontal'
                     BoxLayout:
@@ -107,6 +107,16 @@
                             bold: True
                             # горизонтальное выравнивание
                             # halign: 'left'
+            BoxLayout:
+                orientation: 'vertical'
+                # размер виджета
+                size_hint: 1, 1
+                # растояние между границей и вложенными виджетами  #########
+                padding: [30,20,30,0]
+                Button:
+                    id: 'button_clear'
+                    text: 'clear history'
+                    disabled: False
             BoxLayout:
         BoxLayout:
             # размер виджета
