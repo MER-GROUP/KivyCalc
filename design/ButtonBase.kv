@@ -6,7 +6,8 @@
 # Кнопки калькулятора
 <ButtonBase@Button>:
     # размер шрифта
-    font_size: '40sp'
+    # font_size: '40sp'
+    font_size: '60sp' if app.is_android else '40sp'
 
     # жирность шрифта
     bold: True

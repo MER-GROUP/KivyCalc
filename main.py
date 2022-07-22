@@ -64,7 +64,6 @@ class Calc(BoxLayout):
     label_display = ObjectProperty(None)
     label_display_comment = ObjectProperty(None)
     label_display_memory = ObjectProperty(None)
-    is_android = BooleanProperty(os_is_android)
     display_clear = False
     push_back = False
     push_equal = False
@@ -895,6 +894,9 @@ class Calc(BoxLayout):
 class CalcApp(App):
     # ---------------------------------------------------------------------------
     '''app widget'''
+    # ---------------------------------------------------------------------------
+    # vars
+    is_android = BooleanProperty(os_is_android)
     # ---------------------------------------------------------------------------
     title = 'Kivy Calc'
     def build(self):
