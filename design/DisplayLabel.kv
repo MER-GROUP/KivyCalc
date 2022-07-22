@@ -6,7 +6,8 @@
 # Шрифт (цифры) дисплея калькулятора
 <DisplayLabel@Label>:
     # размер шрифта
-    font_size: '40sp'
+    # font_size: '40sp'
+    font_size: '90sp' if app.is_android else '40sp'
 
     # межстрочный интервал
     line_height: 0.8
@@ -16,6 +17,7 @@
 
     # жирность шрифта
     # bold: True
+    bold: True if app.is_android else False
 
     # автоматически переносить/растягивать текст {
     text_size: self.size
