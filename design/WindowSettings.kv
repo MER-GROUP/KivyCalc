@@ -10,6 +10,7 @@
 
     BoxLayout:
         orientation: 'vertical'
+        # -----------------------------------------------------------------
         BoxLayout:
             # растояние между границей и вложенными виджетами 
             # padding: [0,5,0,0]
@@ -20,6 +21,7 @@
                 bold: True
                 halign: 'center'
                 valign: 'top'
+        # -----------------------------------------------------------------
         BoxLayout:
             Label:
                 text: 'ROUNDING NUMBERS'
@@ -27,6 +29,7 @@
                 font_size: '20sp'
                 halign: 'center'
                 valign: 'top'
+        # -----------------------------------------------------------------
         BoxLayout:
             orientation: 'horizontal'
             # растояние между границей и вложенными виджетами 
@@ -59,6 +62,7 @@
                     halign: 'center'
                     # вертикальное выравнивание
                     valign: 'top'
+        # -----------------------------------------------------------------
         BoxLayout:
             Label:
                 text: 'HISTORY LENGTH'
@@ -66,6 +70,7 @@
                 font_size: '20sp'
                 halign: 'center'
                 valign: 'top'
+        # -----------------------------------------------------------------
         BoxLayout:
             orientation: 'horizontal'
             # растояние между границей и вложенными виджетами 
@@ -98,17 +103,62 @@
                     halign: 'center'
                     # вертикальное выравнивание
                     valign: 'top'
+        # -----------------------------------------------------------------
         BoxLayout:
             # размер виджета
             size_hint: (1, 1) if app.is_android else (None, None)          
             width: 0
             height: 0
             Label:
-                text: 'VIBRATION' if app.is_android else ''
+                text: 'VIBRATION RESPONSE' if app.is_android else ''
                 # размер шрифта
                 font_size: '20sp'
                 halign: 'center'
                 valign: 'top'
+        # -----------------------------------------------------------------
+        BoxLayout:
+            orientation: 'horizontal'
+            # размер виджета
+            size_hint: (1, 1) if app.is_android else (None, None)          
+            width: 0
+            height: 0
+            BoxLayout:
+                # размер виджета
+                size_hint: (1, 1) if app.is_android else (None, None)          
+                width: 0
+                height: 0
+                # растояние между границей и вложенными виджетами 
+                # padding: [10,0,10,0]
+                padding: [10,0,10,0] if app.is_android else [0,0,0,0]
+                Slider:
+                    id: slider_vibro
+                    opacity: 1.0 if app.is_android else 0.0
+                    disabled: False if app.is_android else True
+                    min: 0
+                    max: 1
+                    value: 0.4
+                    step: 0.1
+                    orientation: 'horizontal'
+            BoxLayout:
+                # размер виджета
+                size_hint: (1, 1) if app.is_android else (None, None)          
+                width: 0
+                height: 0
+                # растояние между границей и вложенными виджетами 
+                # padding: [0,0,20,0]
+                padding: [0,0,20,0] if app.is_android else [0,0,0,0]
+                Label:
+                    # присвоение значения slider в label
+                    text: '{}'.format(int(slider_vibro.value)) if app.is_android else ''
+                    # размер шрифта
+                    font_size: '30sp'
+                    # жирность шрифта
+                    bold: True
+                    # горизонтальное выравнивание
+                    halign: 'center'
+                    # вертикальное выравнивание
+                    valign: 'top'
+        # -----------------------------------------------------------------
         BoxLayout:
             # растояние между границей и вложенными виджетами
             padding: [10,5,10,5]
@@ -118,7 +168,8 @@
                 # размер шрифта
                 font_size: '20sp'
                 bold: True 
-                disabled: True                  
+                disabled: True   
+        # -----------------------------------------------------------------               
         BoxLayout:
             # размер виджета
             # size_hint: 1, 0.3
@@ -130,3 +181,4 @@
                 font_size: '30sp'
                 bold: True
                 on_release: root.dismiss()
+        # -----------------------------------------------------------------
