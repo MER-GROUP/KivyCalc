@@ -99,6 +99,17 @@
                     # вертикальное выравнивание
                     valign: 'top'
         BoxLayout:
+            # размер виджета
+            size_hint: (1, 1) if app.is_android else (None, None)          
+            width: 0
+            height: 0
+            Label:
+                text: 'VIBRATION' if app.is_android else ''
+                # размер шрифта
+                font_size: '20sp'
+                halign: 'center'
+                valign: 'top'
+        BoxLayout:
             # растояние между границей и вложенными виджетами
             padding: [10,5,10,5]
             Button:
