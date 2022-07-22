@@ -6,13 +6,15 @@ from kivy.app import App
 # коробочный макет
 from kivy.uix.boxlayout import BoxLayout
 # свойства объекта (виджета)
-from kivy.properties import ObjectProperty
+from kivy.properties import ObjectProperty, BooleanProperty
 # определение ОС
 from kivy.utils import platform
 # *****************************************************************************************
 # глобальные переменные
-# длиина истории label_display_comment (коиличество вомволов)
+# длина истории label_display_comment (коиличество вомволов)
 limit_history = 100
+# является ли ОС - android
+os_is_android = True
 # *****************************************************************************************
 if not 'android' == platform:
     # конфигурация приложения kv
@@ -24,6 +26,8 @@ if not 'android' == platform:
     Config.set('graphics','resizable', False)
     # длиина истории label_display_comment (коиличество вомволов)
     limit_history = 40
+    # является ли ОС - android
+    os_is_android = False
 # *****************************************************************************************
 # Работа с директориями и файлами ОС
 # listdir - показывает файлы в конкретной папке
@@ -60,6 +64,7 @@ class Calc(BoxLayout):
     label_display = ObjectProperty(None)
     label_display_comment = ObjectProperty(None)
     label_display_memory = ObjectProperty(None)
+    is_android = BooleanProperty(os_is_android)
     display_clear = False
     push_back = False
     push_equal = False
