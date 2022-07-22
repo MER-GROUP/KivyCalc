@@ -6,7 +6,8 @@
 # Сохраненная память на дисплее калькулятора
 <DisplayMemory@Label>:
     # размер шрифта
-    font_size: '12sp'
+    # font_size: '12sp'
+    font_size: '34sp' if app.is_android else '12sp'
 
     # цвет шрифта
     color: 'gray'
