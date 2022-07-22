@@ -95,6 +95,16 @@
                     # вертикальное выравнивание
                     valign: 'top'
         BoxLayout:
+            # растояние между границей и вложенными виджетами
+            padding: [10,5,10,5]
+            Button:
+                id: 'button_clear'
+                text: 'CLEAR HISTORY'
+                # размер шрифта
+                font_size: '20sp'
+                bold: True 
+                disabled: True                  
+        BoxLayout:
             # размер виджета
             # size_hint: 1, 0.3
             # растояние между границей и вложенными виджетами 
