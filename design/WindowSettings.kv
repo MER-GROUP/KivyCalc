@@ -124,7 +124,7 @@
             height: 0
             BoxLayout:
                 # размер виджета
-                size_hint: (1, 1) if app.is_android else (None, None)          
+                size_hint: (0.8, 1) if app.is_android else (None, None)          
                 width: 0
                 height: 0
                 # растояние между границей и вложенными виджетами 
@@ -141,7 +141,7 @@
                     orientation: 'horizontal'
             BoxLayout:
                 # размер виджета
-                size_hint: (1, 1) if app.is_android else (None, None)          
+                size_hint: (0.2, 1) if app.is_android else (None, None)          
                 width: 0
                 height: 0
                 # растояние между границей и вложенными виджетами 
@@ -149,7 +149,7 @@
                 padding: [0,0,20,0] if app.is_android else [0,0,0,0]
                 Label:
                     # присвоение значения slider в label
-                    text: '{}'.format(int(slider_vibro.value)) if app.is_android else ''
+                    text: '{}'.format(slider_vibro.value) if app.is_android else ''
                     # размер шрифта
                     font_size: '30sp'
                     # жирность шрифта
