@@ -3,6 +3,10 @@
 # импорт hex цветов
 #:import hex kivy.utils.get_color_from_hex
 
+# decimal - работа с десятичными числами
+# from decimal import Decimal
+#:import dec decimal.Decimal
+
 # Модальное (всплывающе) окно калькулятора - History
 <WindowSettings@ModalView>:
     # размер виджета (окна)
@@ -149,7 +153,7 @@
                 padding: [0,0,20,0] if app.is_android else [0,0,0,0]
                 Label:
                     # присвоение значения slider в label
-                    text: '{}'.format(slider_vibro.value) if app.is_android else ''
+                    text: '{}'.format(dec(slider_vibro.value)) if app.is_android else ''
                     # размер шрифта
                     font_size: '30sp'
                     # жирность шрифта
