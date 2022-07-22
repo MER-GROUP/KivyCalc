@@ -4,7 +4,7 @@
 #:import hex kivy.utils.get_color_from_hex
 
 # decimal - работа с десятичными числами
-# from decimal import Decimal
+# from decimal import Decimal as dec
 #:import dec decimal.Decimal
 
 # Модальное (всплывающе) окно калькулятора - History
@@ -153,7 +153,8 @@
                 padding: [0,0,20,0] if app.is_android else [0,0,0,0]
                 Label:
                     # присвоение значения slider в label
-                    text: '{}'.format(dec(slider_vibro.value)) if app.is_android else ''
+                    # text: '{}'.format(dec(slider_vibro.value)) if app.is_android else ''
+                    text: '{}'.format(dec(slider_vibro.value).quantize(dec('1.0'))) if app.is_android else ''
                     # размер шрифта
                     font_size: '30sp'
                     # жирность шрифта
