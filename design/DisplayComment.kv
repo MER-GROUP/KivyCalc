@@ -6,7 +6,8 @@
 # Краткая история действий на дисплее калькулятора
 <DisplayComment@Label>:
     # размер шрифта
-    font_size: '12sp'
+    # font_size: '12sp'
+    font_size: '24sp' if app.is_android else '12sp'
 
     # цвет шрифта
     color: 'gray'
