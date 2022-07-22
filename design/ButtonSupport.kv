@@ -6,7 +6,11 @@
 # Вспомогательные кнопки калькулятора
 <ButtonSupport@Button>:
     # размер шрифта
-    font_size: '15sp'
+    # font_size: '15sp'
+    font_size: '20sp' if app.is_android else '15sp'
 
     # жирность шрифта
     bold: True
+
+    # цвет цекста
+    color: 'silver'
