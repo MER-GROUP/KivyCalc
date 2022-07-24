@@ -817,15 +817,7 @@ class Calc(BoxLayout):
                     op1 = Parse().back_to_operand(res)[-1]
                     op2 = ''
                 operand = op2 if op2 in '-+*/%' else op1
-
-                # test ########################
-                print(f'!!! res = {res}')######
-                print(f'!!! op1 = {op1}')######
-                print(f'!!! op2 = {op2}')######
-                print(f'!!! operand = {operand}')######
-                print(f'!!! Parse().split_with_operand_and_exponent(res)) = {Parse().split_with_operand_and_exponent(res)}')######
-                print(f'!!! len(Parse().split_with_operand_and_exponent(res)) = {len(Parse().split_with_operand_and_exponent(res))}')######
-                              
+             
                 if (('' != res) 
                     and (2 == len(Parse().split_with_operand_and_exponent(res)))
                     and ('%' == operand)
@@ -840,22 +832,7 @@ class Calc(BoxLayout):
                     # res = str(eval(res))
                     if ('' != res) and (2 == len(Parse().split_with_operand_and_exponent(res))):
                         a, b = Parse().split_with_operand_and_exponent(res)
-
-                        # test ################
-                        print(f'a = {a}') #####
-                        print(f'b = {b}') #####
-
-
                         x, y = Decimal(a), Decimal(b)
-
-
-
-                        # test ################
-                        print(f'x = {x}') #####
-                        print(f'y = {y}') #####
-                        print(f'operand = {operand}')######
-
-
                         if ('-' == operand):
                             res = str(x - y)
                         elif ('+' == operand):
