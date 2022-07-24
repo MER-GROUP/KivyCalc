@@ -10,23 +10,38 @@
 
     BoxLayout:
         orientation: 'vertical'
-        BoxLayout:
-            # растояние между границей и вложенными виджетами 
-            padding: [0,5,0,0]
-            Label:
-                text: 'History'
-                # автоматически переносить/растягивать текст {
-                text_size: self.size
-                halign: 'center'
-                valign: 'top'
-                # автоматически переносить/растягивать текст }
+        # -----------------------------------------------------------------
         BoxLayout:
             # размер виджета
-            size_hint: 1, 0.3
+            size_hint: (1, 0.15) if app.is_android else (1, 0.2)
             # растояние между границей и вложенными виджетами 
-            padding: 10
-            Button:
-                text: 'Close'
+            # padding: [0,5,0,0]
+            Label:
+                text: 'HISTORY'
                 # размер шрифта
                 font_size: '30sp'
+                bold: True
+                halign: 'center'
+                valign: 'top'
+        # -----------------------------------------------------------------   
+        BoxLayout:
+            # растояние между границей и вложенными виджетами 
+            padding: [10,0,10,0]
+
+            DisplayScroll:
+                HistoryLabel:
+                    id: label_hist
+                    text: ''.join([(str(i) + '\n') for i in range(100)])        
+        # -----------------------------------------------------------------               
+        BoxLayout:
+            # размер виджета
+            size_hint: (1, 0.15) if app.is_android else (1, 0.2)
+            # растояние между границей и вложенными виджетами 
+            padding: [10,0,10,10]
+            Button:
+                text: 'CLOSE'
+                # размер шрифта
+                font_size: '30sp'
+                bold: True
                 on_release: root.dismiss()
+        # -----------------------------------------------------------------
