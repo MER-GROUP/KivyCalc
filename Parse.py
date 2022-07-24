@@ -93,7 +93,7 @@ class Parse:
         i = int()
 
         while i < size_line:
-            if (line[i].isdigit()):
+            if (line[i] in '.0123456789'):
                 left = i
                 right = i
                 cnt = int()
@@ -107,11 +107,11 @@ class Parse:
                     if (line[left] in '+-*/%') and (1 == cnt) and (0 == left):
                         cnt = int()
                         break
-                    if (line[left].isdigit()) and (1 == cnt):
+                    if (line[left] in '.0123456789') and (1 == cnt):
                         cnt = int()
                         left += 2
                         break
-                    if (line[left].isdigit()) and (0 == cnt) and (0 == left):
+                    if (line[left] in '.0123456789') and (0 == cnt) and (0 == left):
                         break
                     left -= 1
                 while right < size_line:
@@ -132,7 +132,7 @@ class Parse:
         i = int()
 
         while i < size_line:
-            if (line[i].isdigit()):
+            if (line[i] in '.0123456789'):
                 left = i
                 right = i
                 cnt = int()
@@ -146,11 +146,11 @@ class Parse:
                     if (line[left] in '+-*/%') and (1 == cnt) and (0 == left):
                         cnt = int()
                         break
-                    if (line[left].isdigit()) and (1 == cnt):
+                    if (line[left] in '.0123456789') and (1 == cnt):
                         cnt = int()
                         left += 2
                         break
-                    if (line[left].isdigit()) and (0 == cnt) and (0 == left):
+                    if (line[left] in '.0123456789') and (0 == cnt) and (0 == left):
                         break
                     left -= 1
                 while right < size_line:
@@ -214,6 +214,13 @@ if __name__ == '__main__':
     test_16_2 = '+6767676=1.23456789012345678901234567890123456789012345678901234567890'
     test_16_3 = '-1212E+34--67676e+54-'
     test_16_4 = '-1212E+34--67676e+54'
+    test_16_5 = '5.-2'
+    test_16_6 = '-5.-2'
+    test_16_7 = '-5.--2'
+    test_16_8 = '5.*2'
+    test_16_9 = '-5.*2'
+    test_16_10 = '-5.*-2'
+    test_16_11 = '5.+2'
 
     test_17 = '-1111+334343%2323232-232323+6767676=12345678901234567890'
     test_18 = '-1111+334343%2323232-232323+6767676=1.23456789012345678901234567890123456789012345678901234567890'
@@ -249,6 +256,8 @@ if __name__ == '__main__':
     print(Parse().back_to_operand(test_16_1))
     print(Parse().back_to_operand(test_16_2))
     print(Parse().back_to_operand(test_16_3))
+    print(Parse().back_to_operand(test_16_4))
+    print(Parse().back_to_operand(test_16_5))
 
     print('-------------------------------------')
     print('back_to_operand_with_exponent')
@@ -274,6 +283,12 @@ if __name__ == '__main__':
     print(Parse().back_to_operand_with_exponent(test_16_2))
     print(Parse().back_to_operand_with_exponent(test_16_3))
     print(Parse().back_to_operand_with_exponent(test_16_4))
+    print(Parse().back_to_operand_with_exponent(test_16_5))
+    print(Parse().back_to_operand_with_exponent(test_16_6))
+    print(Parse().back_to_operand_with_exponent(test_16_7))
+    print(Parse().back_to_operand_with_exponent(test_16_8))
+    print(Parse().back_to_operand_with_exponent(test_16_9))
+    print(Parse().back_to_operand_with_exponent(test_16_10))
 
     print('-------------------------------------')
     print('split')
@@ -340,6 +355,15 @@ if __name__ == '__main__':
     print(Parse().split_with_operand_and_exponent(test_16))
     print(Parse().split_with_operand_and_exponent(test_16_1))
     print(Parse().split_with_operand_and_exponent(test_16_2))
+    print(Parse().split_with_operand_and_exponent(test_16_3))
+    print(Parse().split_with_operand_and_exponent(test_16_4))
+    print(Parse().split_with_operand_and_exponent(test_16_5))
+    print(Parse().split_with_operand_and_exponent(test_16_6))
+    print(Parse().split_with_operand_and_exponent(test_16_7))
+    print(Parse().split_with_operand_and_exponent(test_16_8))
+    print(Parse().split_with_operand_and_exponent(test_16_9))
+    print(Parse().split_with_operand_and_exponent(test_16_10))
+    print(Parse().split_with_operand_and_exponent(test_16_11))
     print('*************************************')
     print(test_22)
     print(Parse().split_with_operand_and_exponent(test_22))
