@@ -11,11 +11,16 @@ file_settings = file.file_init_name('', './settings.json', __file__)
 # *****************************************************************************************
 # Settings - настройки программы через json
 class Settings:
+    # ---------------------------------------------------------------------------
     # загрузка настроек файла json
-    def load_setting(self, file_settings: str=file_settings) -> dict:
+    def load_settings(self, file_settings: str=file_settings) -> dict:
         # считываем из файла
         with open(file_settings, 'r') as file:
             return json.load(file)
+    # ---------------------------------------------------------------------------
+    # сохранение настроек файла json
+    def save_settings(self, settings: dict) -> None:
+        pass
 # *****************************************************************************************
 # тесты
 # если не модуль то выполнить программу
@@ -24,5 +29,5 @@ if __name__ == '__main__':
 
     print('-------------------------------------')
     print('+++++load_setting+++++')
-    print(settings.load_setting())
+    print(settings.load_settings())
 # *****************************************************************************************
