@@ -17,6 +17,7 @@ limit_history = 25
 # является ли ОС - android
 os_is_android = True
 # *****************************************************************************************
+# если не ОС не android, то применить следующие настройки
 if not 'android' == platform:
     # конфигурация приложения kv
     from kivy.config import Config
@@ -29,6 +30,30 @@ if not 'android' == platform:
     limit_history = 40
     # является ли ОС - android
     os_is_android = False
+# *****************************************************************************************
+# если ОС Android, то загрузить следующие модули
+if 'android' == platform:
+    # ----------------------------------------------------------------------
+    # модуль plyer - работа с железом устройства
+    from plyer import vibrator
+    # ----------------------------------------------------------------------
+    # permissions - права доступа на чтение и запись файлов
+    from android.permissions import Permission, request_permissions, check_permission
+
+    # проверить права доступа
+    def check_permissions(perms):
+        for perm in perms:
+            if check_permission(perm) != True:
+                return False
+        return True
+
+    # определить права доступа
+    perms = [Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE]
+        
+    # Получить права доступа на чтение и запись
+    while  check_permissions(perms)!= True:
+        request_permissions(perms)
+    # ----------------------------------------------------------------------
 # *****************************************************************************************
 # Работа с директориями и файлами ОС
 # listdir - показывает файлы в конкретной папке
