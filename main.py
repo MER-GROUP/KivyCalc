@@ -6,7 +6,7 @@ from kivy.app import App
 # коробочный макет
 from kivy.uix.boxlayout import BoxLayout
 # свойства объекта (виджета)
-from kivy.properties import ObjectProperty, BooleanProperty
+from kivy.properties import ObjectProperty, BooleanProperty, StringProperty
 # определение ОС
 from kivy.utils import platform
 # *****************************************************************************************
@@ -54,6 +54,8 @@ from decimal import Decimal
 # собственные модули
 # Parse - разбор текстовых строк
 from Parse import Parse
+# Settings - настройки программы через json
+from Settings import Settings
 # *****************************************************************************************
 # Действия программы
 class Calc(BoxLayout):
@@ -904,6 +906,9 @@ class CalcApp(App):
     # ---------------------------------------------------------------------------
     # vars
     is_android = BooleanProperty(os_is_android)
+    setting_round = StringProperty(Settings().load_settings()['round'])
+    setting_hist = StringProperty(Settings().load_settings()['hist'])
+    setting_vibro = StringProperty(Settings().load_settings()['vibro'])
     # ---------------------------------------------------------------------------
     title = 'Kivy Calc'
     def build(self):
