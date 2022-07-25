@@ -7,6 +7,9 @@
 # from decimal import Decimal as dec
 #:import dec decimal.Decimal
 
+# Settings - настройки программы через json
+#:import settings Settings.Settings
+
 # Модальное (всплывающе) окно калькулятора - History
 <WindowSettings@ModalView>:
     # размер виджета (окна)
@@ -48,7 +51,8 @@
                     min: 0
                     max: 10
                     # value: 2
-                    value: int(app.setting_round)
+                    # value: int(app.setting_round)
+                    value: int(settings().load_settings()['round'])
                     step: 1
                     orientation: 'horizontal'
             BoxLayout:
@@ -90,7 +94,8 @@
                     min: 0
                     max: 999
                     # value: 999
-                    value: int(app.setting_hist)
+                    # value: int(app.setting_hist)
+                    value: int(settings().load_settings()['hist'])
                     step: 1
                     orientation: 'horizontal'
             BoxLayout:
@@ -143,7 +148,8 @@
                     min: 0
                     max: 1
                     # value: 0.4
-                    value: float(app.setting_vibro)
+                    # value: float(app.setting_vibro)
+                    value: float(settings().load_settings()['vibro'])
                     step: 0.1
                     orientation: 'horizontal'
             BoxLayout:

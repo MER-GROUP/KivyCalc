@@ -55,7 +55,7 @@ from decimal import Decimal
 # Parse - разбор текстовых строк
 from Parse import Parse
 # Settings - настройки программы через json
-from Settings import Settings
+# from Settings import Settings
 # *****************************************************************************************
 # Действия программы
 class Calc(BoxLayout):
@@ -906,9 +906,9 @@ class CalcApp(App):
     # ---------------------------------------------------------------------------
     # vars
     is_android = BooleanProperty(os_is_android)
-    setting_round = StringProperty(Settings().load_settings()['round'])
-    setting_hist = StringProperty(Settings().load_settings()['hist'])
-    setting_vibro = StringProperty(Settings().load_settings()['vibro'])
+    # setting_round = StringProperty(Settings().load_settings()['round'])
+    # setting_hist = StringProperty(Settings().load_settings()['hist'])
+    # setting_vibro = StringProperty(Settings().load_settings()['vibro'])
     # ---------------------------------------------------------------------------
     title = 'Kivy Calc'
     def build(self):
