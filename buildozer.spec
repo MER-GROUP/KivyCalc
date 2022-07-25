@@ -37,9 +37,9 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-# requirements = python3==3.9.2,hostpython3==3.9.2,kivy,plyer
 # jnius - is install default
-requirements = python3==3.9.2,hostpython3==3.9.2,kivy
+requirements = python3==3.9.2,hostpython3==3.9.2,kivy,plyer
+# requirements = python3==3.9.2,hostpython3==3.9.2,kivy
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -97,7 +97,8 @@ fullscreen = 0
 # (list) Permissions
 #android.permissions = INTERNET
 # android.permissions = VIBRATE
-android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
+# android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
+android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE, VIBRATE
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host

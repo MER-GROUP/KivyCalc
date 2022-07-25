@@ -6,7 +6,7 @@ from kivy.app import App
 # коробочный макет
 from kivy.uix.boxlayout import BoxLayout
 # свойства объекта (виджета)
-from kivy.properties import ObjectProperty, BooleanProperty
+from kivy.properties import ObjectProperty, BooleanProperty, StringProperty
 # определение ОС
 from kivy.utils import platform
 # *****************************************************************************************
@@ -17,6 +17,7 @@ limit_history = 25
 # является ли ОС - android
 os_is_android = True
 # *****************************************************************************************
+# если не ОС не android, то применить следующие настройки
 if not 'android' == platform:
     # конфигурация приложения kv
     from kivy.config import Config
@@ -29,6 +30,30 @@ if not 'android' == platform:
     limit_history = 40
     # является ли ОС - android
     os_is_android = False
+# *****************************************************************************************
+# если ОС Android, то загрузить следующие модули
+if 'android' == platform:
+    # ----------------------------------------------------------------------
+    # модуль plyer - работа с железом устройства
+    from plyer import vibrator
+    # ----------------------------------------------------------------------
+    # permissions - права доступа на чтение и запись файлов
+    from android.permissions import Permission, request_permissions, check_permission
+
+    # проверить права доступа
+    def check_permissions(perms):
+        for perm in perms:
+            if check_permission(perm) != True:
+                return False
+        return True
+
+    # определить права доступа
+    perms = [Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE]
+        
+    # Получить права доступа на чтение и запись
+    while check_permissions(perms)!= True:
+        request_permissions(perms)
+    # ----------------------------------------------------------------------
 # *****************************************************************************************
 # Работа с директориями и файлами ОС
 # listdir - показывает файлы в конкретной папке
@@ -54,6 +79,11 @@ from decimal import Decimal
 # собственные модули
 # Parse - разбор текстовых строк
 from Parse import Parse
+# Settings - настройки программы через json
+from Settings import Settings
+# Работа с директориями и файлами ОС
+from merlib.fs.File import File
+file = File()
 # *****************************************************************************************
 # Действия программы
 class Calc(BoxLayout):
@@ -904,8 +934,19 @@ class CalcApp(App):
     # ---------------------------------------------------------------------------
     # vars
     is_android = BooleanProperty(os_is_android)
+    # setting_round = StringProperty(Settings().load_settings()['round'])
+    # setting_hist = StringProperty(Settings().load_settings()['hist'])
+    # setting_vibro = StringProperty(Settings().load_settings()['vibro'])
     # ---------------------------------------------------------------------------
+    # kivy vars
     title = 'Kivy Calc'
+    # ---------------------------------------------------------------------------
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        # проверка существования файла настроек json
+        if not (file.file_exists('./settings.json', __file__)):
+            Settings().update_settings(round='2', hist='999', vibro='0.4')
+    # ---------------------------------------------------------------------------
     def build(self):
         return Calc()
     # ---------------------------------------------------------------------------
