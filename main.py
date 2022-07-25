@@ -81,6 +81,9 @@ from decimal import Decimal
 from Parse import Parse
 # Settings - настройки программы через json
 from Settings import Settings
+# Работа с директориями и файлами ОС
+from merlib.fs.File import File
+file = File()
 # *****************************************************************************************
 # Действия программы
 class Calc(BoxLayout):
@@ -935,7 +938,15 @@ class CalcApp(App):
     # setting_hist = StringProperty(Settings().load_settings()['hist'])
     # setting_vibro = StringProperty(Settings().load_settings()['vibro'])
     # ---------------------------------------------------------------------------
+    # kivy vars
     title = 'Kivy Calc'
+    # ---------------------------------------------------------------------------
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        # проверка существования файла настроек json
+        if not (file.file_exists('./settings.json', __file__)):
+            Settings().update_settings(round='2', hist='999', vibro='0.4')
+    # ---------------------------------------------------------------------------
     def build(self):
         return Calc()
     # ---------------------------------------------------------------------------
