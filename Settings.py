@@ -23,6 +23,13 @@ class Settings:
         # записываем в файл данные в формате json
         with open(file_settings, 'w') as file:
             json.dump(settings, file, indent=4, sort_keys=True)
+    # ---------------------------------------------------------------------------
+    # обновление настроек файла json
+    def update_settings(self, **settings: dict) -> None:
+        # записываем в файл данные в формате json
+        with open(file_settings, 'w') as file:
+            json.dump(settings, file, indent=4, sort_keys=True)
+    # ---------------------------------------------------------------------------
 # *****************************************************************************************
 # тесты
 # если не модуль то выполнить программу
@@ -42,4 +49,10 @@ if __name__ == '__main__':
     print('settings is save')
     my_settings = settings.load_settings()
     print(my_settings)
+
+    print('-------------------------------------')
+    print('+++++update_settings+++++')
+    print(settings.load_settings())
+    print(settings.update_settings(round='3', hist='777', vibro='0.1'))
+    print(settings.load_settings())
 # *****************************************************************************************
