@@ -47,7 +47,8 @@
                     id: slider_round
                     min: 0
                     max: 10
-                    value: 2
+                    # value: 2
+                    value: int(app.setting_round)
                     step: 1
                     orientation: 'horizontal'
             BoxLayout:
@@ -88,7 +89,8 @@
                     id: slider_hist
                     min: 0
                     max: 999
-                    value: 999
+                    # value: 999
+                    value: int(app.setting_hist)
                     step: 1
                     orientation: 'horizontal'
             BoxLayout:
@@ -140,7 +142,8 @@
                     disabled: False if app.is_android else True
                     min: 0
                     max: 1
-                    value: 0.4
+                    # value: 0.4
+                    value: float(app.setting_vibro)
                     step: 0.1
                     orientation: 'horizontal'
             BoxLayout:
