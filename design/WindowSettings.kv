@@ -194,5 +194,8 @@
                 # размер шрифта
                 font_size: '30sp'
                 bold: True
+                # обновление настроек
+                on_release: settings().update_settings(round=str(int(slider_round.value)), hist=str(int(slider_hist.value)), vibro=str(float(slider_vibro.value)))
+                # закрыть модальное окно
                 on_release: root.dismiss()
         # -----------------------------------------------------------------

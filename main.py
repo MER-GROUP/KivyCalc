@@ -55,7 +55,7 @@ from decimal import Decimal
 # Parse - разбор текстовых строк
 from Parse import Parse
 # Settings - настройки программы через json
-# from Settings import Settings
+from Settings import Settings
 # *****************************************************************************************
 # Действия программы
 class Calc(BoxLayout):
