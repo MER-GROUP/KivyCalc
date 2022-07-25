@@ -51,7 +51,7 @@ if 'android' == platform:
     perms = [Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE]
         
     # Получить права доступа на чтение и запись
-    while  check_permissions(perms)!= True:
+    while check_permissions(perms)!= True:
         request_permissions(perms)
     # ----------------------------------------------------------------------
 # *****************************************************************************************
