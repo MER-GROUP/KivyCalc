@@ -854,7 +854,7 @@ class Calc(BoxLayout):
                 operand = op2 if op2 in '-+*/%' else op1
                 round_str = Settings().load_settings()['round']
                 round_str = Parse().round_decimal(int(round_str))
-                
+
                 if (('' != res) 
                     and (2 == len(Parse().split_with_operand_and_exponent(res)))
                     and ('%' == operand)
@@ -869,6 +869,7 @@ class Calc(BoxLayout):
                         res = str(res)
                     else:
                         res = str(res.quantize(Decimal(round_str)))
+                    res = Parse().del_ends_zero(res)
                 else:
                     # res = str(eval(res))
                     if ('' != res) and (2 == len(Parse().split_with_operand_and_exponent(res))):
@@ -898,6 +899,7 @@ class Calc(BoxLayout):
                                 res = str(res)
                             else:
                                 res = str(res.quantize(Decimal(round_str)))
+                        res = Parse().del_ends_zero(res)
 
         self.label_display.text = res # 6
         self.label_display_comment.text += str(self.operand) # 7
