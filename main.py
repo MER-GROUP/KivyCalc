@@ -935,6 +935,8 @@ class Calc(BoxLayout):
 # Модальное окно программы
 # Если нет прав доступа на чтение и запись
 # будет выведено это окно
+# Это окно не выведется если is_access_open будет равным False
+# Оставляю для примера
 class WindowAccessExample(BoxLayout):
     pass
 # *****************************************************************************************
@@ -1024,7 +1026,8 @@ class CalcApp(App):
         if not (is_access_open):
             # filename = str(Path(join(dirname(__file__), './design/WindowAccess.kv')))
             # return Builder.load_file(filename)
-            return WindowAccess()
+            # return WindowAccessExample()
+            return WindowAccess
         else:
             return Calc()
     # ---------------------------------------------------------------------------
