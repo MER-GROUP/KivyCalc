@@ -935,69 +935,8 @@ class Calc(BoxLayout):
 # Модальное окно программы
 # Если нет прав доступа на чтение и запись
 # будет выведено это окно
-# Это окно не выведется если is_access_open будет равным False
-# Оставляю для примера
-class WindowAccessExample(BoxLayout):
+class WindowAccess(BoxLayout):
     pass
-# *****************************************************************************************
-# Модальное окно программы
-# Если нет прав доступа на чтение и запись
-# будет выведено это окно
-WindowAccess = Builder.load_string(
-'''
-#:kivy 2.0.0
-
-# импорт hex цветов
-#:import hex kivy.utils.get_color_from_hex
-
-# Окно калькулятора - Access
-<WindowAccess>:
-    # размер виджета (окна)
-    size_hint: 1, 1
-
-    BoxLayout:
-        orientation: 'vertical'
-        # -----------------------------------------------------------------
-        BoxLayout:
-            # размер виджета
-            size_hint: (1, 0.15) if app.is_android else (1, 0.2)
-            # растояние между границей и вложенными виджетами 
-            # padding: [0,5,0,0]
-            Label:
-                text: 'ACCESS'
-                # размер шрифта
-                font_size: '30sp'
-                bold: True
-                halign: 'center'
-                valign: 'top'
-        # -----------------------------------------------------------------   
-        BoxLayout:
-            Label:
-                text: 'Для работы программы нужно разрешить права доступа на чтение и запись файлов.' 
-                # размер шрифта
-                font_size: '20sp' if app.is_android else '10sp'
-                # автоматически переносить/растягивать текст {
-                text_size: self.size
-                halign: 'center'
-                valign: 'top'
-                # автоматически переносить/растягивать текст }     
-        # -----------------------------------------------------------------               
-        BoxLayout:
-            # размер виджета
-            size_hint: (1, 0.15) if app.is_android else (1, 0.2)
-            # растояние между границей и вложенными виджетами 
-            padding: [10,0,10,10]
-            Button:
-                text: 'CLOSE'
-                # размер шрифта
-                font_size: '30sp'
-                bold: True
-                # on_release: root.dismiss()
-                # выход из программы
-                on_release: exit()
-        # -----------------------------------------------------------------
-'''
-)
 # *****************************************************************************************
 # Окно программы
 class CalcApp(App):
@@ -1026,8 +965,7 @@ class CalcApp(App):
         if not (is_access_open):
             # filename = str(Path(join(dirname(__file__), './design/WindowAccess.kv')))
             # return Builder.load_file(filename)
-            # return WindowAccessExample()
-            return WindowAccess
+            return WindowAccess()
         else:
             return Calc()
     # ---------------------------------------------------------------------------
