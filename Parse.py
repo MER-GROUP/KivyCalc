@@ -196,6 +196,7 @@ class Parse:
     # то удалить точку и все нули после нее
     def del_ends_zero(self, digit: str) -> str:
         idx = digit.find('.')
+
         if not (-1 == idx):
             line = digit[idx + 1 : ]
             for i in line:
@@ -203,6 +204,14 @@ class Parse:
                 else: break
             else:
                 return digit[ : idx]
+
+        if not (-1 == idx):
+            while True:
+                if ('0' == digit[-1]):
+                    digit = digit[: -1]
+                else:
+                    return digit
+                    
         return digit
     # ---------------------------------------------------------------------------
     pass
@@ -256,6 +265,8 @@ if __name__ == '__main__':
 
     test_26 = '5.000'
     test_27 = '6.001'
+    test_28 = '6.400'
+    test_29 = '6.050'
 
     print('-------------------------------------')
     print('back_to_operand')
@@ -475,6 +486,8 @@ if __name__ == '__main__':
 
     print(Parse().del_ends_zero(test_26))
     print(Parse().del_ends_zero(test_27))
+    print(Parse().del_ends_zero(test_28))
+    print(Parse().del_ends_zero(test_29))
 
     print('-------------------------------------')
 # *****************************************************************************************
