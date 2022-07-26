@@ -31,6 +31,10 @@ if not 'android' == platform:
     # является ли ОС - android
     os_is_android = False
 # *****************************************************************************************
+# глобальная переменная
+# разрешен ли доступ на чтение и запись файлов
+is_access_open = False
+
 # если ОС Android, то загрузить следующие модули
 if 'android' == platform:
     # ----------------------------------------------------------------------
@@ -39,10 +43,6 @@ if 'android' == platform:
     # ----------------------------------------------------------------------
     # permissions - права доступа на чтение и запись файлов
     from android.permissions import Permission, request_permissions, check_permission
-
-    # глобальная переменная
-    # разрешен ли доступ на чтение и запись файлов
-    is_access_open = True
 
     # проверить права доступа
     def check_permissions(perms):
@@ -932,6 +932,12 @@ class Calc(BoxLayout):
     pass
     # ---------------------------------------------------------------------------
 # *****************************************************************************************
+# Модальное окно программы
+# Если нет прав доступа на чтение и запись
+# будет выведено это окно
+class WindowAccess(BoxLayout):
+    pass
+# *****************************************************************************************
 # Окно программы
 class CalcApp(App):
     # ---------------------------------------------------------------------------
@@ -949,11 +955,19 @@ class CalcApp(App):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         # проверка существования файла настроек json
-        if not (file.file_exists('./settings.json', __file__)):
-            Settings().update_settings(round='2', hist='999', vibro='0.4')
+        if (is_access_open):
+            if not (file.file_exists('./settings.json', __file__)):
+                Settings().update_settings(round='2', hist='999', vibro='0.4')
     # ---------------------------------------------------------------------------
     def build(self):
-        return Calc()
+        # если права доступа н открыты то показать WindowAccess
+        # иначе запустить калькулятор
+        if not (is_access_open):
+            # filename = str(Path(join(dirname(__file__), './design/WindowAccess.kv')))
+            # return Builder.load_file(filename)
+            return WindowAccess()
+        else:
+            return Calc()
     # ---------------------------------------------------------------------------
 # *****************************************************************************************
 # запуск программы
