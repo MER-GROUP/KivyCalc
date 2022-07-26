@@ -192,6 +192,19 @@ class Parse:
         res = '0' * digit
         return '1.' + res
     # ---------------------------------------------------------------------------
+    # если число float и оно не дробное (целое) 
+    # то удалить точку и все нули после нее
+    def del_ends_zero(self, digit: str) -> str:
+        idx = digit.find('.')
+        if not (-1 == idx):
+            line = digit[idx + 1 : ]
+            for i in line:
+                if '0' == i: continue
+                else: break
+            else:
+                return digit[ : idx]
+        return digit
+    # ---------------------------------------------------------------------------
     pass
     # ---------------------------------------------------------------------------
 # *****************************************************************************************
@@ -240,6 +253,9 @@ if __name__ == '__main__':
     test_23 = 1
     test_24 = 2
     test_25 = 5
+
+    test_26 = '5.000'
+    test_27 = '6.001'
 
     print('-------------------------------------')
     print('back_to_operand')
@@ -453,6 +469,12 @@ if __name__ == '__main__':
     print(Parse().round_decimal(test_23))
     print(Parse().round_decimal(test_24))
     print(Parse().round_decimal(test_25))
+
+    print('-------------------------------------')
+    print('round_decimal')
+
+    print(Parse().del_ends_zero(test_26))
+    print(Parse().del_ends_zero(test_27))
 
     print('-------------------------------------')
 # *****************************************************************************************
