@@ -129,4 +129,11 @@ q = Decimal('55E+12')
 print(f'type =  {type(q)}')
 print(f'q =  {q}')
 print(f'str(q) =  {str(q)}')
-print('---------------------------')
+print('----------------------------')
+from math import floor, ceil
+from decimal import Decimal
+a, b = Decimal('7.344244875532657776150341930E+40'), Decimal('7.344244875532657776150341930E+40')
+c = a - b
+print(f'a = {a}')
+print(f'b = {b}')
+print(f'c = a - b = {c}')
