@@ -852,6 +852,8 @@ class Calc(BoxLayout):
                     op1 = Parse().back_to_operand(res)[-1]
                     op2 = ''
                 operand = op2 if op2 in '-+*/%' else op1
+                round_str = Settings().load_settings()['round']
+                round_str = Parse().round_decimal(int(round_str))
              
                 if (('' != res) 
                     and (2 == len(Parse().split_with_operand_and_exponent(res)))
@@ -862,20 +864,50 @@ class Calc(BoxLayout):
                     # res = str(eval(res))
                     a, b = Parse().split_with_operand_and_exponent(res)
                     procent, digit = Decimal(a), Decimal(b)
-                    res = str(procent * digit / 100)
+                    # res = str(procent * digit / 100)
+                    # res = str((procent * digit / 100).quantize(Decimal(round_str)))
+                    res = procent * digit / 100
+                    if ('e' in str(res)) or ('E' in str(res)):
+                        res = str(res)
+                    else:
+                        res = str(res.quantize(Decimal(round_str)))
                 else:
                     # res = str(eval(res))
                     if ('' != res) and (2 == len(Parse().split_with_operand_and_exponent(res))):
                         a, b = Parse().split_with_operand_and_exponent(res)
                         x, y = Decimal(a), Decimal(b)
                         if ('-' == operand):
-                            res = str(x - y)
+                            # res = str(x - y)   
+                            # res = str((x - y).quantize(Decimal(round_str)))
+                            res = x - y
+                            if ('e' in str(res)) or ('E' in str(res)):
+                                res = str(res)
+                            else:
+                                res = str(res.quantize(Decimal(round_str)))
                         elif ('+' == operand):
-                            res = str(x + y)
+                            # res = str(x + y)                          
+                            # res = str((x + y).quantize(Decimal(round_str)))
+                            res = x + y
+                            if ('e' in str(res)) or ('E' in str(res)):
+                                res = str(res)
+                            else:
+                                res = str(res.quantize(Decimal(round_str)))
                         elif ('*' == operand):
-                            res = str(x * y)
+                            # res = str(x * y)                         
+                            # res = str((x * y).quantize(Decimal(round_str)))
+                            res = x * y
+                            if ('e' in str(res)) or ('E' in str(res)):
+                                res = str(res)
+                            else:
+                                res = str(res.quantize(Decimal(round_str)))
                         elif ('/' == operand):
-                            res = str(x / y)
+                            # res = str(x / y)                          
+                            # res = str((x / y).quantize(Decimal(round_str)))
+                            res = x / y
+                            if ('e' in str(res)) or ('E' in str(res)):
+                                res = str(res)
+                            else:
+                                res = str(res.quantize(Decimal(round_str)))
 
         self.label_display.text = res # 6
         self.label_display_comment.text += str(self.operand) # 7
