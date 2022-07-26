@@ -40,10 +40,15 @@ if 'android' == platform:
     # permissions - права доступа на чтение и запись файлов
     from android.permissions import Permission, request_permissions, check_permission
 
+    # глобальная переменная
+    # разрешен ли доступ на чтение и запись файлов
+    is_access_open = True
+
     # проверить права доступа
     def check_permissions(perms):
         for perm in perms:
             if check_permission(perm) != True:
+                is_access_open = False
                 return False
         return True
 
