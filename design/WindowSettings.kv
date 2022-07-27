@@ -177,12 +177,16 @@
             # растояние между границей и вложенными виджетами
             padding: [10,5,10,5]
             Button:
-                id: 'button_clear'
+                id: button_clear
                 text: 'CLEAR HISTORY'
                 # размер шрифта
                 font_size: '20sp'
                 bold: True 
-                disabled: True   
+                # disabled: True 
+                disabled: False if len(settings().load_history()) else True
+                # очистить историю вычислений
+                on_release: settings().update_history() 
+                
         # -----------------------------------------------------------------               
         BoxLayout:
             # размер виджета
