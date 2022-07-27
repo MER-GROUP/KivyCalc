@@ -34,6 +34,11 @@ class Settings:
     # ---------------------------------------------------------------------------
     # сохранение истории файла json
     def save_history(self, history: list, file_history: str=file_history) -> None:
+        # обработка длины истории
+        hist_len = int(self.load_settings()['hist'])
+        if (hist_len < len(history)):
+            history = history[(-1 * hist_len) : ]
+
         # записываем в файл данные в формате json
         with open(file_history, 'w') as file:
             json.dump(history, file, indent=4, sort_keys=True)

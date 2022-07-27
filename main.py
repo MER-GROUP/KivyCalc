@@ -806,14 +806,16 @@ class Calc(BoxLayout):
     # 2. записываем в переменную previous_operand предыдущий операнд
     # 3. записываем в переменную operand текущий операнд
     # 4. записать в список (массив) итоговую переменную write_number и примененный operand
-    # 5. выполнить вычисления выражения
-    # 6. результат вычесления вывести на дисплей калькулятора (label_display)
-    # 7. добавляем в историю label_display_comment текущий операнд
-    # 8. результат вычесления добавить в историю калькулятора (label_display_comment)
-    # 9. записываем в переменную write_number результат вычесления
-    # 10. очищаем массив данных калькулятора calc_arr
-    # 11. помечаем что кнопка equal была нажата (push_equal = True)
-    # 12. обрезать историю label_display_comment если она длинная
+    # 5. записать вычисления в историю
+    # 6. выполнить вычисления выражения
+    # 7. результат вычесления вывести на дисплей калькулятора (label_display)
+    # 8. добавляем в историю label_display_comment текущий операнд
+    # 9. результат вычесления добавить в историю калькулятора (label_display_comment)
+    # 10. записываем в переменную write_number результат вычесления
+    # 11. очищаем массив данных калькулятора calc_arr
+    # 12. помечаем что кнопка equal была нажата (push_equal = True)
+    # 13. обрезать историю label_display_comment если она длинная
+    # 14. записать ответ вычислений в историю
     def equal(self):
         if (self.write_number is None) and (self.operand is None): # 1
             return
@@ -837,7 +839,10 @@ class Calc(BoxLayout):
         self.calc_arr.append(self.write_number) # 4
         self.calc_arr.append(self.operand)
 
-        res = str() # 5
+        history_arr = Settings().load_history() # 5
+        history_arr.append(''.join(self.calc_arr))
+
+        res = str() # 6
         for i in self.calc_arr: 
             if (i in '-+*/%'):
                 res += i
@@ -901,16 +906,19 @@ class Calc(BoxLayout):
                                 res = str(res.quantize(Decimal(round_str)))
                         res = Parse().del_ends_zero(res)
 
-        self.label_display.text = res # 6
-        self.label_display_comment.text += str(self.operand) # 7
-        self.label_display_comment.text += res # 8
-        self.write_number = res # 9
-        self.calc_arr.clear() # 10
-        self.push_equal = True # 11
+        self.label_display.text = res # 7
+        self.label_display_comment.text += str(self.operand) # 8
+        self.label_display_comment.text += res # 9
+        self.write_number = res # 10
+        self.calc_arr.clear() # 11
+        self.push_equal = True # 12
 
-        # 12
+        # 13
         self.label_display_comment.text = Parse().history_trim(self.label_display_comment.text,
                                                                 limit_history)
+
+        history_arr[-1] += res # 13
+        Settings().save_history(history_arr)
 
         # test
         print('------------------------------------------------')

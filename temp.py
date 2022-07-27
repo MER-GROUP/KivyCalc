@@ -143,3 +143,10 @@ print(int('5'))
 print('----------------------------')
 print('123.567'.find('.')) # 3
 print('----------------------------')
+arr = list(range(1, 11))
+print(arr)
+arr = arr[-20: ]
+print(arr)
+arr = arr[-5: ]
+print(arr)
+print('----------------------------')
