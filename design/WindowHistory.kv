@@ -34,7 +34,8 @@
             DisplayScroll:
                 HistoryLabel:
                     id: label_hist
-                    # text: ''.join([(str(i) + '\n') for i in range(100)])        
+                    # text: ''.join([(str(i) + '\n') for i in range(100)]) 
+                    # показать историю вычислений       
                     text: '\n\n'.join(reversed(settings().load_history()))        
         # -----------------------------------------------------------------               
         BoxLayout:
@@ -47,5 +48,6 @@
                 # размер шрифта
                 font_size: '30sp'
                 bold: True
+                # закрыть окно
                 on_release: root.dismiss()
         # -----------------------------------------------------------------
