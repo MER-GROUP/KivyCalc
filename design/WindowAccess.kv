@@ -3,10 +3,10 @@
 # импорт hex цветов
 #:import hex kivy.utils.get_color_from_hex
 
-# Модальное (всплывающе) окно калькулятора - Info
-<WindowInfo@ModalView>:
+# Окно калькулятора - Access
+<WindowAccess>:
     # размер виджета (окна)
-    size_hint: 0.9, 0.9
+    size_hint: 1, 1
 
     BoxLayout:
         orientation: 'vertical'
@@ -17,7 +17,7 @@
             # растояние между границей и вложенными виджетами 
             # padding: [0,5,0,0]
             Label:
-                text: 'INFO'
+                text: 'ACCESS'
                 # размер шрифта
                 font_size: '30sp'
                 bold: True
@@ -26,7 +26,7 @@
         # -----------------------------------------------------------------   
         BoxLayout:
             Label:
-                text: 'РАЗРАБОТЧИК И АВТОР:\n Максим Романенко (Red Alert) \n\nПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ:\n свободное\n\nИНСТРУМЕНТЫ РАЗРАБОТКИ:\n python (python.org), kivy (kivy.org),\n json (json.org), debian (debian.org),\n git (git-scm.com), vscode (code.visualstudio.com)\n\nКОНТАКТЫ:\n i@mer-group.ru, github.com/mer-group' 
+                text: 'Для работы программы нужно разрешить права доступа на чтение и запись файлов.' 
                 # размер шрифта
                 font_size: '20sp' if app.is_android else '10sp'
                 # автоматически переносить/растягивать текст {
@@ -45,5 +45,7 @@
                 # размер шрифта
                 font_size: '30sp'
                 bold: True
-                on_release: root.dismiss()
+                # on_release: root.dismiss()
+                # выход из программы
+                on_release: exit()
         # -----------------------------------------------------------------

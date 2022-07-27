@@ -31,6 +31,10 @@ if not 'android' == platform:
     # является ли ОС - android
     os_is_android = False
 # *****************************************************************************************
+# глобальная переменная
+# разрешен ли доступ на чтение и запись файлов
+is_access_open = True
+
 # если ОС Android, то загрузить следующие модули
 if 'android' == platform:
     # ----------------------------------------------------------------------
@@ -44,6 +48,7 @@ if 'android' == platform:
     def check_permissions(perms):
         for perm in perms:
             if check_permission(perm) != True:
+                is_access_open = False
                 return False
         return True
 
@@ -758,6 +763,14 @@ class Calc(BoxLayout):
             self.label_display_comment.text = self.label_display_comment.text[: -1]
             self.label_display.text = ''
             self.write_number = None if 0 == len(self.label_display.text) else self.label_display.text
+        elif (('' != self.label_display_comment.text) 
+            and (self.label_display_comment.text[-1] in '-+*/%')
+            and (1 < len(self.label_display.text))
+            ): 
+            self.label_display.text = self.label_display.text[: -1]
+            # self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)           
+            self.write_number = None if 0 == len(self.label_display.text) else self.label_display.text
+            self.label_display_comment.text += self.write_number  
         elif ('' != self.label_display.text):
             self.label_display.text = self.label_display.text[: -1]
             self.write_number = None if 0 == len(self.label_display.text) else self.label_display.text
@@ -801,14 +814,16 @@ class Calc(BoxLayout):
     # 2. записываем в переменную previous_operand предыдущий операнд
     # 3. записываем в переменную operand текущий операнд
     # 4. записать в список (массив) итоговую переменную write_number и примененный operand
-    # 5. выполнить вычисления выражения
-    # 6. результат вычесления вывести на дисплей калькулятора (label_display)
-    # 7. добавляем в историю label_display_comment текущий операнд
-    # 8. результат вычесления добавить в историю калькулятора (label_display_comment)
-    # 9. записываем в переменную write_number результат вычесления
-    # 10. очищаем массив данных калькулятора calc_arr
-    # 11. помечаем что кнопка equal была нажата (push_equal = True)
-    # 12. обрезать историю label_display_comment если она длинная
+    # 5. записать вычисления в историю
+    # 6. выполнить вычисления выражения
+    # 7. результат вычесления вывести на дисплей калькулятора (label_display)
+    # 8. добавляем в историю label_display_comment текущий операнд
+    # 9. результат вычесления добавить в историю калькулятора (label_display_comment)
+    # 10. записываем в переменную write_number результат вычесления
+    # 11. очищаем массив данных калькулятора calc_arr
+    # 12. помечаем что кнопка equal была нажата (push_equal = True)
+    # 13. обрезать историю label_display_comment если она длинная
+    # 14. записать ответ вычислений в историю
     def equal(self):
         if (self.write_number is None) and (self.operand is None): # 1
             return
@@ -832,7 +847,10 @@ class Calc(BoxLayout):
         self.calc_arr.append(self.write_number) # 4
         self.calc_arr.append(self.operand)
 
-        res = str() # 5
+        history_arr = Settings().load_history() # 5
+        history_arr.append(''.join(self.calc_arr))
+
+        res = str() # 6
         for i in self.calc_arr: 
             if (i in '-+*/%'):
                 res += i
@@ -841,13 +859,15 @@ class Calc(BoxLayout):
             else:
                 res += i
                 try:
-                    op1 = Parse().back_to_operand(res)[-1]
-                    op2 = Parse().back_to_operand(res)[-2]
+                    op1 = Parse().back_to_operand_with_exponent(res)[-1]
+                    op2 = Parse().back_to_operand_with_exponent(res)[-2]
                 except (IndexError):
-                    op1 = Parse().back_to_operand(res)[-1]
+                    op1 = Parse().back_to_operand_with_exponent(res)[-1]
                     op2 = ''
                 operand = op2 if op2 in '-+*/%' else op1
-             
+                round_str = Settings().load_settings()['round']
+                round_str = Parse().round_decimal(int(round_str))
+
                 if (('' != res) 
                     and (2 == len(Parse().split_with_operand_and_exponent(res)))
                     and ('%' == operand)
@@ -857,31 +877,56 @@ class Calc(BoxLayout):
                     # res = str(eval(res))
                     a, b = Parse().split_with_operand_and_exponent(res)
                     procent, digit = Decimal(a), Decimal(b)
-                    res = str(procent * digit / 100)
+                    res = procent * digit / 100
+                    if ('e' in str(res)) or ('E' in str(res)):
+                        res = str(res)
+                    else:
+                        res = str(res.quantize(Decimal(round_str)))
+                    res = Parse().del_ends_zero(res)
                 else:
                     # res = str(eval(res))
                     if ('' != res) and (2 == len(Parse().split_with_operand_and_exponent(res))):
                         a, b = Parse().split_with_operand_and_exponent(res)
                         x, y = Decimal(a), Decimal(b)
                         if ('-' == operand):
-                            res = str(x - y)
+                            res = x - y
+                            if ('e' in str(res)) or ('E' in str(res)):
+                                res = str(res)
+                            else:
+                                res = str(res.quantize(Decimal(round_str)))
                         elif ('+' == operand):
-                            res = str(x + y)
+                            res = x + y
+                            if ('e' in str(res)) or ('E' in str(res)):
+                                res = str(res)
+                            else:
+                                res = str(res.quantize(Decimal(round_str)))
                         elif ('*' == operand):
-                            res = str(x * y)
+                            res = x * y
+                            if ('e' in str(res)) or ('E' in str(res)):
+                                res = str(res)
+                            else:
+                                res = str(res.quantize(Decimal(round_str)))
                         elif ('/' == operand):
-                            res = str(x / y)
+                            res = x / y
+                            if ('e' in str(res)) or ('E' in str(res)):
+                                res = str(res)
+                            else:
+                                res = str(res.quantize(Decimal(round_str)))
+                        res = Parse().del_ends_zero(res)
 
-        self.label_display.text = res # 6
-        self.label_display_comment.text += str(self.operand) # 7
-        self.label_display_comment.text += res # 8
-        self.write_number = res # 9
-        self.calc_arr.clear() # 10
-        self.push_equal = True # 11
+        self.label_display.text = res # 7
+        self.label_display_comment.text += str(self.operand) # 8
+        self.label_display_comment.text += res # 9
+        self.write_number = res # 10
+        self.calc_arr.clear() # 11
+        self.push_equal = True # 12
 
-        # 12
+        # 13
         self.label_display_comment.text = Parse().history_trim(self.label_display_comment.text,
                                                                 limit_history)
+
+        history_arr[-1] += res # 14
+        Settings().save_history(history_arr)
 
         # test
         print('------------------------------------------------')
@@ -927,6 +972,12 @@ class Calc(BoxLayout):
     pass
     # ---------------------------------------------------------------------------
 # *****************************************************************************************
+# Модальное окно программы
+# Если нет прав доступа на чтение и запись
+# будет выведено это окно
+class WindowAccess(BoxLayout):
+    pass
+# *****************************************************************************************
 # Окно программы
 class CalcApp(App):
     # ---------------------------------------------------------------------------
@@ -943,12 +994,28 @@ class CalcApp(App):
     # ---------------------------------------------------------------------------
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        # проверка существования файла настроек json
-        if not (file.file_exists('./settings.json', __file__)):
-            Settings().update_settings(round='2', hist='999', vibro='0.4')
+        # проверка существования файла настроек и истории json
+        if (is_access_open):
+            if not (file.file_exists_dir('./json/', __file__)):
+                file.file_create_dir('./json/', __file__)
+            if not (file.file_exists('./json/settings.json', __file__)):
+                Settings().update_settings(round='2', hist='999', vibro='0.4')
+            if not (file.file_exists('./json/history.json', __file__)):
+                Settings().update_history()
     # ---------------------------------------------------------------------------
     def build(self):
-        return Calc()
+        # если права доступа н открыты то показать WindowAccess
+        # иначе запустить калькулятор
+        if not (is_access_open):
+            # filename = str(Path(join(dirname(__file__), './design/WindowAccess.kv')))
+            # return Builder.load_file(filename)
+            return WindowAccess()
+        else:
+            return Calc()
+    # ---------------------------------------------------------------------------
+    # отключение кнопки при нажатии
+    def button_disable(self, buttton):
+        buttton.disabled = True
     # ---------------------------------------------------------------------------
 # *****************************************************************************************
 # запуск программы
