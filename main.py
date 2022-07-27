@@ -978,10 +978,12 @@ class CalcApp(App):
     # ---------------------------------------------------------------------------
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        # проверка существования файла настроек json
+        # проверка существования файла настроек и истории json
         if (is_access_open):
-            if not (file.file_exists('./settings.json', __file__)):
+            if not (file.file_exists('./json/settings.json', __file__)):
                 Settings().update_settings(round='2', hist='999', vibro='0.4')
+            if not (file.file_exists('./json/history.json', __file__)):
+                Settings().update_history()
     # ---------------------------------------------------------------------------
     def build(self):
         # если права доступа н открыты то показать WindowAccess
