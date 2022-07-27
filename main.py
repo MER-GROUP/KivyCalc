@@ -917,7 +917,7 @@ class Calc(BoxLayout):
         self.label_display_comment.text = Parse().history_trim(self.label_display_comment.text,
                                                                 limit_history)
 
-        history_arr[-1] += res # 13
+        history_arr[-1] += res # 14
         Settings().save_history(history_arr)
 
         # test
