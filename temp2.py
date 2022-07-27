@@ -24,21 +24,27 @@ history = [
 
 
 
-# data_again_read = None
+data_again_read = None
 
-# # считываем из файла
-# with open('settings.json', 'r') as file:
-#     data_again_read = json.load(file)
-#     # print(data_again_read[0]["vibro"])
-#     # print(data_again_read)
+# считываем из файла
+with open('history.json', 'r') as file:
+    data_again_read = json.load(file)
+    # print(data_again_read[0]["vibro"])
+    # print(data_again_read)
+
+print(data_again_read)
+
+# data_again_read[0]['vibro'] = '0.7'
+# data_again_read[0] = '999'
 
 # print(data_again_read)
-
-# # data_again_read[0]['vibro'] = '0.7'
-# data_again_read['vibro'] = '0.4'
-
-# print(data_again_read)
+# data_again_read = list()
+print(data_again_read)
+data_again_read = list(data_again_read)
+data_again_read.append('555')
+data_again_read.append('666')
+print(data_again_read)
 
 # # записываем в файл данные в формате json
 with open('history.json', 'w') as file:
-    json.dump(history, file, indent=4, sort_keys=True)
+    json.dump(data_again_read, file, indent=4, sort_keys=True)

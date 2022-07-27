@@ -7,7 +7,9 @@ import json
 from merlib.fs.File import File
 file = File()
 # определить верную директорию файла настроек
-file_settings = file.file_init_name('', './settings.json', __file__)
+file_settings = file.file_init_name('', './json/settings.json', __file__)
+# определить верную директорию файла истории
+file_history = file.file_init_name('', './json/history.json', __file__)
 # *****************************************************************************************
 # Settings - настройки программы через json
 class Settings:
