@@ -988,6 +988,7 @@ class CalcApp(App):
         super().__init__(**kwargs)
         # проверка существования файла настроек и истории json
         if (is_access_open):
+            file.file_create_dir('./json/', __file__)
             if not (file.file_exists('./json/settings.json', __file__)):
                 Settings().update_settings(round='2', hist='999', vibro='0.4')
             if not (file.file_exists('./json/history.json', __file__)):
