@@ -186,7 +186,8 @@
                 disabled: False if len(settings().load_history()) else True
                 # очистить историю вычислений
                 on_release: settings().update_history() 
-                
+                # отключение кнопки при нажатии
+                on_release: app.button_disable(self)
         # -----------------------------------------------------------------               
         BoxLayout:
             # размер виджета
