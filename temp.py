@@ -150,3 +150,7 @@ print(arr)
 arr = arr[-5: ]
 print(arr)
 print('----------------------------')
+arr = list(range(1, 11))
+print(arr)
+print(*reversed(arr))
+print('----------------------------')

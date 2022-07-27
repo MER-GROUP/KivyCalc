@@ -3,6 +3,9 @@
 # импорт hex цветов
 #:import hex kivy.utils.get_color_from_hex
 
+# Settings - настройки программы через json
+#:import settings Settings.Settings
+
 # Модальное (всплывающе) окно калькулятора - History
 <WindowHistory@ModalView>:
     # размер виджета (окна)
@@ -31,7 +34,8 @@
             DisplayScroll:
                 HistoryLabel:
                     id: label_hist
-                    text: ''.join([(str(i) + '\n') for i in range(100)])        
+                    # text: ''.join([(str(i) + '\n') for i in range(100)])        
+                    text: '\n\n'.join(reversed(settings().load_history()))        
         # -----------------------------------------------------------------               
         BoxLayout:
             # размер виджета
