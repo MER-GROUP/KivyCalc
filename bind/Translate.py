@@ -48,6 +48,26 @@ class Translate:
         'history': [
             'ИСТОРИЯ',
             'HISTORY'
+        ],
+        'clear': [
+            'ОЧИСТИТЬ ИСТОРИЮ',
+            'CLEAR HISTORY'
+        ],
+        'vibro': [
+            'ВИБРАЦИОННЫЙ ОТКЛИК',
+            'VIBRATION RESPONSE'
+        ],
+        'length': [
+            'ДЛИНА ИСТОРИИ',
+            'HISTORY LENGTH'
+        ],
+        'round': [
+            'ОКРУГЛЕНИЕ ЧИСЕЛ',
+            'ROUNDING NUMBERS'
+        ],
+        'settings': [
+            'НАСТРОЙКИ',
+            'SETTINGS'
         ]
     }
     # ---------------------------------------------------------------------------

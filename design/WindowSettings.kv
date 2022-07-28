@@ -10,6 +10,13 @@
 # Settings - настройки программы через json
 #:import settings Settings.Settings
 
+# Translate - автоматическая локализация программы на родной язык
+#:import translate bind.Translate.Translate
+
+# Работа с директориями и файлами ОС
+# from merlib.fs.File import File
+#:import file merlib.fs.File.File
+
 # Модальное (всплывающе) окно калькулятора - Settings
 <WindowSettings@ModalView>:
     # размер виджета (окна)
@@ -22,7 +29,8 @@
             # растояние между границей и вложенными виджетами 
             # padding: [0,5,0,0]
             Label:
-                text: 'SETTINGS'
+                # text: 'SETTINGS'
+                text: translate().get_translate(file().file_get_local_language(), 'settings')
                 # размер шрифта
                 font_size: '30sp'
                 bold: True
@@ -31,7 +39,8 @@
         # -----------------------------------------------------------------
         BoxLayout:
             Label:
-                text: 'ROUNDING NUMBERS'
+                # text: 'ROUNDING NUMBERS'
+                text: translate().get_translate(file().file_get_local_language(), 'round')
                 # размер шрифта
                 font_size: '20sp'
                 halign: 'center'
@@ -74,7 +83,8 @@
         # -----------------------------------------------------------------
         BoxLayout:
             Label:
-                text: 'HISTORY LENGTH'
+                # text: 'HISTORY LENGTH'
+                text: translate().get_translate(file().file_get_local_language(), 'length')
                 # размер шрифта
                 font_size: '20sp'
                 halign: 'center'
@@ -121,7 +131,8 @@
             width: 0
             height: 0
             Label:
-                text: 'VIBRATION RESPONSE' if app.is_android else ''
+                # text: 'VIBRATION RESPONSE' if app.is_android else ''
+                text: translate().get_translate(file().file_get_local_language(), 'vibro') if app.is_android else ''
                 # размер шрифта
                 font_size: '20sp'
                 halign: 'center'
@@ -179,7 +190,8 @@
             padding: [10,5,10,5]
             Button:
                 id: button_clear
-                text: 'CLEAR HISTORY'
+                # text: 'CLEAR HISTORY'
+                text: translate().get_translate(file().file_get_local_language(), 'clear')
                 # размер шрифта
                 font_size: '20sp'
                 bold: True 
@@ -199,7 +211,8 @@
             # растояние между границей и вложенными виджетами 
             padding: [10,0,10,10]
             Button:
-                text: 'CLOSE'
+                # text: 'CLOSE'
+                text: translate().get_translate(file().file_get_local_language(), 'close')
                 # размер шрифта
                 font_size: '30sp'
                 bold: True
