@@ -224,7 +224,7 @@ class Calc(BoxLayout):
                 or ('0.' == self.label_display.text))
             and (2 == len(self.label_display.text))
             ):
-            if (2 < len(self.label_display_comment.text)):
+            if (2 <= len(self.label_display_comment.text)):
                 self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)
                 self.label_display_comment.text += str(self.write_number)
             else:
