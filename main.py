@@ -91,6 +91,8 @@ from merlib.fs.File import File
 file = File()
 # Design - манипуляции (действия) с объектами kivy
 from bind.Design import Design
+# Hardware - манипуляции (действия) с железом устройства
+from bind.Hardware import Hardware
 # *****************************************************************************************
 # Действия программы
 class Calc(BoxLayout):
