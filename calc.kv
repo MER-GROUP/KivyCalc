@@ -66,16 +66,16 @@
         ButtonSupport:
             # размер виджета (кнопки)
             size_hint: 0.8, 1
-            # text: "HISTORY"
-            text: translate().get_translate(file().file_get_local_language(), 'history')
-            on_press: Factory.WindowHistory().open()
+            # text: "INFO"
+            text: translate().get_translate(file().file_get_local_language(), 'info')
+            on_press: Factory.WindowInfo().open()
             on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
         ButtonSupport:
             # размер виджета (кнопки)
             size_hint: 1, 1
-            # text: "INFO"
-            text: translate().get_translate(file().file_get_local_language(), 'info')
-            on_press: Factory.WindowInfo().open()
+            # text: "HISTORY"
+            text: translate().get_translate(file().file_get_local_language(), 'history')
+            on_press: Factory.WindowHistory().open()
             on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
     GridLayout:
         cols: 4
