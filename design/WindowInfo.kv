@@ -3,6 +3,20 @@
 # импорт hex цветов
 #:import hex kivy.utils.get_color_from_hex
 
+# decimal - работа с десятичными числами
+# from decimal import Decimal as dec
+#:import dec decimal.Decimal
+
+# Settings - настройки программы через json
+#:import settings Settings.Settings
+
+# Translate - автоматическая локализация программы на родной язык
+#:import translate bind.Translate.Translate
+
+# Работа с директориями и файлами ОС
+# from merlib.fs.File import File
+#:import file merlib.fs.File.File
+
 # Модальное (всплывающе) окно калькулятора - Info
 <WindowInfo@ModalView>:
     # размер виджета (окна)
@@ -17,7 +31,8 @@
             # растояние между границей и вложенными виджетами 
             # padding: [0,5,0,0]
             Label:
-                text: 'INFO'
+                # text: 'INFO'
+                text: translate().get_translate(file().file_get_local_language(), 'info')
                 # размер шрифта
                 font_size: '30sp'
                 bold: True
@@ -26,7 +41,10 @@
         # -----------------------------------------------------------------   
         BoxLayout:
             Label:
-                text: 'РАЗРАБОТЧИК И АВТОР:\n Максим Романенко (Red Alert) \n\nПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ:\n свободное\n\nИНСТРУМЕНТЫ РАЗРАБОТКИ:\n python (python.org), kivy (kivy.org),\n json (json.org), debian (debian.org),\n git (git-scm.com), vscode (code.visualstudio.com)\n\nКОНТАКТЫ:\n i@mer-group.ru, github.com/mer-group' 
+                markup: True
+                # text: 'РАЗРАБОТЧИК И АВТОР:\n Максим Романенко (Red Alert) \n\nПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ:\n свободное\n\nИНСТРУМЕНТЫ РАЗРАБОТКИ:\n python (python.org), kivy (kivy.org),\n json (json.org), debian (debian.org),\n git (git-scm.com), vscode (code.visualstudio.com)\n\nКОНТАКТЫ:\n i@mer-group.ru, github.com/mer-group' 
+                # text: translate().get_translate('en', 'about')
+                text: translate().get_translate(file().file_get_local_language(), 'about')
                 # размер шрифта
                 font_size: '20sp' if app.is_android else '10sp'
                 # автоматически переносить/растягивать текст {
@@ -41,9 +59,12 @@
             # растояние между границей и вложенными виджетами 
             padding: [10,0,10,10]
             Button:
-                text: 'CLOSE'
+                # text: 'CLOSE'
+                text: translate().get_translate(file().file_get_local_language(), 'close')
                 # размер шрифта
                 font_size: '30sp'
                 bold: True
                 on_release: root.dismiss()
+                # вибрация устройства при нажатии кнопки
+                on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
         # -----------------------------------------------------------------

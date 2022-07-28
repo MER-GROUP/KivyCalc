@@ -10,6 +10,13 @@
 # Settings - настройки программы через json
 #:import settings Settings.Settings
 
+# Translate - автоматическая локализация программы на родной язык
+#:import translate bind.Translate.Translate
+
+# Работа с директориями и файлами ОС
+# from merlib.fs.File import File
+#:import file merlib.fs.File.File
+
 # Модальное (всплывающе) окно калькулятора - Settings
 <WindowSettings@ModalView>:
     # размер виджета (окна)
@@ -22,7 +29,8 @@
             # растояние между границей и вложенными виджетами 
             # padding: [0,5,0,0]
             Label:
-                text: 'SETTINGS'
+                # text: 'SETTINGS'
+                text: translate().get_translate(file().file_get_local_language(), 'settings')
                 # размер шрифта
                 font_size: '30sp'
                 bold: True
@@ -31,7 +39,8 @@
         # -----------------------------------------------------------------
         BoxLayout:
             Label:
-                text: 'ROUNDING NUMBERS'
+                # text: 'ROUNDING NUMBERS'
+                text: translate().get_translate(file().file_get_local_language(), 'round')
                 # размер шрифта
                 font_size: '20sp'
                 halign: 'center'
@@ -74,7 +83,8 @@
         # -----------------------------------------------------------------
         BoxLayout:
             Label:
-                text: 'HISTORY LENGTH'
+                # text: 'HISTORY LENGTH'
+                text: translate().get_translate(file().file_get_local_language(), 'length')
                 # размер шрифта
                 font_size: '20sp'
                 halign: 'center'
@@ -121,7 +131,8 @@
             width: 0
             height: 0
             Label:
-                text: 'VIBRATION RESPONSE' if app.is_android else ''
+                # text: 'VIBRATION RESPONSE' if app.is_android else ''
+                text: translate().get_translate(file().file_get_local_language(), 'vibro') if app.is_android else ''
                 # размер шрифта
                 font_size: '20sp'
                 halign: 'center'
@@ -150,7 +161,7 @@
                     # value: 0.4
                     # value: float(app.setting_vibro)
                     value: float(settings().load_settings()['vibro'])
-                    step: 0.1
+                    step: 0.01
                     orientation: 'horizontal'
             BoxLayout:
                 # размер виджета
@@ -163,7 +174,8 @@
                 Label:
                     # присвоение значения slider в label
                     # text: '{}'.format(dec(slider_vibro.value)) if app.is_android else ''
-                    text: '{}'.format(dec(slider_vibro.value).quantize(dec('1.0'))) if app.is_android else ''
+                    # text: '{}'.format(dec(slider_vibro.value).quantize(dec('1.0'))) if app.is_android else ''
+                    text: '{}'.format(dec(slider_vibro.value).quantize(dec('1.00'))) if app.is_android else ''
                     # размер шрифта
                     font_size: '30sp'
                     # жирность шрифта
@@ -178,7 +190,8 @@
             padding: [10,5,10,5]
             Button:
                 id: button_clear
-                text: 'CLEAR HISTORY'
+                # text: 'CLEAR HISTORY'
+                text: translate().get_translate(file().file_get_local_language(), 'clear')
                 # размер шрифта
                 font_size: '20sp'
                 bold: True 
@@ -188,6 +201,9 @@
                 on_release: settings().update_history() 
                 # отключение кнопки при нажатии
                 on_release: app.button_disable(self)
+                # вибрация устройства при нажатии кнопки
+                # on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
+                on_press: app.vibrator_android(dec(slider_vibro.value))
         # -----------------------------------------------------------------               
         BoxLayout:
             # размер виджета
@@ -195,7 +211,8 @@
             # растояние между границей и вложенными виджетами 
             padding: [10,0,10,10]
             Button:
-                text: 'CLOSE'
+                # text: 'CLOSE'
+                text: translate().get_translate(file().file_get_local_language(), 'close')
                 # размер шрифта
                 font_size: '30sp'
                 bold: True
@@ -203,4 +220,7 @@
                 on_release: settings().update_settings(round=str(int(slider_round.value)), hist=str(int(slider_hist.value)), vibro=str(float(slider_vibro.value)))
                 # закрыть модальное окно
                 on_release: root.dismiss()
+                # вибрация устройства при нажатии кнопки
+                # on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
+                on_press: app.vibrator_android(dec(slider_vibro.value))
         # -----------------------------------------------------------------

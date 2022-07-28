@@ -39,7 +39,7 @@ is_access_open = True
 if 'android' == platform:
     # ----------------------------------------------------------------------
     # модуль plyer - работа с железом устройства
-    from plyer import vibrator
+    # from plyer import vibrator
     # ----------------------------------------------------------------------
     # permissions - права доступа на чтение и запись файлов
     from android.permissions import Permission, request_permissions, check_permission
@@ -89,6 +89,10 @@ from Settings import Settings
 # Работа с директориями и файлами ОС
 from merlib.fs.File import File
 file = File()
+# Design - манипуляции (действия) с объектами kivy
+from bind.Design import Design
+# Hardware - манипуляции (действия) с железом устройства
+from bind.Hardware import Hardware
 # *****************************************************************************************
 # Действия программы
 class Calc(BoxLayout):
@@ -979,7 +983,7 @@ class WindowAccess(BoxLayout):
     pass
 # *****************************************************************************************
 # Окно программы
-class CalcApp(App):
+class CalcApp(App, Design, Hardware):
     # ---------------------------------------------------------------------------
     '''app widget'''
     # ---------------------------------------------------------------------------
@@ -1012,10 +1016,6 @@ class CalcApp(App):
             return WindowAccess()
         else:
             return Calc()
-    # ---------------------------------------------------------------------------
-    # отключение кнопки при нажатии
-    def button_disable(self, buttton):
-        buttton.disabled = True
     # ---------------------------------------------------------------------------
 # *****************************************************************************************
 # запуск программы
