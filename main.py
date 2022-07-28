@@ -39,7 +39,7 @@ is_access_open = True
 if 'android' == platform:
     # ----------------------------------------------------------------------
     # модуль plyer - работа с железом устройства
-    from plyer import vibrator
+    # from plyer import vibrator
     # ----------------------------------------------------------------------
     # permissions - права доступа на чтение и запись файлов
     from android.permissions import Permission, request_permissions, check_permission
@@ -981,7 +981,7 @@ class WindowAccess(BoxLayout):
     pass
 # *****************************************************************************************
 # Окно программы
-class CalcApp(App, Design):
+class CalcApp(App, Design, Hardware):
     # ---------------------------------------------------------------------------
     '''app widget'''
     # ---------------------------------------------------------------------------
