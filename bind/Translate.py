@@ -15,7 +15,7 @@ class Translate:
                     'json (json.org), debian (debian.org),\n' +
                     'vscode (code.visualstudio.com),\n' +
                     'git (git-scm.com)[/color]\n' +
-                '[b][color=#C0C0C0]ИСХОДНЫЙ КОД ПРОГРАММЫ:[/color][/b]\n' +
+                '[b][color=#C0C0C0]КОД ПРОГРАММЫ:[/color][/b]\n' +
                     '[color=#808080]github.com/mer-group/kivycalc[/color]\n' +
                 '[b][color=#C0C0C0]КОНТАКТЫ:[/color][/b]\n' +
                     '[color=#808080]i@mer-group.ru\n' +
@@ -31,7 +31,7 @@ class Translate:
                     'json (json.org), debian (debian.org),\n' +
                     'vscode (code.visualstudio.com),\n' +
                     'git (git-scm.com)[/color]\n' +
-                '[b][color=#C0C0C0]THE SOURCE CODE OF THE PROGRAM:[/color][/b]\n' +
+                '[b][color=#C0C0C0]PROGRAM CODE:[/color][/b]\n' +
                     '[color=#808080]github.com/mer-group/kivycalc[/color]\n' +
                 '[b][color=#C0C0C0]CONTACTS:[/color][/b]\n' +
                     '[color=#808080]i@mer-group.ru\n' +
