@@ -3,6 +3,10 @@
 # импорт hex цветов
 #:import hex kivy.utils.get_color_from_hex
 
+# decimal - работа с десятичными числами
+# from decimal import Decimal as dec
+#:import dec decimal.Decimal
+
 # Settings - настройки программы через json
 #:import settings Settings.Settings
 
@@ -50,4 +54,6 @@
                 bold: True
                 # закрыть модальное окно
                 on_release: root.dismiss()
+                # вибрация устройства при нажатии кнопки
+                on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
         # -----------------------------------------------------------------

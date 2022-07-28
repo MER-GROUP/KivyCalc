@@ -188,6 +188,9 @@
                 on_release: settings().update_history() 
                 # отключение кнопки при нажатии
                 on_release: app.button_disable(self)
+                # вибрация устройства при нажатии кнопки
+                # on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
+                on_press: app.vibrator_android(dec(slider_vibro.value))
         # -----------------------------------------------------------------               
         BoxLayout:
             # размер виджета
@@ -203,4 +206,7 @@
                 on_release: settings().update_settings(round=str(int(slider_round.value)), hist=str(int(slider_hist.value)), vibro=str(float(slider_vibro.value)))
                 # закрыть модальное окно
                 on_release: root.dismiss()
+                # вибрация устройства при нажатии кнопки
+                # on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
+                on_press: app.vibrator_android(dec(slider_vibro.value))
         # -----------------------------------------------------------------
