@@ -4,38 +4,38 @@ class Translate:
     # ---------------------------------------------------------------------------
     # словарь руского и английского языка
     translate = {
-        'info': [
-            'РАЗРАБОТЧИК И АВТОР:\n/\
-                    Максим Романенко (Red Alert)\n/\
-                ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ:\n/\
-                    свободное и распространяется\n/\
-                    по лицензии MIT\n/\
-                ИНСТРУМЕНТЫ РАЗРАБОТКИ:\n/\
-                    python (python.org), kivy (kivy.org),\n/\
-                    json (json.org), debian (debian.org),\n/\
-                    vscode (code.visualstudio.com),\n/\
-                    git (git-scm.com)\n/\
-                ИСХОДНЫЙ КОД ПРОГРАММЫ:\n/\
-                    github.com/mer-group/kivycalc\n/\
-                КОНТАКТЫ:\n/\
-                    i@mer-group.ru\n/\
-                    github.com/mer-group',
+        'about': [
+            '[b][color=#C0C0C0]РАЗРАБОТЧИК И АВТОР:[/color][/b]\n' +
+                    '[color=#808080]Максим Романенко (Red Alert)[/color]\n' +
+                '[b][color=#C0C0C0]ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ:[/color][/b]\n' +
+                    '[color=#808080]свободное и распространяется\n' +
+                    'по лицензии MIT[/color]\n' +
+                '[b][color=#C0C0C0]ИНСТРУМЕНТЫ РАЗРАБОТКИ:[/color][/b]\n' +
+                    '[color=#808080]python (python.org), kivy (kivy.org),\n' +
+                    'json (json.org), debian (debian.org),\n' +
+                    'vscode (code.visualstudio.com),\n' +
+                    'git (git-scm.com)[/color]\n' +
+                '[b][color=#C0C0C0]ИСХОДНЫЙ КОД ПРОГРАММЫ:[/color][/b]\n' +
+                    '[color=#808080]github.com/mer-group/kivycalc[/color]\n' +
+                '[b][color=#C0C0C0]КОНТАКТЫ:[/color][/b]\n' +
+                    '[color=#808080]i@mer-group.ru\n' +
+                    'github.com/mer-group[/color]',
 
-            'DEVELOPER AND AUTHOR:\n/\
-                    Maxim Ramanenka (Red Alert)\n/\
-                SOFTWARE:\n/\
-                    free and distributed\n/\
-                    under the MIT license\n/\
-                DEVELOPMENT TOOLS:\n/\
-                    python (python.org), kivy (kivy.org),\n/\
-                    json (json.org), debian (debian.org),\n/\
-                    vscode (code.visualstudio.com),\n/\
-                    git (git-scm.com)\n/\
-                THE SOURCE CODE OF THE PROGRAM:\n/\
-                    github.com/mer-group/kivycalc\n/\
-                CONTACTS:\n/\
-                    i@mer-group.ru\n/\
-                    github.com/mer-group'
+            '[b][color=#C0C0C0]DEVELOPER AND AUTHOR:[/color][/b]\n' +
+                    '[color=#808080]Maxim Ramanenka (Red Alert)[/color]\n' +
+                '[b][color=#C0C0C0]SOFTWARE:[/color][/b]\n' +
+                    '[color=#808080]free and distributed\n' +
+                    'under the MIT license[/color]\n' +
+                '[b][color=#C0C0C0]DEVELOPMENT TOOLS:[/color][/b]\n' +
+                    '[color=#808080]python (python.org), kivy (kivy.org),\n' +
+                    'json (json.org), debian (debian.org),\n' +
+                    'vscode (code.visualstudio.com),\n' +
+                    'git (git-scm.com)[/color]\n' +
+                '[b][color=#C0C0C0]THE SOURCE CODE OF THE PROGRAM:[/color][/b]\n' +
+                    '[color=#808080]github.com/mer-group/kivycalc[/color]\n' +
+                '[b][color=#C0C0C0]CONTACTS:[/color][/b]\n' +
+                    '[color=#808080]i@mer-group.ru\n' +
+                    'github.com/mer-group[/color]'
         ]
     }
     # ---------------------------------------------------------------------------
