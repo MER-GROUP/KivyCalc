@@ -1,9 +1,9 @@
 # *****************************************************************************************
 # platform - определение операционки
-from kivy.utils import platform as __platform
+from kivy.utils import platform
 # *****************************************************************************************
 # если ОС Android, то загрузить следующие модули
-if 'android' == __platform:
+if 'android' == platform:
     # ---------------------------------------------------------------------------
     # autoclass - импорт java классов
     # JavaException - работа с исключениями java классов
@@ -22,7 +22,7 @@ class Hardware:
     # ---------------------------------------------------------------------------
     # вибрация устройство на ОС - Android
     def vibrator_android(self, n):
-        if 'android' == __platform:
+        if 'android' == platform:
             try:
                 vibrator.vibrate(n)
             except JavaException as e:

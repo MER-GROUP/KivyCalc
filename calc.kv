@@ -2,6 +2,13 @@
 # для вызова модальных окон
 #:import Factory kivy.factory.Factory
 
+# decimal - работа с десятичными числами
+# from decimal import Decimal as dec
+#:import dec decimal.Decimal
+
+# Settings - настройки программы через json
+#:import settings Settings.Settings
+
 # Дизайн калькулятора
 <Calc>:
     # vars
@@ -56,6 +63,7 @@
         ButtonBase:
             text: '1'
             on_press: root.write_digit(self)
+            on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
         ButtonBase:
             text: '2'
             on_press: root.write_digit(self)
