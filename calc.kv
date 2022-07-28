@@ -1,4 +1,5 @@
 #:kivy 2.0.0
+
 # для вызова модальных окон
 #:import Factory kivy.factory.Factory
 
@@ -8,6 +9,13 @@
 
 # Settings - настройки программы через json
 #:import settings Settings.Settings
+
+# Translate - автоматическая локализация программы на родной язык
+#:import translate bind.Translate.Translate
+
+# Работа с директориями и файлами ОС
+# from merlib.fs.File import File
+#:import file merlib.fs.File.File
 
 # Дизайн калькулятора
 <Calc>:
@@ -49,15 +57,18 @@
         orientation: 'horizontal'
         size_hint: 1, 0.1
         ButtonSupport:
-            text: "SETTINGS"
+            # text: "SETTINGS"
+            text: translate().get_translate(file().file_get_local_language(), 'settings')
             on_press: Factory.WindowSettings().open()
             on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
         ButtonSupport:
-            text: "HISTORY"
+            # text: "HISTORY"
+            text: translate().get_translate(file().file_get_local_language(), 'history')
             on_press: Factory.WindowHistory().open()
             on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
         ButtonSupport:
-            text: "INFO"
+            # text: "INFO"
+            text: translate().get_translate(file().file_get_local_language(), 'info')
             on_press: Factory.WindowInfo().open()
             on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
     GridLayout:
