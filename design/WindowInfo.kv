@@ -46,7 +46,8 @@
                 # text: translate().get_translate('en', 'about')
                 text: translate().get_translate(file().file_get_local_language(), 'about')
                 # размер шрифта
-                font_size: '20sp' if app.is_android else '10sp'
+                # font_size: '20sp' if app.is_android else '10sp'
+                font_size: '18sp' if app.is_android else '10sp'
                 # автоматически переносить/растягивать текст {
                 text_size: self.size
                 halign: 'center'

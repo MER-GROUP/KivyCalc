@@ -224,7 +224,7 @@ class Calc(BoxLayout):
                 or ('0.' == self.label_display.text))
             and (2 == len(self.label_display.text))
             ):
-            if (2 < len(self.label_display_comment.text)):
+            if (2 <= len(self.label_display_comment.text)):
                 self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)
                 self.label_display_comment.text += str(self.write_number)
             else:
@@ -1006,7 +1006,7 @@ class CalcApp(App, Design, Hardware):
             if not (file.file_exists_dir('./json/', __file__)):
                 file.file_create_dir('./json/', __file__)
             if not (file.file_exists('./json/settings.json', __file__)):
-                Settings().update_settings(round='2', hist='999', vibro='0.4')
+                Settings().update_settings(round='2', hist='999', vibro='0.05')
             if not (file.file_exists('./json/history.json', __file__)):
                 Settings().update_history()
     # ---------------------------------------------------------------------------
