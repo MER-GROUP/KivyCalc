@@ -36,6 +36,14 @@ class Translate:
                 '[b][color=#C0C0C0]CONTACTS:[/color][/b]\n' +
                     '[color=#808080]i@mer-group.ru\n' +
                     'github.com/mer-group[/color]'
+        ],
+        'info': [
+            'ИНФО',
+            'INFO'
+        ],
+        'close': [
+            'ЗАКРЫТЬ',
+            'CLOSE'
         ]
     }
     # ---------------------------------------------------------------------------
