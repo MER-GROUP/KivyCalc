@@ -49,14 +49,20 @@ class Translate:
     # ---------------------------------------------------------------------------
     # переводит строку в английский или русский язык
     def get_translate(self, lang: str, name: str) -> str:
-        if (lang.lower() in 'russianрусский'):
-            return self.translate[name][0]
-        else:
-            return self.translate[name][1]
+        try:
+            if (lang.lower() in 'russianрусский'):
+                return self.translate[name][0]
+            else:
+                return self.translate[name][1]
+        except (KeyError):
+            return 'KeyError'
     # ---------------------------------------------------------------------------
 # *****************************************************************************************
 # тесты
 # если не модуль то выполнить программу
 if __name__ == '__main__':
-    pass
+    print('-------------------------------------')
+    print('+++++get_translate+++++')
+    print(Translate().get_translate('en', 'info'))
+    print(Translate().get_translate('en', 'error'))
 # *****************************************************************************************
