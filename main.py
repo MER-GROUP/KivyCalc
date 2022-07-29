@@ -1,5 +1,5 @@
 # *****************************************************************************************
-# KivyCalc - простой калькулятор для простых иповседневных вычеслений
+# KivyCalc - простой калькулятор для простых и повседневных вычеслений
 # *****************************************************************************************
 # версия проекта
 __version__ = '3.33'
@@ -152,7 +152,7 @@ class Calc(BoxLayout):
             and ('0' == digit_begin)
             ):
             # test ##############################
-            print('!!!!!!! RETURN 1 !!!!!!!')####
+            print('!!!!!!! RETURN 1 !!!!!!!') ###
             return
         elif ((2 == len(self.label_display.text))
             and ('-0' == self.label_display.text)
@@ -183,7 +183,7 @@ class Calc(BoxLayout):
             and ('0' == self.label_display.text[0])
             ):
             # test ##############################
-            print('!!!!!!! RETURN 2 !!!!!!!')####
+            print('!!!!!!! RETURN 2 !!!!!!!') ###
             return
         elif (chr(183) == digit_begin) and (0 == len(self.label_display.text)):
             digit_begin = '0.'
@@ -200,10 +200,10 @@ class Calc(BoxLayout):
             else:
                 pass          
         except (ValueError):
-            # test
-            print('------------------------------------------------')
-            print('!!!!!!!!!!!!!!!!!!! EXCEPTION !!!!!!!!!!!!!!!!!!')
-            print(f'!!!!!!!!!!!!digit_end = {digit_end}!!!!!!!!!!!!')
+            # test ######################################################
+            print('------------------------------------------------') ###
+            print('!!!!!!!!!!!!!!!!!!! EXCEPTION !!!!!!!!!!!!!!!!!!') ###
+            print(f'!!!!!!!!!!!!digit_end = {digit_end}!!!!!!!!!!!!') ###
             return
 
         if ('-0.' == digit_begin): # 4
@@ -256,9 +256,9 @@ class Calc(BoxLayout):
                 self.label_display_comment.text = Parse().back_to_operand(self.label_display_comment.text)
                 self.label_display_comment.text += str(self.write_number)
         else:
-            # test ##################################################
-            print('------------------------------------------------')
-            print('!!!!!!!!!!!!!!!!!!!!!HISTORY!!!!!!!!!!!!!!!!!!!!')
+            # test ######################################################
+            print('------------------------------------------------') ###
+            print('!!!!!!!!!!!!!!!!!!!!!HISTORY!!!!!!!!!!!!!!!!!!!!') ###
             self.label_display_comment.text += str(self.write_number)[-1]
     
         self.previous_operand = self.operand # 7
@@ -273,18 +273,18 @@ class Calc(BoxLayout):
             self.push_equal = False
             self.label_display_comment.text = self.write_number
 
-        # test
-        print('------------------------------------------------')
-        print(' write write_number =', self.write_number)
-        print(' write temp_number =', self.temp_number)
-        print(' write result_number =', self.result_number)
-        print(' write operand =', self.operand)
-        print(' write previous_operand =', self.previous_operand)
-        print(' write calc_arr =', self.calc_arr)
-        print(' write digit_end =', digit_end)
-        print(' write zero =', self.zero)
-        print(' write push_back =', self.push_back)
-        print(' write push_equal =', self.push_equal)
+        # test ######################################################
+        print('------------------------------------------------') ###
+        print(' write write_number =', self.write_number) ###########
+        print(' write temp_number =', self.temp_number) #############
+        print(' write result_number =', self.result_number) #########
+        print(' write operand =', self.operand) #####################
+        print(' write previous_operand =', self.previous_operand) ###
+        print(' write calc_arr =', self.calc_arr) ###################
+        print(' write digit_end =', digit_end) ######################
+        print(' write zero =', self.zero) ###########################
+        print(' write push_back =', self.push_back) #################
+        print(' write push_equal =', self.push_equal) ###############
     # ---------------------------------------------------------------------------
     # операнд сложения чисел
     # 1. условия проверки нажятия кнопки '+'
@@ -340,17 +340,17 @@ class Calc(BoxLayout):
         self.label_display_comment.text = Parse().history_trim(self.label_display_comment.text,
                                                                 limit_history)
 
-        # test
-        print('------------------------------------------------')
-        print(' add write_number =', self.write_number)
-        print(' add temp_number =', self.temp_number)
-        print(' add result_number =', self.result_number)
-        print(' add operand =', self.operand)
-        print(' add previous_operand =', self.previous_operand)
-        print(' add calc_arr =', self.calc_arr)
-        print(' add zero =', self.zero)
-        print(' add push_back =', self.push_back)
-        print(' add push_equal =', self.push_equal)
+        # test ######################################################
+        print('------------------------------------------------') ###
+        print(' add write_number =', self.write_number) #############
+        print(' add temp_number =', self.temp_number) ###############
+        print(' add result_number =', self.result_number) ###########
+        print(' add operand =', self.operand) #######################
+        print(' add previous_operand =', self.previous_operand) #####
+        print(' add calc_arr =', self.calc_arr) #####################
+        print(' add zero =', self.zero) #############################
+        print(' add push_back =', self.push_back) ###################
+        print(' add push_equal =', self.push_equal) #################
     # ---------------------------------------------------------------------------
     # операнд вычитания чисел
     # 1. условия проверки нажятия кнопки '-'
@@ -406,17 +406,17 @@ class Calc(BoxLayout):
         self.label_display_comment.text = Parse().history_trim(self.label_display_comment.text,
                                                                 limit_history)
 
-        # test
-        print('------------------------------------------------')
-        print(' subtract write_number =', self.write_number)
-        print(' subtract temp_number =', self.temp_number)
-        print(' subtract result_number =', self.result_number)
-        print(' subtract operand =', self.operand)
-        print(' subtract previous_operand =', self.previous_operand)
-        print(' subtract calc_arr =', self.calc_arr)
-        print(' subtract zero =', self.zero)
-        print(' subtract push_back =', self.push_back)
-        print(' subtract push_equal =', self.push_equal)
+        # test #########################################################
+        print('------------------------------------------------') ######
+        print(' subtract write_number =', self.write_number) ###########
+        print(' subtract temp_number =', self.temp_number) #############
+        print(' subtract result_number =', self.result_number) #########
+        print(' subtract operand =', self.operand) #####################
+        print(' subtract previous_operand =', self.previous_operand) ###
+        print(' subtract calc_arr =', self.calc_arr) ###################
+        print(' subtract zero =', self.zero) ###########################
+        print(' subtract push_back =', self.push_back) #################
+        print(' subtract push_equal =', self.push_equal) ###############
     # ---------------------------------------------------------------------------
     # операнд умножения чисел
     # 1. условия проверки нажятия кнопки '*'
@@ -472,17 +472,17 @@ class Calc(BoxLayout):
         self.label_display_comment.text = Parse().history_trim(self.label_display_comment.text,
                                                                 limit_history)
 
-        # test
-        print('------------------------------------------------')
-        print(' multiply write_number =', self.write_number)
-        print(' multiply temp_number =', self.temp_number)
-        print(' multiply result_number =', self.result_number)
-        print(' multiply operand =', self.operand)
-        print(' multiply previous_operand =', self.previous_operand)
-        print(' multiply calc_arr =', self.calc_arr)
-        print(' multiply zero =', self.zero)
-        print(' multiply push_back =', self.push_back)
-        print(' multiply push_equal =', self.push_equal)
+        # test #########################################################
+        print('------------------------------------------------') ######
+        print(' multiply write_number =', self.write_number) ###########
+        print(' multiply temp_number =', self.temp_number) #############
+        print(' multiply result_number =', self.result_number) #########
+        print(' multiply operand =', self.operand) #####################
+        print(' multiply previous_operand =', self.previous_operand) ###
+        print(' multiply calc_arr =', self.calc_arr) ###################
+        print(' multiply zero =', self.zero) ###########################
+        print(' multiply push_back =', self.push_back) #################
+        print(' multiply push_equal =', self.push_equal) ###############
     # ---------------------------------------------------------------------------
     # операнд деления чисел
     # 1. условия проверки нажятия кнопки '/'
@@ -547,17 +547,17 @@ class Calc(BoxLayout):
         self.label_display_comment.text = Parse().history_trim(self.label_display_comment.text,
                                                                 limit_history)
 
-        # test
-        print('------------------------------------------------')
-        print(' division write_number =', self.write_number)
-        print(' division temp_number =', self.temp_number)
-        print(' division result_number =', self.result_number)
-        print(' division operand =', self.operand)
-        print(' division previous_operand =', self.previous_operand)
-        print(' division calc_arr =', self.calc_arr)
-        print(' division zero =', self.zero)
-        print(' division push_back =', self.push_back)
-        print(' division push_equal =', self.push_equal)
+        # test #########################################################
+        print('------------------------------------------------') ######
+        print(' division write_number =', self.write_number) ###########
+        print(' division temp_number =', self.temp_number) #############
+        print(' division result_number =', self.result_number) #########
+        print(' division operand =', self.operand) #####################
+        print(' division previous_operand =', self.previous_operand) ###
+        print(' division calc_arr =', self.calc_arr) ###################
+        print(' division zero =', self.zero) ###########################
+        print(' division push_back =', self.push_back) #################
+        print(' division push_equal =', self.push_equal) ###############
     # ---------------------------------------------------------------------------
     # операнд процент от числа
     # 1. условия проверки нажятия кнопки '%'
@@ -613,17 +613,17 @@ class Calc(BoxLayout):
         self.label_display_comment.text = Parse().history_trim(self.label_display_comment.text,
                                                                 limit_history)
 
-        # test
-        print('------------------------------------------------')
-        print(' percent write_number =', self.write_number)
-        print(' percent temp_number =', self.temp_number)
-        print(' percent result_number =', self.result_number)
-        print(' percent operand =', self.operand)
-        print(' percent previous_operand =', self.previous_operand)
-        print(' percent calc_arr =', self.calc_arr)
-        print(' percent zero =', self.zero)
-        print(' percent push_back =', self.push_back)
-        print(' percent push_equal =', self.push_equal)
+        # test ########################################################
+        print('------------------------------------------------') #####
+        print(' percent write_number =', self.write_number) ###########
+        print(' percent temp_number =', self.temp_number) #############
+        print(' percent result_number =', self.result_number) #########
+        print(' percent operand =', self.operand) #####################
+        print(' percent previous_operand =', self.previous_operand) ###
+        print(' percent calc_arr =', self.calc_arr) ###################
+        print(' percent zero =', self.zero) ###########################
+        print(' percent push_back =', self.push_back) #################
+        print(' percent push_equal =', self.push_equal) ###############
     # ---------------------------------------------------------------------------
     # операнд сохранения числа в память калькулятора
     # 1. сохранить в память калькулятора число
@@ -677,17 +677,17 @@ class Calc(BoxLayout):
             self.push_back = True
             self.label_display_memory.text = ''    
 
-        # test
-        print('------------------------------------------------')
-        print(' memory write_number =', self.write_number)
-        print(' memory temp_number =', self.temp_number)
-        print(' memory result_number =', self.result_number)
-        print(' memory operand =', self.operand)
-        print(' memory previous_operand =', self.previous_operand)
-        print(' memory calc_arr =', self.calc_arr)
-        print(' memory zero =', self.zero)
-        print(' memory push_back =', self.push_back)
-        print(' memory push_equal =', self.push_equal)
+        # test #######################################################
+        print('------------------------------------------------') ####
+        print(' memory write_number =', self.write_number) ###########
+        print(' memory temp_number =', self.temp_number) #############
+        print(' memory result_number =', self.result_number) #########
+        print(' memory operand =', self.operand) #####################
+        print(' memory previous_operand =', self.previous_operand) ###
+        print(' memory calc_arr =', self.calc_arr) ###################
+        print(' memory zero =', self.zero) ###########################
+        print(' memory push_back =', self.push_back) #################
+        print(' memory push_equal =', self.push_equal) ###############
     # ---------------------------------------------------------------------------
     # операнд удаление чисел     
     # 1. удалить крайнюю цифру из числа
@@ -804,17 +804,17 @@ class Calc(BoxLayout):
             else:
                 self.label_display_comment.text = self.write_number
 
-        # test
-        print('------------------------------------------------')
-        print(' back write_number =', self.write_number)
-        print(' back temp_number =', self.temp_number)
-        print(' back result_number =', self.result_number)
-        print(' back operand =', self.operand)
-        print(' back previous_operand =', self.previous_operand)
-        print(' back calc_arr =', self.calc_arr)
-        print(' back zero =', self.zero)
-        print(' back push_back =', self.push_back)
-        print(' back push_equal =', self.push_equal)
+        # test ######################################################
+        print('------------------------------------------------') ###
+        print(' back write_number =', self.write_number) ############
+        print(' back temp_number =', self.temp_number) ##############
+        print(' back result_number =', self.result_number) ##########
+        print(' back operand =', self.operand) ######################
+        print(' back previous_operand =', self.previous_operand) ####
+        print(' back calc_arr =', self.calc_arr) ####################
+        print(' back zero =', self.zero) ############################
+        print(' back push_back =', self.push_back) ##################
+        print(' back push_equal =', self.push_equal) ################
     # ---------------------------------------------------------------------------
     # операнд равно (результат действий калькулятора)
     # 1. условия проверки нажятия кнопки '='   
@@ -935,18 +935,18 @@ class Calc(BoxLayout):
         history_arr[-1] += res # 14
         Settings().save_history(history_arr)
 
-        # test
-        print('------------------------------------------------')
-        print(' equal write_number =', self.write_number)
-        print(' equal temp_number =', self.temp_number)
-        print(' equal result_number =', self.result_number)
-        print(' equal operand =', self.operand)
-        print(' equal previous_operand =', self.previous_operand)
-        print(' equal calc_arr =', self.calc_arr)
-        print(' equal zero =', self.zero)
-        print(' equal push_back =', self.push_back)
-        print(' equal res =', res)
-        print(' equal push_equal =', self.push_equal)
+        # test ######################################################
+        print('------------------------------------------------') ###
+        print(' equal write_number =', self.write_number) ###########
+        print(' equal temp_number =', self.temp_number) #############
+        print(' equal result_number =', self.result_number) #########
+        print(' equal operand =', self.operand) #####################
+        print(' equal previous_operand =', self.previous_operand) ###
+        print(' equal calc_arr =', self.calc_arr) ###################
+        print(' equal zero =', self.zero) ###########################
+        print(' equal push_back =', self.push_back) #################
+        print(' equal res =', res) ##################################
+        print(' equal push_equal =', self.push_equal) ###############
     # ---------------------------------------------------------------------------
     # обнудить все переменные при нажатии кнопки 'C'
     def clear(self):
@@ -964,17 +964,17 @@ class Calc(BoxLayout):
         self.previous_operand = None
         self.calc_arr = list()
 
-        # test
-        print('------------------------------------------------')
-        print(' clear write_number =', self.write_number)
-        print(' clear temp_number =', self.temp_number)
-        print(' clear result_number =', self.result_number)
-        print(' clear operand =', self.operand)
-        print(' clear previous_operand =', self.previous_operand)
-        print(' clear calc_arr =', self.calc_arr)
-        print(' clear zero =', self.zero)
-        print(' clear push_back =', self.push_back)
-        print(' clear push_equal =', self.push_equal)
+        # test ######################################################
+        print('------------------------------------------------') ###
+        print(' clear write_number =', self.write_number) ###########
+        print(' clear temp_number =', self.temp_number) #############
+        print(' clear result_number =', self.result_number) #########
+        print(' clear operand =', self.operand) #####################
+        print(' clear previous_operand =', self.previous_operand) ###
+        print(' clear calc_arr =', self.calc_arr) ###################
+        print(' clear zero =', self.zero) ###########################
+        print(' clear push_back =', self.push_back) #################
+        print(' clear push_equal =', self.push_equal) ###############
     # ---------------------------------------------------------------------------
     pass
     # ---------------------------------------------------------------------------
