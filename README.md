@@ -288,7 +288,7 @@ Use this space to list resources you find helpful and would like to give credit 
 
 <!-- license -->
 [license-shield]: https://img.shields.io/github/license/MER-GROUP/KivyCalc.svg?style=for-the-badge
-[license-url]: https://github.com/MER-GROUP/KivyCalc/LICENSE.txt
+[license-url]: https://github.com/MER-GROUP/KivyCalc/blob/master/LICENSE
 
 <!-- linkedin -->
 <!--
