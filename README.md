@@ -7,7 +7,7 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-<!-- PROJECT SHIELDS -->
+<!-- PROJECT SHIELDS --------------------------------------------------------------------------->
 <!--
 *** I'm using markdown "reference style" links for readability.
 *** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
@@ -23,9 +23,9 @@
 <!--
 [![LinkedIn][linkedin-shield]][linkedin-url]
 -->
+<!-- ------------------------------------------------------------------------------------------>
 
 <!-- PROJECT LOGO ----------------------------------------------------------------------------->
-<br />
 <div align="center">
   <a href="https://github.com/MER-GROUP/KivyCalc">
     <img src="ico/calc.png" alt="Logo" width="280" height="280">
@@ -34,28 +34,28 @@
   <h1 align="center">Kivi Calc</h1>
 
   <p align="center">
-    <h2>KivyCalc is a simple cross-platform calculator</h2>
-    <h2>(KivyCalc - это простой кроссплатформенный калькулятор)</h2>
-    <h3>Screenshots of the program in Linux, MacOS, Windows</h3>
-    <h3>(Cкриншоты программы в Linux, MacOS, Windows)</h3>
-    <br />
+        <h2>KivyCalc is a simple cross-platform calculator</h2>
+        <h2>(KivyCalc - это простой кроссплатформенный калькулятор)</h2>
+        <h3>Screenshots of the program in Linux, MacOS, Windows</h3>
+        <h3>(Cкриншоты программы в Linux, MacOS, Windows)</h3>
+        <br />
+            <table border="0">
+                <tr>
+                    <td><img src="screenshot/linux-max-windows_eng/1 - calc.png"></td>
+                    <td><img src="screenshot/linux-max-windows_eng/2 - settings.png"></td>
+                    <td><img src="screenshot/linux-max-windows_eng/3 - info.png"></td>
+                    <td><img src="screenshot/linux-max-windows_eng/4 - history.png"></td>
+                </tr>
+                <tr>
+                    <td><img src="screenshot/linux-max-windows_rus/1 - калькулятор.png"></td>
+                    <td><img src="screenshot/linux-max-windows_rus/2 - настройки.png"></td>
+                    <td><img src="screenshot/linux-max-windows_rus/3 - инфо.png"></td>
+                    <td><img src="screenshot/linux-max-windows_rus/4 - история.png"></td>
+                </tr>
+            </table>
+        <h3>Screenshots of the program in Android</h3>
+        <h3>(Cкриншоты программы в Android)</h3>
         <table border="0">
-            <tr>
-                <td><img src="screenshot/linux-max-windows_eng/1 - calc.png"></td>
-                <td><img src="screenshot/linux-max-windows_eng/2 - settings.png"></td>
-                <td><img src="screenshot/linux-max-windows_eng/3 - info.png"></td>
-                <td><img src="screenshot/linux-max-windows_eng/4 - history.png"></td>
-            </tr>
-            <tr>
-                <td><img src="screenshot/linux-max-windows_rus/1 - калькулятор.png"></td>
-                <td><img src="screenshot/linux-max-windows_rus/2 - настройки.png"></td>
-                <td><img src="screenshot/linux-max-windows_rus/3 - инфо.png"></td>
-                <td><img src="screenshot/linux-max-windows_rus/4 - история.png"></td>
-            </tr>
-        </table>
-    <h3>Screenshots of the program in Android</h3>
-    <h3>(Cкриншоты программы в Android)</h3>
-    <table border="0">
             <tr>
                 <td><img src="screenshot/android_eng/1 - cacl.png"></td>
                 <td><img src="screenshot/android_eng/2 - settings.png"></td>
@@ -69,25 +69,16 @@
                 <td><img src="screenshot/android_rus/4 - история.png"></td>
             </tr>
         </table>
-    <br />
-    <a href="https://github.com/MER-GROUP/KivyCalc">View</a>
-    ·
-    <a href="https://github.com/MER-GROUP/KivyCalc/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/MER-GROUP/KivyCalc/issues">Request Feature</a>
+        <a href="https://github.com/MER-GROUP/KivyCalc">View</a>
+        ·
+        <a href="https://github.com/MER-GROUP/KivyCalc/issues">Report Bug</a>
+        ·
+        <a href="https://github.com/MER-GROUP/KivyCalc/issues">Request Feature</a>
   </p>
 </div>
 <!-- ------------------------------------------------------------------------------------------>
 
-
-
-
-
-
-
-
-
-<!-- TABLE OF CONTENTS -->
+<!-- TABLE OF CONTENTS ------------------------------------------------------------------------>
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -112,6 +103,10 @@
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
+<!-- ------------------------------------------------------------------------------------------>
+
+
+
 
 
 
