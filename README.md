@@ -24,40 +24,54 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 -->
 
-<!-- PROJECT LOGO -->
+<!-- PROJECT LOGO ----------------------------------------------------------------------------->
 <br />
 <div align="center">
   <a href="https://github.com/MER-GROUP/KivyCalc">
-    <img src="ico/calc.png" alt="Logo" width="80" height="80">
+    <img src="ico/calc.png" alt="Logo" width="280" height="280">
   </a>
 
-  <h3 align="center">Kivi Calc</h3>
+  <h1 align="center">Kivi Calc</h1>
 
   <p align="center">
-    KivyCalc is a simple cross-platform calculator
-    (KivyCalc - это простой кроссплатформенный калькулятор)
+    <h2>KivyCalc is a simple cross-platform calculator</h2>
+    <h2>(KivyCalc - это простой кроссплатформенный калькулятор)</h2>
+    <br />
+    <h3>Screenshots of the program in Linux, MacOS, Windows</h3>
+    <h3>(Cкриншоты программы в Linux, MacOS, Windows)</h3>
     <br />
         <table border="0">
-        <tr>
-            <td colspan="4">Screenshots of the program in Linux, macOS, Windows</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td colspan="4">(Cкриншоты программы в Linux, MacOS, Windows)</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td><img src="screenshot/linux-max-windows_eng/1 - calc.png"></td>
-            <td><img src="screenshot/linux-max-windows_eng/2 - settings.png"></td>
-            <td><img src="screenshot/linux-max-windows_eng/3 - info.png"></td>
-            <td><img src="screenshot/linux-max-windows_eng/4 - history.png"></td>
-        </tr>
-    </table>
+            <tr>
+                <td><img src="screenshot/linux-max-windows_eng/1 - calc.png"></td>
+                <td><img src="screenshot/linux-max-windows_eng/2 - settings.png"></td>
+                <td><img src="screenshot/linux-max-windows_eng/3 - info.png"></td>
+                <td><img src="screenshot/linux-max-windows_eng/4 - history.png"></td>
+            </tr>
+            <tr>
+                <td><img src="screenshot/linux-max-windows_rus/1 - калькулятор.png"></td>
+                <td><img src="screenshot/linux-max-windows_rus/2 - настройки.png"></td>
+                <td><img src="screenshot/linux-max-windows_rus/3 - инфо.png"></td>
+                <td><img src="screenshot/linux-max-windows_rus/4 - история.png"></td>
+            </tr>
+        </table>
     <br />
+    <h3>Screenshots of the program in Android</h3>
+    <h3>(Cкриншоты программы в Android)</h3>
+    <br />
+    <table border="0">
+            <tr>
+                <td><img src="screenshot/android_eng/1 - cacl.png"></td>
+                <td><img src="screenshot/android_eng/2 - settings.png"></td>
+                <td><img src="screenshot/android_eng/3 - info.png"></td>
+                <td><img src="screenshot/android_eng/4 - history.png"></td>
+            </tr>
+            <tr>
+                <td><img src="screenshot/android_rus/1 - калькулятор.png"></td>
+                <td><img src="screenshot/android_rus/2 - настройки.png"></td>
+                <td><img src="screenshot/android_rus/3 - инфо.png"></td>
+                <td><img src="screenshot/android_rus/4 - история.png"></td>
+            </tr>
+        </table>
     <br />
     <a href="https://github.com/MER-GROUP/KivyCalc">View</a>
     ·
@@ -66,7 +80,7 @@
     <a href="https://github.com/MER-GROUP/KivyCalc/issues">Request Feature</a>
   </p>
 </div>
-
+<!-- ------------------------------------------------------------------------------------------>
 
 
 
