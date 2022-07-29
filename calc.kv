@@ -65,7 +65,7 @@
             on_press: app.vibrator_android(dec(settings().load_settings()['vibro']))
         ButtonSupport:
             # размер виджета (кнопки)
-            size_hint: 0.8, 1
+            size_hint: 0.7, 1
             # text: "INFO"
             text: translate().get_translate(file().file_get_local_language(), 'info')
             on_press: Factory.WindowInfo().open()
