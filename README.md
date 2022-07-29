@@ -36,7 +36,6 @@
   <p align="center">
     <h2>KivyCalc is a simple cross-platform calculator</h2>
     <h2>(KivyCalc - это простой кроссплатформенный калькулятор)</h2>
-    <br />
     <h3>Screenshots of the program in Linux, MacOS, Windows</h3>
     <h3>(Cкриншоты программы в Linux, MacOS, Windows)</h3>
     <br />
@@ -54,10 +53,8 @@
                 <td><img src="screenshot/linux-max-windows_rus/4 - история.png"></td>
             </tr>
         </table>
-    <br />
     <h3>Screenshots of the program in Android</h3>
     <h3>(Cкриншоты программы в Android)</h3>
-    <br />
     <table border="0">
             <tr>
                 <td><img src="screenshot/android_eng/1 - cacl.png"></td>
