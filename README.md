@@ -7,8 +7,6 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -22,32 +20,59 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+<!--
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-
+-->
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/MER-GROUP/KivyCalc">
+    <img src="ico/calc.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Kivi Calc</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    KivyCalc is a simple cross-platform calculator
+    (KivyCalc - это простой кроссплатформенный калькулятор)
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+        <table border="0">
+        <tr>
+            <td colspan="4">Screenshots of the program in Linux, macOS, Windows</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="4">(Cкриншоты программы в Linux, MacOS, Windows)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><img src="screenshot/linux-max-windows_eng/1 - calc.png"></td>
+            <td><img src="screenshot/linux-max-windows_eng/2 - settings.png"></td>
+            <td><img src="screenshot/linux-max-windows_eng/3 - info.png"></td>
+            <td><img src="screenshot/linux-max-windows_eng/4 - history.png"></td>
+        </tr>
+    </table>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/MER-GROUP/KivyCalc">View</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/MER-GROUP/KivyCalc/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/MER-GROUP/KivyCalc/issues">Request Feature</a>
   </p>
 </div>
+
+
+
+
+
+
+
 
 
 
@@ -174,7 +199,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
     - [ ] Chinese
     - [ ] Spanish
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/MER-GROUP/KivyCalc/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -238,18 +263,34 @@ Use this space to list resources you find helpful and would like to give credit 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+
+<!-- contributors -->
+[contributors-shield]: https://img.shields.io/github/contributors/MER-GROUP/KivyCalc.svg?style=for-the-badge
+[contributors-url]: https://github.com/MER-GROUP/KivyCalc/graphs/contributors
+
+<!-- forks -->
+[forks-shield]: https://img.shields.io/github/forks/MER-GROUP/KivyCalc.svg?style=for-the-badge
+[forks-url]: https://github.com/MER-GROUP/KivyCalc/network/members
+
+<!-- stars -->
+[stars-shield]: https://img.shields.io/github/stars/MER-GROUP/KivyCalc.svg?style=for-the-badge
+[stars-url]: https://github.com/MER-GROUP/KivyCalc/stargazers
+
+<!-- issues -->
+[issues-shield]: https://img.shields.io/github/issues/MER-GROUP/KivyCalc.svg?style=for-the-badge
+[issues-url]: https://github.com/MER-GROUP/KivyCalc/issues
+
+<!-- license -->
+[license-shield]: https://img.shields.io/github/license/MER-GROUP/KivyCalc.svg?style=for-the-badge
+[license-url]: https://github.com/MER-GROUP/KivyCalc/blob/master/LICENSE.txt
+
+<!-- linkedin -->
+<!--
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
+-->
+
+<!-- forks -->
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
