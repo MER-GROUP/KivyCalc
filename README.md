@@ -185,21 +185,27 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
+<!-- GETTING STARTED --------------------------------------------------------------------------->
+## **Getting Started [Начало работы]**
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+**To install and run this program, follow the steps described below.**
 
-### Prerequisites
+[*Для установки и запуска данной программы проделайте шаги описанные ниже.*]
+
+### **Prerequisites [Подготовка к установке]**
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+
+1. Clone the repo [Скопируйте репозиторий]
   ```sh
-  npm install npm@latest -g
+  git clone https://github.com/MER-GROUP/KivyCalc.git
+  ```
+2. Go to the program folder [Перейдите в папку с программой]
+  ```sh
+  cd KivyCalc
   ```
 
-### Installation
+### **Installation [Установка]**
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
@@ -217,8 +223,8 @@ _Below is an example of how you can instruct your audience on installing and set
    const API_KEY = 'ENTER YOUR API';
    ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
+<p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
+<!-- ------------------------------------------------------------------------------------------->
 
 
 
