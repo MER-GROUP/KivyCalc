@@ -87,7 +87,7 @@
     <li>
       <a href="#about-the-project">About The Project [Об этом проекте]</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#built-with">Built With [Инструменты разработки]</a></li>
       </ul>
     </li>
     <li>
@@ -106,11 +106,6 @@
   </ol>
 </details>
 <!-- ------------------------------------------------------------------------------------------->
-
-
-
-
-
 
 <!-- ABOUT THE PROJECT ------------------------------------------------------------------------->
 ## **About The Project [Об этом проекте]**
@@ -156,14 +151,15 @@ of mathematical operators.**
 <p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
 <!-- ------------------------------------------------------------------------------------------->
 
+<!-- Built With -------------------------------------------------------------------------------->
+### **Built With [Инструменты разработки]**
 
-
-
-
-### Built With
-
+<!-- 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+[В этом разделе должны быть перечислены все основные фреймворки / библиотеки, используемые для начальной загрузки вашего проекта. Оставьте любые дополнения/плагины для раздела "Подтверждения". Вот несколько примеров.] 
+-->
 
+<!-- 
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
 * [![Vue][Vue.js]][Vue-url]
@@ -171,9 +167,21 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![Laravel][Laravel.com]][Laravel-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![JQuery][JQuery.com]][JQuery-url] 
+-->
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+* [![Python][Python.org]][Python-url]
+* [![Kivy][Kivy.org]][Kivy-url]
+* [![Json][Json.org]][Json-url]
+* [![Debian][Debian.org]][Debian-url]
+* [![VSCode][VSCode.org]][VSCode-url]
+* [![Git][Git.org]][Git-url]
+
+<p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
+<!-- ------------------------------------------------------------------------------------------->
+
+
+
 
 
 
@@ -213,6 +221,11 @@ _Below is an example of how you can instruct your audience on installing and set
 
 
 
+
+
+
+
+
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -221,6 +234,11 @@ Use this space to show useful examples of how a project can be used. Additional 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
+
 
 
 
@@ -238,6 +256,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 See the [open issues](https://github.com/MER-GROUP/KivyCalc/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
+
+
 
 
 
@@ -259,12 +283,22 @@ Don't forget to give the project a star! Thanks again!
 
 
 
+
+
+
+
+
+
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
 
 
 
@@ -276,6 +310,10 @@ Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.c
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
 
 
 
@@ -294,6 +332,10 @@ Use this space to list resources you find helpful and would like to give credit 
 * [React Icons](https://react-icons.github.io/react-icons/search)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
 
 
 
@@ -331,24 +373,59 @@ Use this space to list resources you find helpful and would like to give credit 
 [product-screenshot]: images/screenshot.png 
 -->
 
-
-
-
-
-
+<!-- Next -->
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
+
+<!-- React -->
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
+
+<!-- Vue -->
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org/
+
+<!-- Angular -->
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
+
+<!-- Svelte -->
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
 [Svelte-url]: https://svelte.dev/
+
+<!-- Laravel -->
 [Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
 [Laravel-url]: https://laravel.com
+
+<!-- Bootstrap -->
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
+
+<!-- JQuery -->
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+
+<!-- Python -->
+[Python.org]: https://img.shields.io/badge/python-7279D8?style=for-the-badge&logo=python&logoColor=white
+[Python-url]: https://python.org/
+
+<!-- Kivy -->
+[Kivy.org]: https://img.shields.io/badge/kivy-49444E?style=for-the-badge&logo=python&logoColor=white
+[Kivy-url]: https://kivy.org/
+
+<!-- Json -->
+[Json.org]: https://img.shields.io/badge/json-D0B4C4?style=for-the-badge&logo=json&logoColor=white
+[Json-url]: https://json.org/
+
+<!-- Debian -->
+[Debian.org]: https://img.shields.io/badge/debian-81476C?style=for-the-badge&logo=debian&logoColor=white
+[Debian-url]: https://debian.org/
+
+<!-- VSCode -->
+[VSCode.org]: https://img.shields.io/badge/vscode-3E7384?style=for-the-badge&logo=visualstudio&logoColor=white
+[VSCode-url]: https://code.visualstudio.com/
+
+<!-- Git -->
+[Git.org]: https://img.shields.io/badge/git-F92929?style=for-the-badge&logo=git&logoColor=white
+[Git-url]: https://git-scm.com/
+<!-- ------------------------------------------------------------------------------------------->
