@@ -1,11 +1,14 @@
 <div id="top"></div>
+<!-- Best-README-Template ---------------------------------------------------------------------->
 <!--
+*** https://github.com/othneildrew/Best-README-Template
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
 *** or simply open an issue with the tag "enhancement".
 *** Don't forget to give the project a star!
 *** Thanks again! Now go create something AMAZING! :D
 -->
+<!-- ------------------------------------------------------------------------------------------->
 
 <!-- PROJECT SHIELDS --------------------------------------------------------------------------->
 <!--
@@ -23,21 +26,21 @@
 <!--
 [![LinkedIn][linkedin-shield]][linkedin-url]
 -->
-<!-- ------------------------------------------------------------------------------------------>
+<!-- ------------------------------------------------------------------------------------------->
 
-<!-- PROJECT LOGO ----------------------------------------------------------------------------->
+<!-- PROJECT LOGO ------------------------------------------------------------------------------>
 <div align="center">
   <a href="https://github.com/MER-GROUP/KivyCalc">
     <img src="ico/calc.png" alt="Logo" width="280" height="280">
   </a>
 
-  <h1 align="center">Kivi Calc</h1>
+  <h1 align="center"><b>Kivi Calc</b></h1>
 
   <p align="center">
-        <h2>KivyCalc is a simple cross-platform calculator <br />
-            [KivyCalc - это простой кроссплатформенный калькулятор]</h2>
-        <h3>Screenshots of the program in Linux, MacOS, Windows <br />
-            [Cкриншоты программы в Linux, MacOS, Windows]</h3>
+        <h2><b>KivyCalc is a simple cross-platform calculator</b><br />
+            <i>[KivyCalc - это простой кроссплатформенный калькулятор]</i></h2>
+        <h3><b>Screenshots of the program in Linux, MacOS, Windows</b><br />
+            <i>[Cкриншоты программы в Linux, MacOS, Windows]</i></h3>
         <table border="0">
             <tr>
                 <td><img src="screenshot/linux-max-windows_eng/1 - calc.png"></td>
@@ -52,8 +55,8 @@
                 <td><img src="screenshot/linux-max-windows_rus/4 - история.png"></td>
             </tr>
         </table>
-        <h3>Screenshots of the program in Android <br />
-            [Cкриншоты программы в Android]</h3>
+        <h3><b>Screenshots of the program in Android</b><br />
+            <i>[Cкриншоты программы в Android]</i></h3>
         <table border="0">
             <tr>
                 <td><img src="screenshot/android_eng/1 - cacl.png"></td>
@@ -75,14 +78,14 @@
         <a href="https://github.com/MER-GROUP/KivyCalc/issues">Request Feature</a>
   </p>
 </div>
-<!-- ------------------------------------------------------------------------------------------>
+<!-- ------------------------------------------------------------------------------------------->
 
-<!-- TABLE OF CONTENTS ------------------------------------------------------------------------>
+<!-- TABLE OF CONTENTS ------------------------------------------------------------------------->
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Table of Contents [Содержание]</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">About The Project [Об этом проекте]</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -102,30 +105,58 @@
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
-<!-- ------------------------------------------------------------------------------------------>
+<!-- ------------------------------------------------------------------------------------------->
 
 
 
 
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+<!-- ABOUT THE PROJECT ------------------------------------------------------------------------->
+## **About The Project [Об этом проекте]**
+<!-- 
+[![Product Name Screen Shot][product-screenshot]](https://example.com) 
+-->
+**KivyCalc is a simple cross-platform calculator. The principle of operation is taken from the simplest calculator, that is, calculations are performed sequentially, the priority of mathematical
+operators is not taken into account.**
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[*KivyCalc - это простой кроссплатформенный калькулятор. Принцип работы взят из самого простого калькулятора, тоесть вычисления выполняются последовательно, приоритет математических 
+операторов не учитывается.*]
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+**For example, the mathematical expression KivyCalc will calculate as:**
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+[*Например математическое выражение KivyCalc посчитает как:*]
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+> 5 + 5 * 5 = 50
 
-Use the `BLANK_README.md` to get started.
+**but not like this:**
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+[*но не так:*]
+
+> 5 + 5 * 5 = 30
+
+**This was done on purpose, since most people do not take into account the priority
+of mathematical operators.**
+
+[*Сделалось это специально, так как большинство людей не учитывают приоритет 
+математических операторов.*]
+
+**KivyCalc settings allow you to:**
+
+[*Настройки KivyCalc позволяют:*]
+
+1. Set the rule of rounding numbers [Установить правило окруление чисел]
+2. Set the length of the story [Установить длину истории]
+3. Set the vibration release [Установить вибрационный отклюк]
+
+**KivyCalc also shows the history of mathematical calculations.**
+
+[*Также KivyCalc показывает историю математических вычислений.*]
+
+<p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
+<!-- ------------------------------------------------------------------------------------------->
+
+
 
 
 
@@ -266,7 +297,7 @@ Use this space to list resources you find helpful and would like to give credit 
 
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
+<!-- MARKDOWN LINKS & IMAGES ------------------------------------------------------------------->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 <!-- contributors -->
@@ -295,8 +326,16 @@ Use this space to list resources you find helpful and would like to give credit 
 [linkedin-url]: https://linkedin.com/in/othneildrew
 -->
 
-<!-- forks -->
-[product-screenshot]: images/screenshot.png
+<!-- screenshot -->
+<!-- 
+[product-screenshot]: images/screenshot.png 
+-->
+
+
+
+
+
+
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
