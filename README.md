@@ -97,7 +97,7 @@
         <li><a href="#installation">Installation [Установка]</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#usage">Usage [Использование]</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -218,20 +218,15 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
 <!-- ------------------------------------------------------------------------------------------->
 
+<!-- USAGE EXAMPLES ---------------------------------------------------------------------------->
+## **Usage [Использование]**
 
+**The program is simple and intuitive to use and does not need instructions.**
 
+[*Программа проста и интуитивно понятна в использовании и не нуждается в инструкциях.*]
 
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
+<!-- ------------------------------------------------------------------------------------------->
 
 
 
