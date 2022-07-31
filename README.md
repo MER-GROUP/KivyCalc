@@ -98,7 +98,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage [Использование]</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#roadmap">Roadmap [История изменений]</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -228,28 +228,16 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
 <!-- ------------------------------------------------------------------------------------------->
 
+<!-- ROADMAP ----------------------------------------------------------------------------------->
+## **Roadmap [История изменений]**
 
+- [x] Add History [Добавлена история вычислений]
+- [ ] Multi-language Support [Поддержка нескольких языков]
+    - [ ] English
+    - [ ] Русский
 
-
-
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/MER-GROUP/KivyCalc/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
+<p align="right">(<a href="#top"> [вернуться к началу]back to top</a>)</p>
+<!-- ------------------------------------------------------------------------------------------->
 
 
 
