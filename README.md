@@ -91,10 +91,10 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started">Getting Started [Начало работы]</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#prerequisites">Prerequisites [Подготовка к установке]</a></li>
+        <li><a href="#installation">Installation [Установка]</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -140,9 +140,9 @@ of mathematical operators.**
 
 [*Настройки KivyCalc позволяют:*]
 
-1. Set the rule of rounding numbers [Установить правило окруление чисел]
-2. Set the length of the story [Установить длину истории]
-3. Set the vibration release [Установить вибрационный отклюк]
+1. Set the rule of rounding numbers [*Установить правило окруление чисел*]
+2. Set the length of the story [*Установить длину истории*]
+3. Set the vibration release [*Установить вибрационный отклюк*]
 
 **KivyCalc also shows the history of mathematical calculations.**
 
@@ -180,11 +180,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
 <!-- ------------------------------------------------------------------------------------------->
 
-
-
-
-
-
 <!-- GETTING STARTED --------------------------------------------------------------------------->
 ## **Getting Started [Начало работы]**
 
@@ -194,34 +189,31 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 ### **Prerequisites [Подготовка к установке]**
 
-This is an example of how to list things you need to use the software and how to install them.
-
-1. Clone the repo [Скопируйте репозиторий]
+1. Clone the repo [*Скопируйте репозиторий*]:
   ```sh
   git clone https://github.com/MER-GROUP/KivyCalc.git
   ```
-2. Go to the program folder [Перейдите в папку с программой]
+2. Go to the program folder [*Перейдите в папку с программой*]:
   ```sh
   cd KivyCalc
+  ```
+3. Install the necessary components [*Установите необходимые компоненты*]:
+  ```sh
+  pip install -Ur requirements.txt
   ```
 
 ### **Installation [Установка]**
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Running the program in Linux, MacOS, Windows and other operating systems [*Запуск программы в Linux, MacOS, Windows и других операционных системах*]:
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   python main.py
    ```
-3. Install NPM packages
+2. If the program gives an error at startup, it means that the necessary libraries for launching the Kivy framework are not installed. Follow the link [https://github.com/kivy/kivy](https://github.com/kivy/kivy) and read what needs to be done [*Если программа выдает ошибку при запуске, это означает, что необходимые библиотеки для запуска фреймворка Kivy не установлены. Перейдите по ссылке [https://github.com/kivy/kivy](https://github.com/kivy/kivy) и прочитайте, что нужно сделать*].
+3. Building a project on Android [*Создание проекта на Android*]:
    ```sh
-   npm install
+   buildozer -v android debug
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+4. If the project has not been assembled, it means that the Bulldozer program libraries are not installed. Follow the link [https://github.com/kivy/buildozer](https://github.com/kivy/buildozer) and read what needs to be done [*Если проект не был собран, это означает, что библиотеки программ Bulldozer не установлены. Перейдите по ссылке [https://github.com/kivy/buildozer](https://github.com/kivy/buildozer) и прочитайте, что нужно сделать*].
 
 <p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
 <!-- ------------------------------------------------------------------------------------------->
