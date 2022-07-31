@@ -71,11 +71,11 @@
                 <td><img src="screenshot/android_rus/4 - история.png"></td>
             </tr>
         </table>
-        <a href="https://github.com/MER-GROUP/KivyCalc">View</a>
+        <a href="https://github.com/MER-GROUP/KivyCalc">View [Просмотр]</a>
         ·
-        <a href="https://github.com/MER-GROUP/KivyCalc/issues">Report Bug</a>
+        <a href="https://github.com/MER-GROUP/KivyCalc/issues">Report Bug [Сообщить об ошибке]</a>
         ·
-        <a href="https://github.com/MER-GROUP/KivyCalc/issues">Request Feature</a>
+        <a href="https://github.com/MER-GROUP/KivyCalc/issues">Request Feature [Внести изменение]</a>
   </p>
 </div>
 <!-- ------------------------------------------------------------------------------------------->
@@ -99,10 +99,10 @@
     </li>
     <li><a href="#usage">Usage [Использование]</a></li>
     <li><a href="#roadmap">Roadmap [История изменений]</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#contributing">Contributing [Вклад в проект]</a></li>
+    <li><a href="#license">License [Лицензия]</a></li>
+    <li><a href="#contact">Contact [Контакты]</a></li>
+    <li><a href="#acknowledgments">Acknowledgments [Используемын ресурсы]</a></li>
   </ol>
 </details>
 <!-- ------------------------------------------------------------------------------------------->
@@ -231,94 +231,78 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- ROADMAP ----------------------------------------------------------------------------------->
 ## **Roadmap [История изменений]**
 
-- [x] Add History [Добавлена история вычислений]
-- [ ] Multi-language Support [Поддержка нескольких языков]
+- [x] Add History [*Добавлена история вычислений*]
+- [ ] Multi-language Support [*Поддержка нескольких языков*]
     - [ ] English
     - [ ] Русский
 
-<p align="right">(<a href="#top"> [вернуться к началу]back to top</a>)</p>
+<p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
 <!-- ------------------------------------------------------------------------------------------->
 
+<!-- CONTRIBUTING ------------------------------------------------------------------------------>
+## **Contributing [Вклад в проект]**
 
+**Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are __greatly appreciated__.**
 
+[*Вклад - это то, что делает сообщество с открытым исходным кодом таким удивительным местом для обучения, вдохновения и творчества. Любой ваш вклад __очень ценится__.*]
 
+**If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!**
 
+[*Если у вас есть предложение, которое сделало бы проект лучше, пожалуйста, сделайте форк репозитория, сделайте изменение и создайте запрос на рассмотрение вашего изменения. Вы также можете просто открыть проблему с тегом "улучшение".
+Не забудьте дать проекту звезду! Еще раз спасибо!*]
 
+1. Fork the Project [*Сделайте форк проекта*]
+2. Create your Feature Branch [*Создайте свою ветку*]:
+   ```sh
+   git checkout -b feature/KivyCalc
+   ```
+3. Commit your Changes [*Внесите изменения*]:
+   ```sh
+   git commit -m 'Add some AmazingFeature'
+   ```
+4. Push to the Branch [*Отправте на рассмотрение ваши изменения*]:
+   ```sh
+   git push origin feature/AmazingFeature`
+   ```
+5. Open a Pull Request [*Откройке ваш запрос*]
 
+<p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
+<!-- ------------------------------------------------------------------------------------------->
 
-<!-- CONTRIBUTING -->
-## Contributing
+<!-- LICENSE ----------------------------------------------------------------------------------->
+## **License [Лицензия]**
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+**Distributed under the MIT License. See `LICENSE` for more information.**
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+[*Распространяется по лицензии MIT. Дополнительные сведения см. в разделе `ЛИЦЕНЗИЯ`.*]
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+<p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
+<!-- ------------------------------------------------------------------------------------------->
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- CONTACT ----------------------------------------------------------------------------------->
+## **Contact [Контакты]**
 
+Max Ramanenka (Red Alert)  - i@mer-group.ru
 
+Project Link [*Ссылка на проект*]: [https://github.com/MER-GROUP/KivyCalc](https://github.com/MER-GROUP/KivyCalc)
 
+<p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
+<!-- ------------------------------------------------------------------------------------------->
 
+<!-- ACKNOWLEDGMENTS --------------------------------------------------------------------------->
+## **Acknowledgments [Используемын ресурсы]**
 
+* [Python](https://www.python.org/)
+* [Kivy](https://kivy.org/#home)
+* [Json](https://www.json.org/json-en.html)
+* [Debian](https://www.debian.org/)
+* [VSCode](https://code.visualstudio.com/)
+* [Git](https://git-scm.com/)
+* [Markdown](https://www.markdownguide.org/)
 
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-
-
-
+<p align="right">(<a href="#top">back to top [вернуться к началу]</a>)</p>
+<!-- ------------------------------------------------------------------------------------------->
 
 <!-- MARKDOWN LINKS & IMAGES ------------------------------------------------------------------->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
