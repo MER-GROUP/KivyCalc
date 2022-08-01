@@ -142,7 +142,7 @@ of mathematical operators.**
 
 1. Set the rule of rounding numbers [*Установить правило окруление чисел*]
 2. Set the length of the story [*Установить длину истории*]
-3. Set the vibration release [*Установить вибрационный отклюк*]
+3. Set the vibration release [*Установить вибрационный отклик*]
 
 **KivyCalc also shows the history of mathematical calculations.**
 
@@ -249,7 +249,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 **If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!**
 
-[*Если у вас есть предложение, которое сделало бы проект лучше, пожалуйста, сделайте форк репозитория, сделайте изменение и создайте запрос на рассмотрение вашего изменения. Вы также можете просто открыть проблему с тегом "улучшение".
+[*Если у вас есть предложение, которое сделало бы проект лучше, пожалуйста, сделайте форк репозитория, внесите изменение и создайте запрос на рассмотрение вашего изменения. Вы также можете просто открыть проблему с тегом "улучшение".
 Не забудьте дать проекту звезду! Еще раз спасибо!*]
 
 1. Fork the Project [*Сделайте форк проекта*]
